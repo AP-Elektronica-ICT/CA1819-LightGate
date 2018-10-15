@@ -43,4 +43,18 @@ export class ObjectiveListComponent implements OnInit {
     this._svc.postObjectiveRequest(body);
   }
 
+  calculateDamage()
+  {
+    //Get percentages from camera API
+    this.objectives.labels.forEach(label => {
+      if(label.feature[0] == null/*feature*/ && label.feature[1] == null/*feature*/)
+      {
+        //TODO
+        //Exchange null for feature
+        //if camera API percentage is > 0.7
+        //...
+      }
+    });
+  }
+
 }
