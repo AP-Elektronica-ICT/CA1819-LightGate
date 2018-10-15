@@ -6,7 +6,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ObjectiveCreatorComponent } from '../components/objective-creator/objective-creator';
 import { ObjectiveListComponent } from '../components/objective-list/objective-list';
 import { ObjectivesService } from '../services/objectives.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,7 +15,6 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     MyApp,
     HomePage,
-    ObjectiveCreatorComponent,
     ObjectiveListComponent
   ],
   imports: [
