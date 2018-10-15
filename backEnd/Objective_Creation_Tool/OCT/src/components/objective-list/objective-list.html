@@ -1,0 +1,30 @@
+<!-- Generated template for the ObjectiveListComponent component -->
+<div>
+  <table>
+    <thead><strong>Objective Database</strong></thead>
+    <tbody *ngIf="objectives != null"> 
+      <tr *ngFor="let obj of objectives">
+        <td>ID - {{ obj.id }}</td>
+        <td>Description - {{ obj.description }}</td>
+        
+        <td *ngFor="let label of obj.labels">
+          <p>ID - {{ label.id }} </p>
+          <p>Feature - {{ label.feature }} </p>
+        </td>
+     
+      
+      
+    </tbody>
+  </table>
+
+  <br>
+
+  <form>
+    <input placeholder="description" type="text" id="objective_description">
+    <input placeholder="feature 1" type="text" id="objective_feature1">
+    <input placeholder="feature 2" type="text" id="objective_feature2">
+    <input type="submit" name="submit" (click)="postRequest()">
+  </form>
+
+
+</div>
