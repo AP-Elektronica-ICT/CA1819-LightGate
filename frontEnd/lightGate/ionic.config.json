@@ -1,5 +1,7 @@
 {
   "name": "lightGate",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
