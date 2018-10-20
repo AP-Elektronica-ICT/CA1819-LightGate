@@ -1,4 +1,6 @@
 <!-- Generated template for the ObjectiveListComponent component -->
+
+<!-- Objective Database -->
 <div>
   <table>
     <thead><strong>Objective Database</strong></thead>
@@ -9,21 +11,36 @@
         
         <td *ngFor="let label of obj.labels">
           <p>Feature - {{ label.feature }} </p>
-        </td>
-     
-      
-      
+        </td>      
     </tbody>
   </table>
 
-  <br>
+ <br>
 
+<!-- Create Objective -->
   <form>
     <input placeholder="description" type="text" id="objective_description">
     <input placeholder="feature 1" type="text" id="objective_feature1">
     <input placeholder="feature 2" type="text" id="objective_feature2">
     <input type="submit" name="submit" (click)="postRequest()">
   </form>
-
-
+  
 </div>
+
+<br>
+
+<!-- Health Bar -->
+<progress id="health" value="100" max="100"></progress>
+
+
+<!-- Camera -->
+<ion-content>
+  <img [src]="currentImage" *ngIf="currentImage">
+   
+  <ion-fab center bottom>
+     <button ion-fab (click)="takePicture()">
+       <ion-icon name="camera"></ion-icon>
+     </button>
+   </ion-fab>
+  </ion-content>
+  

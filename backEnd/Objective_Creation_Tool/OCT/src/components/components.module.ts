@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { ObjectiveCreatorComponent } from './objective-creator/objective-creator';
 import { ObjectiveListComponent } from './objective-list/objective-list';
+
 @NgModule({
-	declarations: [ObjectiveCreatorComponent,
+	declarations: [
     ObjectiveListComponent],
 	imports: [],
-	exports: [ObjectiveCreatorComponent,
+	exports: [
     ObjectiveListComponent]
 })
 export class ComponentsModule {}
