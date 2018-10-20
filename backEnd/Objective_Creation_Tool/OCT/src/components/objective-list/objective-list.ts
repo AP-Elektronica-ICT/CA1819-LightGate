@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ObjectivesService, IObjectivesRoot } from '../../services/objectives.service';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { directive } from '@angular/core/src/render3/instructions';
 
 /**
  * Generated class for the ObjectiveListComponent component.
@@ -46,6 +47,9 @@ export class ObjectiveListComponent implements OnInit {
      // Handle error
      console.log("Camera issue:" + err);
     });
+
+    //NOT HERE
+    this.calculateDamage();
   } 
 
   postRequest()
@@ -65,20 +69,37 @@ export class ObjectiveListComponent implements OnInit {
     this._svc.postObjectiveRequest(body);
   }
 
+  deleteRequest(id: any, description: string)
+  {
+    this._svc.deleteObjectiveRequest(id, description);
+  }
+
   calculateDamage()
   {
-    //Get percentages from camera API
-    console.log("Calculating Damage");
-    this.objectives.labels.forEach(label => {
-      if(label.feature[0] == "Car"/*feature*/ && label.feature[1] == "Red"/*feature*/)
+    //Get description from API
+    
+    //console.log("Calculating Damage");
+
+    for (let index = 0; index < 10; index++) {
+      
+      if (this.objectives[index] != null)
       {
-        this.health.value -= 10;
-        //TODO
-        //Exchange hardcoded string for the real feature
-        //if camera API percentage is > 0.7
-        //...
+        let obj = this.objectives[index].labels;
+        console.log(obj);
+        
+        if(obj[0].feature == "Bike" /*API.feature*/ && obj[1].feature == "Yellow")
+          {
+            this.health.value -= 10;
+            this.deleteRequest(this.objectives[index].id, this.objectives[index].description);
+            //TODO
+            //Exchange hardcoded string for the real feature
+            //...
+          }
+
+          //Reload page for debugging
+          location.reload(); 
       }
-    });
+    }
   }
 
 }

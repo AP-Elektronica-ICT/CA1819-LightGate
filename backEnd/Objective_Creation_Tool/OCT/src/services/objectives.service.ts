@@ -17,9 +17,15 @@ export class ObjectivesService
     postObjectiveRequest(body: any)
     {
         this._http.post("http://localhost:5000/api/v1/objectives", body).subscribe(result => {
-            console.log("Post Result 1: " + result);
+            console.log("Post Result: " + result);
                 
         });
+    }
+
+    deleteObjectiveRequest(id: any, description: string)
+    {
+        this._http.delete("http://localhost:5000/api/v1/objectives/" + id).subscribe();
+        console.log("Completed Objective #" + id + " - " + description);       
     }
 }
 
