@@ -1,9 +1,10 @@
 <!-- Generated template for the ObjectiveListComponent component -->
 
 <!-- Objective Database -->
+<p><strong>Objective Database</strong></p>
+
 <div>
   <table>
-    <thead><strong>Objective Database</strong></thead>
     <tbody *ngIf="objectives != null"> 
       <tr *ngFor="let obj of objectives">
         <td>ID - {{ obj.id }}</td>
@@ -18,6 +19,8 @@
  <br>
 
 <!-- Create Objective -->
+<p><strong>Create Objective</strong></p>
+
   <form>
     <input placeholder="description" type="text" id="objective_description">
     <input placeholder="feature 1" type="text" id="objective_feature1">
@@ -30,10 +33,14 @@
 <br>
 
 <!-- Health Bar -->
+<p><strong>Health Bar</strong></p>
+
 <progress id="health" value="100" max="100"></progress>
 
 
 <!-- Camera -->
+<p><strong>Camera</strong></p>
+
 <ion-content>
   <img [src]="currentImage" *ngIf="currentImage">
    

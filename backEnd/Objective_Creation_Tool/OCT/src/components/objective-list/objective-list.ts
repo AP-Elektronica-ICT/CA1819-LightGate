@@ -87,7 +87,7 @@ export class ObjectiveListComponent implements OnInit {
         let obj = this.objectives[index].labels;
         console.log(obj);
         
-        if(obj[0].feature == "Bike" /*API.feature*/ && obj[1].feature == "Yellow")
+        if(obj[0].feature == "Horse" /*API.feature*/ && obj[1].feature == "White")
           {
             this.health.value -= 10;
             this.deleteRequest(this.objectives[index].id, this.objectives[index].description);
