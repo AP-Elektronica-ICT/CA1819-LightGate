@@ -11,4 +11,39 @@
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
   </p>
+  <P><img src="./assets/imgs/logo.png" alt="image" id="photo" /></P>
+  <P><button id="btn">Take Picture</button></P>
+  <p id="msg"></p>
+
+  <script>
+    let app = {
+        init: () => {
+          document.getElementById('btn').addEventListener('click', app.takephoto)
+        },
+        takephoto: () => {
+            let opts ={
+              quality: 80,
+              destinationType: Camera.DestinationType.FILE_URI,
+              sourceType: Camera.CAMERA,
+              allowEdit: false,
+              encodingType: Camera.EncodingType.JPEG,
+              mediaType: Camera.MediaType.PICTURE,
+              CameraDirection: Camera.Direction.BACK,
+              targetWidth: 300,
+              targetHeight: 400
+            };
+            navigator.camera.getPicture(app.ftw, app.wtf, opts)
+        },
+        ftw: (imgURI) => {
+          document.getElementById('msg').textContent = imgURI;
+          document.getElementById('photo').src = imgURI;
+        },
+        wtf: (msg) => {
+          document.getElementById('msg').textContent = msg;
+        }
+    };
+    document.addEventListener('deviceready', app.init);
+
+  </script>
+
 </ion-content>
