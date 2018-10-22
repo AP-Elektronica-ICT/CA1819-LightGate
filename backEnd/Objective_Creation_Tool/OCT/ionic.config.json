@@ -1,0 +1,7 @@
+{
+  "name": "OCT",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
