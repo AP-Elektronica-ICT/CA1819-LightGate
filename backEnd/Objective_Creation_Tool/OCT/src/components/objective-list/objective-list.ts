@@ -48,7 +48,7 @@ export class ObjectiveListComponent implements OnInit {
      console.log("Camera issue:" + err);
     });
 
-    //NOT HERE
+    //DON'T EXECUTE HERE
     this.calculateDamage();
   } 
 
