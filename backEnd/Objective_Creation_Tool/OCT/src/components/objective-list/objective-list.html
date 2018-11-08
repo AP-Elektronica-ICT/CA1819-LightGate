@@ -30,24 +30,5 @@
   
 </div>
 
-<br>
 
-<!-- Health Bar -->
-<p><strong>Health Bar</strong></p>
-
-<progress id="health" value="100" max="100"></progress>
-
-
-<!-- Camera -->
-<p><strong>Camera</strong></p>
-
-<ion-content>
-  <img [src]="currentImage" *ngIf="currentImage">
-   
-  <ion-fab center bottom>
-     <button ion-fab (click)="takePicture()">
-       <ion-icon name="camera"></ion-icon>
-     </button>
-   </ion-fab>
-  </ion-content>
   

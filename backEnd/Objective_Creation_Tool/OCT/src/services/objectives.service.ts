@@ -7,7 +7,7 @@ import "rxjs/add/observable/of";
 @Injectable()
 export class ObjectivesService
 {
-    private url = "http://localhost:2054/api/v1/objectives/";
+    private url = "http://objective-creation-tool.azurewebsites.net/api/v1/objectives";
 
     constructor(private _http: HttpClient) { }
 
