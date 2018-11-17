@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Camera, CameraOptions } from '@ionic-native/camera';
 
 @Component({
   selector: 'page-home',
@@ -11,5 +10,9 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
+  Alert() {
+    console.log("This button will end up taking a picture but has to function behind it just yet");
+  }
+
 
 }

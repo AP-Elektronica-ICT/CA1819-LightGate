@@ -1,7 +1,671 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="627b04b0-da1b-401b-9981-a9cac74c31ae" name="Default" comment="" />
+    <list default="true" id="627b04b0-da1b-401b-9981-a9cac74c31ae" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/3.2/taskArtifacts/fileHashes.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/3.2/taskArtifacts/fileSnapshots.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/3.2/taskArtifacts/taskArtifacts.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/3.2/taskArtifacts/taskArtifacts.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/4.1/fileChanges/last-build.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/4.1/fileContent/fileContent.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/4.1/fileHashes/fileHashes.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/4.1/fileHashes/fileHashes.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/4.1/fileHashes/resourceHashesCache.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/4.1/javaCompile/classAnalysis.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/4.1/javaCompile/jarAnalysis.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/4.1/javaCompile/javaCompile.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/4.1/javaCompile/taskHistory.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/4.1/javaCompile/taskJars.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/4.1/taskHistory/fileSnapshots.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/4.1/taskHistory/taskHistory.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/4.1/taskHistory/taskHistory.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/buildOutputCleanup/built.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/buildOutputCleanup/cache.properties.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/ionicons.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/ionicons.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/ionicons.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/ionicons.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/noto-sans-bold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/noto-sans-bold.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/noto-sans-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/noto-sans-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/roboto-bold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/roboto-bold.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/roboto-bold.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/roboto-light.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/roboto-light.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/roboto-light.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/roboto-medium.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/roboto-medium.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/roboto-medium.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/roboto-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/roboto-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/roboto-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/icon/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/imgs/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/drawable-land-hdpi/screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/drawable-land-ldpi/screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/drawable-land-mdpi/screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/drawable-land-xhdpi/screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/drawable-land-xxhdpi/screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/drawable-land-xxxhdpi/screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/drawable-port-hdpi/screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/drawable-port-ldpi/screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/drawable-port-mdpi/screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/drawable-port-xhdpi/screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/drawable-port-xxhdpi/screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/drawable-port-xxxhdpi/screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/mipmap-hdpi/icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/mipmap-ldpi/icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/mipmap-mdpi/icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/mipmap-xhdpi/icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/mipmap-xxhdpi/icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/mipmap-xxxhdpi/icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/gradle/wrapper/gradle-wrapper.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/android-fail.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/android-success.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/blackberry-fail.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/blackberry-success.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/browser-fail.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/browser-success.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/firefox-fail.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/firefox-success.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/fireos-fail.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/fireos-success.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/ios-fail.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/ios-success.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/ubuntu-fail.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/ubuntu-success.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/windows-fail.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/windows-success.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/wp8-fail.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/img/wp8-success.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/ja/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/ja/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/doc/ru/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/doc/ja/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/icon/drawable-hdpi-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/icon/drawable-ldpi-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/icon/drawable-mdpi-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/icon/drawable-xhdpi-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/icon/drawable-xxhdpi-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/icon/drawable-xxxhdpi-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/splash/drawable-land-hdpi-screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/splash/drawable-land-ldpi-screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/splash/drawable-land-mdpi-screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/splash/drawable-land-xhdpi-screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/splash/drawable-land-xxhdpi-screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/splash/drawable-land-xxxhdpi-screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/splash/drawable-port-hdpi-screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/splash/drawable-port-ldpi-screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/splash/drawable-port-mdpi-screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/splash/drawable-port-xhdpi-screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/splash/drawable-port-xxhdpi-screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/android/splash/drawable-port-xxxhdpi-screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon-1024.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon-40.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon-40@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon-40@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon-50.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon-50@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon-60.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon-60@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon-60@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon-72.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon-72@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon-76.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon-76@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon-83.5@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon-small.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon-small@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon-small@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/icon/icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/splash/Default-568h@2x~iphone.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/splash/Default-667h.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/splash/Default-736h.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/splash/Default-Landscape-736h.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/splash/Default-Landscape@2x~ipad.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/splash/Default-Landscape@~ipadpro.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/splash/Default-Landscape~ipad.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/splash/Default-Portrait@2x~ipad.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/splash/Default-Portrait@~ipadpro.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/splash/Default-Portrait~ipad.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/splash/Default@2x~iphone.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/splash/Default@2x~universal~anyany.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/ios/splash/Default~iphone.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/splash.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/assets/icon/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/assets/imgs/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/ionicons.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/ionicons.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/ionicons.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/ionicons.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/noto-sans-bold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/noto-sans-bold.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/noto-sans-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/noto-sans-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/roboto-bold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/roboto-bold.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/roboto-bold.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/roboto-light.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/roboto-light.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/roboto-light.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/roboto-medium.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/roboto-medium.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/roboto-medium.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/roboto-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/roboto-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/roboto-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/icon/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/imgs/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../varia/Excell Velocity.xlsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../varia/LightGate_sprint_1.pptx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../varia/Lightgate_pitch.pptx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_API/.vscode/launch.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_API/.vscode/settings.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_API/.vscode/tasks.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_API/Controllers/LabelsController.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_API/Controllers/Model/DBInitializer.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_API/Controllers/Model/Label.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_API/Controllers/Model/LibraryContext.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_API/Controllers/Model/Objective.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_API/Controllers/ObjectivesController.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_API/Controllers/ValuesController.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_API/Objective_API.csproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_API/Program.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_API/Startup.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_API/appsettings.Development.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_API/appsettings.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/.editorconfig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/.sourcemaps/main.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/config.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/ionic.config.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/ionic.starter.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/.gradle/buildOutputCleanup/cache.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/AndroidManifest.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/build.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/cordova.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/project.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/AuthenticationToken.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/BuildHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/CallbackContext.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/CallbackMap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/Config.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/ConfigXmlParser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/CordovaActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/CordovaArgs.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/CordovaBridge.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/CordovaClientCertRequest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/CordovaDialogsHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/CordovaHttpAuthHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/CordovaInterface.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/CordovaInterfaceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/CordovaPlugin.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/CordovaPreferences.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/CordovaResourceApi.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/CordovaWebView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/CordovaWebViewEngine.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/CordovaWebViewImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/CoreAndroid.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/ExposedJsApi.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/ICordovaClientCertRequest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/ICordovaCookieManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/ICordovaHttpAuthHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/LOG.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/NativeToJsMessageQueue.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/PermissionHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/PluginEntry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/PluginManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/PluginResult.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/ResumeCallback.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/Whitelist.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/engine/SystemCookieManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/engine/SystemExposedJsApi.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/engine/SystemWebChromeClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/engine/SystemWebView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/engine/SystemWebViewClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/CordovaLib/src/org/apache/cordova/engine/SystemWebViewEngine.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/android.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/build.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/AndroidManifest.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/ionicons.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/ionicons.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/noto-sans.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/assets/fonts/roboto.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/cordova-js-src/android/nativeapiprovider.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/cordova-js-src/android/promptbasednativeapi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/cordova-js-src/exec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/cordova-js-src/platform.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/cordova-js-src/plugin/android/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/cordova.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/cordova_plugins.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/manifest.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/plugins/cordova-plugin-camera/www/Camera.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/plugins/cordova-plugin-camera/www/CameraConstants.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/plugins/cordova-plugin-camera/www/CameraPopoverHandle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/plugins/cordova-plugin-camera/www/CameraPopoverOptions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/plugins/cordova-plugin-device/www/device.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/plugins/cordova-plugin-ionic-keyboard/www/android/keyboard.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/plugins/cordova-plugin-ionic-webview/src/www/util.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/plugins/cordova-plugin-splashscreen/www/splashscreen.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/plugins/cordova-plugin-statusbar/www/statusbar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/assets/www/service-worker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/java/com/ionicframework/cordova/webview/AndroidProtocolHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/java/com/ionicframework/cordova/webview/IonicWebView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/java/com/ionicframework/cordova/webview/IonicWebViewEngine.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/java/com/ionicframework/cordova/webview/UriMatcher.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/java/com/ionicframework/cordova/webview/WebViewLocalServer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/java/io/ionic/keyboard/IonicKeyboard.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/java/io/ionic/starter/MainActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/java/org/apache/cordova/camera/CameraLauncher.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/java/org/apache/cordova/camera/CordovaUri.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/java/org/apache/cordova/camera/ExifHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/java/org/apache/cordova/camera/FileHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/java/org/apache/cordova/camera/FileProvider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/java/org/apache/cordova/device/Device.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/java/org/apache/cordova/splashscreen/SplashScreen.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/java/org/apache/cordova/statusbar/StatusBar.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/java/org/apache/cordova/whitelist/WhitelistPlugin.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/values/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/xml/camera_provider_paths.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/app/src/main/res/xml/config.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/build.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/Api.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/android_sdk_version" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/android_sdk_version.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/build" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/build.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/check_reqs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/check_reqs.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/clean" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/clean.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/defaults.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/Adb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/AndroidManifest.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/AndroidProject.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/AndroidStudio.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/android_sdk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/build.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/builders/GenericBuilder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/builders/GradleBuilder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/builders/StudioBuilder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/builders/builders.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/check_reqs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/device.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/emulator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/getASPath.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/install-device" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/install-device.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/install-emulator" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/install-emulator.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/list-devices" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/list-devices.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/list-emulator-images" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/list-emulator-images.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/list-started-emulators" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/list-started-emulators.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/log.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/plugin-build.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/pluginHandlers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/prepare.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/retry.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/run.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/start-emulator" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/lib/start-emulator.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/log.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/loggingHelper.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/run" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/run.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/version" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/cordova/version.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/gradle/wrapper/gradle-wrapper.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/gradlew" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/gradlew.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/platform_www/cordova-js-src/android/nativeapiprovider.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/platform_www/cordova-js-src/android/promptbasednativeapi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/platform_www/cordova-js-src/exec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/platform_www/cordova-js-src/platform.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/platform_www/cordova-js-src/plugin/android/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/platform_www/cordova.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/platform_www/cordova_plugins.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/platform_www/plugins/cordova-plugin-camera/www/Camera.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/platform_www/plugins/cordova-plugin-camera/www/CameraConstants.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/platform_www/plugins/cordova-plugin-camera/www/CameraPopoverHandle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/platform_www/plugins/cordova-plugin-camera/www/CameraPopoverOptions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/platform_www/plugins/cordova-plugin-device/www/device.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/platform_www/plugins/cordova-plugin-ionic-keyboard/www/android/keyboard.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/platform_www/plugins/cordova-plugin-ionic-webview/src/www/util.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/platform_www/plugins/cordova-plugin-splashscreen/www/splashscreen.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/platform_www/plugins/cordova-plugin-statusbar/www/statusbar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/project.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/settings.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/platforms/android/wrapper.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/android.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/NOTICE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/RELEASENOTES.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/appium-tests/android/android.spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/appium-tests/helpers/cameraHelper.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/appium-tests/ios/ios.spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/de/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/de/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/es/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/es/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/fr/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/fr/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/it/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/it/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/ko/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/ko/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/pl/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/pl/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/ru/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/zh/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/doc/zh/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/jsdoc2md/TEMPLATE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/plugin.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/src/android/CameraLauncher.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/src/android/CordovaUri.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/src/android/ExifHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/src/android/FileHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/src/android/FileProvider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/src/android/xml/camera_provider_paths.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/src/browser/CameraProxy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/src/ios/CDVCamera.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/src/ios/CDVCamera.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/src/ios/CDVExif.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/src/ios/CDVJpegHeaderWriter.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/src/ios/CDVJpegHeaderWriter.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/src/ios/UIImage+CropScaleOrientation.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/src/ios/UIImage+CropScaleOrientation.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/src/osx/CDVCamera.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/src/osx/CDVCamera.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/src/windows/CameraProxy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/CDVCameraTest.xcworkspace/contents.xcworkspacedata" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/CDVCameraTest.xcworkspace/xcshareddata/CDVCameraTest.xccheckout" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/CDVCameraTest.xcworkspace/xcshareddata/xcschemes/CordovaLib.xcscheme" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/CDVCameraTest/CDVCameraLibTests/CameraTest.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/CDVCameraTest/CDVCameraLibTests/Info.plist" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/CDVCameraTest/CDVCameraTest.xcodeproj/project.pbxproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/CDVCameraTest/CDVCameraTest.xcodeproj/project.xcworkspace/contents.xcworkspacedata" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/CDVCameraTest/CDVCameraTest.xcodeproj/project.xcworkspace/xcshareddata/CDVCameraTest.xccheckout" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/CDVCameraTest/CDVCameraTest.xcodeproj/xcshareddata/xcschemes/CDVCameraLib.xcscheme" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/CDVCameraTest/CDVCameraTest.xcodeproj/xcshareddata/xcschemes/CDVCameraLibTests.xcscheme" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/doc/de/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/doc/es/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/doc/fr/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/doc/it/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/doc/ja/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/doc/ko/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/doc/pl/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/doc/zh/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/ios/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/plugin.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/tests/tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/types/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/www/Camera.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/www/CameraConstants.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/www/CameraPopoverHandle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/www/CameraPopoverOptions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-camera/www/ios/CameraPopoverHandle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/NOTICE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/RELEASENOTES.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/doc/de/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/doc/de/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/doc/es/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/doc/es/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/doc/fr/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/doc/fr/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/doc/it/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/doc/it/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/doc/ja/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/doc/ja/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/doc/ko/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/doc/ko/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/doc/pl/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/doc/pl/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/doc/zh/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/doc/zh/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/plugin.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/src/android/Device.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/src/browser/DeviceProxy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/src/ios/CDVDevice.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/src/ios/CDVDevice.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/src/osx/CDVDevice.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/src/osx/CDVDevice.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/src/windows/DeviceProxy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/tests/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/tests/plugin.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/tests/tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/types/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-device/www/device.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-keyboard/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-keyboard/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-keyboard/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-keyboard/plugin.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-keyboard/src/android/IonicKeyboard.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-keyboard/src/ios/CDVIonicKeyboard.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-keyboard/src/ios/CDVIonicKeyboard.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-keyboard/www/android/keyboard.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-keyboard/www/ios/keyboard.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/plugin.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/android/com/ionicframework/cordova/webview/AndroidProtocolHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/android/com/ionicframework/cordova/webview/IonicWebView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/android/com/ionicframework/cordova/webview/IonicWebViewEngine.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/android/com/ionicframework/cordova/webview/UriMatcher.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/android/com/ionicframework/cordova/webview/WebViewLocalServer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/CDVWKProcessPoolFactory.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/CDVWKProcessPoolFactory.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/CDVWKWebViewEngine.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/CDVWKWebViewEngine.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/CDVWKWebViewUIDelegate.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/CDVWKWebViewUIDelegate.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Core/GCDWebServer.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Core/GCDWebServer.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Core/GCDWebServerConnection.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Core/GCDWebServerConnection.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Core/GCDWebServerFunctions.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Core/GCDWebServerFunctions.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Core/GCDWebServerHTTPStatusCodes.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Core/GCDWebServerPrivate.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Core/GCDWebServerRequest.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Core/GCDWebServerRequest.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Core/GCDWebServerResponse.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Core/GCDWebServerResponse.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Requests/GCDWebServerDataRequest.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Requests/GCDWebServerDataRequest.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Requests/GCDWebServerFileRequest.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Requests/GCDWebServerFileRequest.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Requests/GCDWebServerMultiPartFormRequest.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Requests/GCDWebServerMultiPartFormRequest.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Requests/GCDWebServerURLEncodedFormRequest.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Requests/GCDWebServerURLEncodedFormRequest.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Responses/GCDWebServerDataResponse.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Responses/GCDWebServerDataResponse.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Responses/GCDWebServerErrorResponse.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Responses/GCDWebServerErrorResponse.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Responses/GCDWebServerFileResponse.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Responses/GCDWebServerFileResponse.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Responses/GCDWebServerStreamedResponse.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/GCDWebServer/Responses/GCDWebServerStreamedResponse.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/ios/wk-plugin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/www/ios/ios-wkwebview-exec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-ionic-webview/src/www/util.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/NOTICE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/RELEASENOTES.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/doc/de/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/doc/de/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/doc/es/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/doc/es/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/doc/fr/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/doc/fr/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/doc/it/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/doc/it/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/doc/ja/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/doc/ja/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/doc/ko/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/doc/ko/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/doc/pl/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/doc/pl/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/doc/ru/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/doc/zh/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/doc/zh/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/plugin.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/src/android/SplashScreen.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/src/browser/SplashScreenProxy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/src/ios/CDVSplashScreen.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/src/ios/CDVSplashScreen.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/src/ios/CDVViewController+SplashScreen.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/src/ios/CDVViewController+SplashScreen.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/src/wp/ResolutionHelper.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/src/wp/SplashScreen.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/CDVSplashScreenTest.xcworkspace/contents.xcworkspacedata" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/CDVSplashScreenTest.xcworkspace/xcshareddata/CDVSplashScreenTest.xccheckout" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/CDVSplashScreenTest.xcworkspace/xcshareddata/xcschemes/CordovaLib.xcscheme" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/CDVSplashScreenTest/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/CDVSplashScreenTest/CDVSplashScreenLibTests/ImageNameTest.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/CDVSplashScreenTest/CDVSplashScreenLibTests/ImageNameTestDelegates.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/CDVSplashScreenTest/CDVSplashScreenLibTests/ImageNameTestDelegates.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/CDVSplashScreenTest/CDVSplashScreenLibTests/Info.plist" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/CDVSplashScreenTest/CDVSplashScreenTest.xcodeproj/project.pbxproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/CDVSplashScreenTest/CDVSplashScreenTest.xcodeproj/project.xcworkspace/contents.xcworkspacedata" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/CDVSplashScreenTest/CDVSplashScreenTest.xcodeproj/project.xcworkspace/xcshareddata/CDVSplashScreenTest.xccheckout" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/CDVSplashScreenTest/CDVSplashScreenTest.xcodeproj/xcshareddata/xcschemes/CDVSplashScreenLib.xcscheme" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/CDVSplashScreenTest/CDVSplashScreenTest.xcodeproj/xcshareddata/xcschemes/CDVSplashScreenLibTests.xcscheme" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/doc/de/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/doc/es/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/doc/fr/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/doc/it/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/doc/ja/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/doc/ko/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/doc/pl/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/doc/zh/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/ios/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/plugin.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/tests/tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/types/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/www/splashscreen.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-splashscreen/www/windows/SplashScreenProxy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/NOTICE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/RELEASENOTES.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/doc/de/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/doc/de/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/doc/es/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/doc/es/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/doc/fr/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/doc/fr/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/doc/it/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/doc/it/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/doc/ja/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/doc/ko/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/doc/ko/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/doc/pl/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/doc/pl/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/doc/ru/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/doc/zh/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/doc/zh/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/plugin.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/src/android/StatusBar.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/src/browser/StatusBarProxy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/src/ios/CDVStatusBar.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/src/ios/CDVStatusBar.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/src/windows/StatusBarProxy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/src/wp/StatusBar.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/tests/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/tests/plugin.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/tests/tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/types/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-statusbar/www/statusbar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-whitelist/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-whitelist/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-whitelist/NOTICE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-whitelist/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-whitelist/RELEASENOTES.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-whitelist/doc/de/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-whitelist/doc/es/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-whitelist/doc/fr/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-whitelist/doc/it/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-whitelist/doc/ja/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-whitelist/doc/ko/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-whitelist/doc/pl/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-whitelist/doc/zh/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-whitelist/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-whitelist/plugin.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/cordova-plugin-whitelist/src/android/WhitelistPlugin.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/plugins/fetch.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/resources/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/app/app.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/app/app.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/app/app.module.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/app/app.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/app/main.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/components/components.module.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/components/objective-list/objective-list.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/components/objective-list/objective-list.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/components/objective-list/objective-list.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/manifest.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/pages/home/home.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/pages/home/home.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/pages/home/home.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/service-worker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/services/objectives.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/src/theme/variables.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/tsconfig.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/tslint.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/ionicons.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/ionicons.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/noto-sans.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/assets/fonts/roboto.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/manifest.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../backEnd/Objective_Creation_Tool/OCT/www/service-worker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../varia/test.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../backEnd/.gitignore" afterPath="$PROJECT_DIR$/../backEnd/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/frontEnd.iml" afterPath="$PROJECT_DIR$/.idea/frontEnd.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lightGate/config.xml" afterPath="$PROJECT_DIR$/lightGate/config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lightGate/package-lock.json" afterPath="$PROJECT_DIR$/lightGate/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lightGate/package.json" afterPath="$PROJECT_DIR$/lightGate/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lightGate/src/app/app.component.ts" afterPath="$PROJECT_DIR$/lightGate/src/app/app.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lightGate/src/app/app.module.ts" afterPath="$PROJECT_DIR$/lightGate/src/app/app.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lightGate/src/app/app.scss" afterPath="$PROJECT_DIR$/lightGate/src/app/app.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lightGate/src/pages/home/home.html" afterPath="$PROJECT_DIR$/lightGate/src/pages/home/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lightGate/src/pages/home/home.ts" afterPath="$PROJECT_DIR$/lightGate/src/pages/home/home.ts" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -15,7 +679,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lightGate/src/pages/home/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="429">
@@ -35,11 +699,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lightGate/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="924">
+              <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="23" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -50,7 +714,7 @@
       <file leaf-file-name="home.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lightGate/src/pages/home/home.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
+            <state relative-caret-position="495">
               <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
@@ -106,6 +770,9 @@
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -150,6 +817,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -224,13 +892,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -241,7 +912,7 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.tslint" value="" />
+    <property name="node.js.selected.package.tslint" value="D:\School\Jaar_4\frontEnd\lightGate\node_modules\tslint" />
     <property name="typescript-compiler-editor-notification" value="false" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="JavaScriptPreferStrict" value="false" />
@@ -348,29 +1019,31 @@
       <workItem from="1539866263356" duration="197000" />
       <workItem from="1539866472603" duration="42000" />
       <workItem from="1540194267557" duration="1668000" />
+      <workItem from="1541691641426" duration="72000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9642000" />
+    <option name="totallyTimeSpent" value="9714000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3866" height="2106" extended-state="6" />
+    <editor active="true" />
     <layout>
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298153" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22578125" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3319261" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3319261" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298153" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -686,19 +1359,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lightGate/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lightGate/src/pages/home/home.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
+        <state relative-caret-position="495">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
@@ -727,6 +1390,16 @@
         <state relative-caret-position="429">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lightGate/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
