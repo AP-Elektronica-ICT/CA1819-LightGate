@@ -7,14 +7,21 @@ import { CameraPreview} from '@ionic-native/camera-preview';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { AuthenticationService } from '../services/authentication.service';
+import { BattleComponent } from '../components/battle/battle';
+import { LoginComponent } from '../components/login/login';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    BattleComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -26,6 +33,7 @@ import { HomePage } from '../pages/home/home';
     CameraPreview,
     StatusBar,
     SplashScreen,
+    AuthenticationService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

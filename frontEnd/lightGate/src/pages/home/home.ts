@@ -10,9 +10,6 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
-  Alert() {
-    console.log("This button will end up taking a picture but has to function behind it just yet");
-  }
 
 
 }

@@ -63,6 +63,7 @@ namespace businessLayer.Objective_API.Facades
         {
             try
             {
+                newPlayer.Id = Guid.NewGuid();
                 context.Players.Add(newPlayer);
                 context.SaveChanges();
             }
