@@ -11,7 +11,6 @@ import { ObjectivesService } from '../services/objectives.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 //import { ComponentsModule } from '../components/components.module';
-import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -36,7 +35,6 @@ import { Camera } from '@ionic-native/camera';
     StatusBar,
     SplashScreen,
     ObjectivesService,
-    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

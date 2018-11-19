@@ -3,17 +3,25 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { CameraPreview} from '@ionic-native/camera-preview';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { AuthenticationService } from '../services/authentication.service';
+import { BattleComponent } from '../components/battle/battle';
+import { LoginComponent } from '../components/login/login';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    BattleComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -22,8 +30,10 @@ import { HomePage } from '../pages/home/home';
     HomePage
   ],
   providers: [
+    CameraPreview,
     StatusBar,
     SplashScreen,
+    AuthenticationService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
