@@ -38,6 +38,7 @@ namespace Objective_API
             services.AddScoped<IObjectiveFacade, ObjectiveFacade>();
             services.AddScoped<ILabelFacade, LabelFacade>();
             services.AddScoped<IPlayerFacade, PlayerFacade>();
+            services.AddScoped<IGuildFacade, GuildFacade>();
 
             services.AddCors();
             services.AddMvc().AddJsonOptions(options => {

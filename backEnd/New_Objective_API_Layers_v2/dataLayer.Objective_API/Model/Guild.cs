@@ -5,9 +5,10 @@ using System.Text;
 
 namespace dataLayer.Objective_API.Model
 {
-    class Guild
+    public class Guild
     {
-        public Guid Leader { get; set; }
+        public Guid Id { get; set; }
+        //public Player Leader { get; set; }
         public string GuildName { get; set; }
         public ICollection<Player> Players { get; set; }
 

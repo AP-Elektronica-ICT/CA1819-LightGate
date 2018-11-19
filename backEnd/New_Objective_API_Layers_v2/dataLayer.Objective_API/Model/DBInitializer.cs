@@ -9,38 +9,57 @@ public class DBInitializer
     public static void Initialize(LibraryContext context)
     {
         //Create db when it's not yet created
-        context.Database.EnsureCreated();
+        context.Database.EnsureCreated();            
         
         //Are there any players?
         if(!context.Players.Any())
             {
+                var g = new Guild()
+                {
+                    Id = System.Guid.NewGuid(),
+                    GuildName = "DevTeam"                    
+                };
+
                 var p = new Player()
                 {
                     Id = System.Guid.NewGuid(),
-                    Name = "Denny"
+                    Name = "Denny",
+                    GuildId = g.Id,
+                    Guild = g
+                
                 };
-
+                
                 var p2 = new Player()
                 {
                     Id = System.Guid.NewGuid(),
-                    Name = "Steven"
+                    Name = "Steven",
+                    GuildId = g.Id,
+                    Guild = g
                 };
 
                 var p3 = new Player()
                 {
                     Id = System.Guid.NewGuid(),
-                    Name = "Stijn"
+                    Name = "Stijn",
+                    GuildId = g.Id,
+                    Guild = g
                 };
+
+                //Add leader to guild
+
+                //g.Leader = p;
 
                 //Add everything to their respective collection
                 context.Players.Add(p);
                 context.Players.Add(p2);
                 context.Players.Add(p3);
+                context.Guilds.Add(g);
 
                 //Save all changes to the DB
                 context.SaveChanges();
             }
-
+        
+            
 
             //Are there any objectives?
             if (!context.Objectives.Any())

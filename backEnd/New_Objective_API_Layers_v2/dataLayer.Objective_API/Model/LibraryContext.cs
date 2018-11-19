@@ -13,6 +13,8 @@ namespace Model{
         public DbSet<Objective> Objectives {get; set;}
         public DbSet<Label> Labels {get; set;}
         public DbSet<Player> Players { get; set; }
+
+        public DbSet<Guild> Guilds { get; set; }
        
     }
 }

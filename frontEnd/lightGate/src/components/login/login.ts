@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit{
   postRequest()
   {
     var body = {
-      name: (<HTMLInputElement>document.getElementById("player_name")).value.toLowerCase()
+      name: (<HTMLInputElement>document.getElementById("player_name")).value
     }
 
     this._svc.postPlayerRequest(body);

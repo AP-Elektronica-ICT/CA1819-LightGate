@@ -28,7 +28,7 @@ public class PlayersController : Controller
         return facade.GetPlayersLibrary();
     }
 
-    // Get specific objective
+    // Get specific player
 
     [Route("{id}")]
     [HttpGet]
@@ -38,7 +38,7 @@ public class PlayersController : Controller
         return facade.GetPlayer(id);
     }
 
-    // Add specific objective
+    // Add specific player
 
     [HttpPost]
     
