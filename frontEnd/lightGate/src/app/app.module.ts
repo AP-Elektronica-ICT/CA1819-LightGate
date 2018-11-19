@@ -10,6 +10,8 @@ import { HomePage } from '../pages/home/home';
 import { AuthenticationService } from '../services/authentication.service';
 import { BattleComponent } from '../components/battle/battle';
 import { LoginComponent } from '../components/login/login';
+import { JoinCreateComponent } from '../components/join-create/join-create';
+import { CreationOptionsComponent } from '../components/creation-options/creation-options';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -17,7 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
     MyApp,
     HomePage,
     BattleComponent,
-    LoginComponent
+    LoginComponent,
+    JoinCreateComponent,
+    CreationOptionsComponent
   ],
   imports: [
     BrowserModule,

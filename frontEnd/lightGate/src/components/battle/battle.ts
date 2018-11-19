@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { CameraPreview, CameraPreviewOptions } from '@ionic-native/camera-preview';
+import { CameraPreview, CameraPreviewOptions, CameraPreviewPictureOptions } from '@ionic-native/camera-preview';
 
 /**
  * Generated class for the BattleComponent component.
@@ -40,11 +40,26 @@ export class BattleComponent {
         alpha: 1
       };
 
-
       this.CameraPreview.startCamera(cameraPreviewOpts);
     });
     
   }
+
+  pictureOpts: CameraPreviewPictureOptions = {
+    width: 1280,
+    height: 1280,
+    quality: 85
+  }
+
+  picture : string;
+  takePicture() {
+    this.CameraPreview.takePicture(this.pictureOpts).then((imageData) => {
+      console.log("This button will end up taking a ");
+      this.picture = imageData;
+    }, (err) => {
+      console.log(err);
+    });
+  };
 
   Alert() {
     console.log("This button will end up taking a picture but has to function behind it just yet");
