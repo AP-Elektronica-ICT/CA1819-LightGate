@@ -21,15 +21,17 @@ export class BattleComponent {
 
       this.StatusBar.styleDefault();
       this.SplashScreen.hide();
+      var cameraWidth = window.screen.width;
+      var camreaHeight = window.screen.height;
 
 
       const cameraPreviewOpts: CameraPreviewOptions = {
         //This will define the start coordinates of the camera view
-        x: 100,
-        y: 200,
+        x: 0,
+        y: 100,
         //defines the width and height of the view
-        width: 300,
-        height: 300,
+        width: cameraWidth,
+        height: camreaHeight - 290,
         camera: 'rear',
         tapPhoto: true,
         previewDrag: true,
