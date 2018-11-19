@@ -1,4 +1,3 @@
-using dataLayer.Objective_API.Model;
 using System.Linq;
 
 namespace Model{
@@ -14,10 +13,25 @@ public class DBInitializer
         //Are there any players?
         if(!context.Players.Any())
             {
+                var b = new Battle()
+                {
+                    Id = System.Guid.NewGuid()
+                };
+
                 var g = new Guild()
                 {
                     Id = System.Guid.NewGuid(),
-                    GuildName = "DevTeam"                    
+                    GuildName = "DevTeam",
+                    BattleId = b.Id,
+                    Battle = b
+                };
+
+                var g2 = new Guild()
+                {
+                    Id = System.Guid.NewGuid(),
+                    GuildName = "OpsTeam",
+                    BattleId = b.Id,
+                    Battle = b
                 };
 
                 var p = new Player()
@@ -45,6 +59,31 @@ public class DBInitializer
                     Guild = g
                 };
 
+                var p4 = new Player()
+                {
+                    Id = System.Guid.NewGuid(),
+                    Name = "Ynned",
+                    GuildId = g2.Id,
+                    Guild = g2
+
+                };
+
+                var p5 = new Player()
+                {
+                    Id = System.Guid.NewGuid(),
+                    Name = "Nevets",
+                    GuildId = g2.Id,
+                    Guild = g2
+                };
+
+                var p6 = new Player()
+                {
+                    Id = System.Guid.NewGuid(),
+                    Name = "Nijts",
+                    GuildId = g2.Id,
+                    Guild = g2
+                };
+
                 //Add leader to guild
 
                 //g.Leader = p;
@@ -53,7 +92,14 @@ public class DBInitializer
                 context.Players.Add(p);
                 context.Players.Add(p2);
                 context.Players.Add(p3);
+                context.Players.Add(p4);
+                context.Players.Add(p5);
+                context.Players.Add(p6);
+
                 context.Guilds.Add(g);
+                context.Guilds.Add(g2);
+
+                context.Battles.Add(b);
 
                 //Save all changes to the DB
                 context.SaveChanges();
