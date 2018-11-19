@@ -55,7 +55,8 @@ export class BattleComponent {
   takePicture() {
     this.CameraPreview.takePicture(this.pictureOpts).then((imageData) => {
       console.log("This button will end up taking a ");
-      this.picture = imageData;
+      this.picture = 'data:image/jpeg;base64,' + imageData;
+      console.log(this.picture)
     }, (err) => {
       console.log(err);
     });
