@@ -10,19 +10,23 @@ import { HomePage } from '../pages/home/home';
 import { AuthenticationService } from '../services/authentication.service';
 import { BattleComponent } from '../components/battle/battle';
 import { LoginComponent } from '../components/login/login';
+import { SelectionComponent } from '../components/selection/selection';
 import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     BattleComponent,
-    LoginComponent
+    LoginComponent,
+    SelectionComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

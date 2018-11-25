@@ -10,6 +10,6 @@ namespace services.Objective_API.Services
     {
         List<Player> GetPlayersLibrary();
         Player GetPlayer(Guid id);
-        void CreatePlayer(Player newPlayer);
+        Player CreatePlayer(Player newPlayer);
     }
 }

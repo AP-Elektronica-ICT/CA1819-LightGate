@@ -1,4 +1,5 @@
 ﻿
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,9 +12,10 @@ namespace Model
         public Guid Id { get; set; }
         public string Name { get; set; }
 
-        public Guid GuildId { get; set; }
+        public Guid? GuildId { get; set; }
 
         [ForeignKey("GuildId")]
+        [JsonIgnore]
         public Guild Guild { get; set; }
     }
 }

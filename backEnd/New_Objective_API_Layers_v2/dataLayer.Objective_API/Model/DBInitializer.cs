@@ -18,6 +18,7 @@ public class DBInitializer
                     Id = System.Guid.NewGuid()
                 };
 
+
                 var g = new Guild()
                 {
                     Id = System.Guid.NewGuid(),
@@ -98,9 +99,9 @@ public class DBInitializer
 
                 context.Guilds.Add(g);
                 context.Guilds.Add(g2);
-
+                
                 context.Battles.Add(b);
-
+                
                 //Save all changes to the DB
                 context.SaveChanges();
             }

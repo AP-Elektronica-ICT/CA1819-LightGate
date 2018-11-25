@@ -41,8 +41,8 @@ public class PlayersController : Controller
 
     [HttpPost]
     
-    public void CreatePlayer([FromBody] Player newPlayer)
+    public Player CreatePlayer([FromBody] Player newPlayer)
     {
-        facade.CreatePlayer(newPlayer);
+        return facade.CreatePlayer(newPlayer);
     }   
 }
