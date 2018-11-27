@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { CameraPreview} from '@ionic-native/camera-preview';
+import { ScreenOrientation } from '@ionic-native/screen-orientation'
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -34,6 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage
   ],
   providers: [
+    ScreenOrientation,
     CameraPreview,
     StatusBar,
     SplashScreen,
