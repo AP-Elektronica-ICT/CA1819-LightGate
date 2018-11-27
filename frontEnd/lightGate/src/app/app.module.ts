@@ -13,6 +13,7 @@ import { BattleComponent } from '../components/battle/battle';
 import { LoginComponent } from '../components/login/login';
 import { JoinCreateComponent } from '../components/join-create/join-create';
 import { CreationOptionsComponent } from '../components/creation-options/creation-options';
+import { DeclareGuildNamesComponent } from "../components/declare-guild-names/declare-guild-names";
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     BattleComponent,
     LoginComponent,
     JoinCreateComponent,
-    CreationOptionsComponent
+    CreationOptionsComponent,
+    DeclareGuildNamesComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,10 @@ import { HttpClientModule } from '@angular/common/http';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    CreationOptionsComponent,
+    DeclareGuildNamesComponent,
+    JoinCreateComponent
   ],
   providers: [
     ScreenOrientation,

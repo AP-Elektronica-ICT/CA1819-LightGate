@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AlertController } from 'ionic-angular';
+import {NavController} from 'ionic-angular';
+import { DeclareGuildNamesComponent } from "../declare-guild-names/declare-guild-names";
 /**
  * Generated class for the CreationOptionsComponent component.
  *
@@ -18,7 +20,7 @@ export class CreationOptionsComponent {
   participate: boolean = false;
   text: string;
 
-  constructor(private alertCtrl: AlertController) {
+  constructor(private alertCtrl: AlertController, public navCtrl: NavController) {
     console.log('Hello CreationOptionsComponent Component');
     this.text = 'Creation Option';
   }
@@ -32,13 +34,17 @@ export class CreationOptionsComponent {
       this.configData = {'guilds': this.Guilds, 'timeLimit': this.timeLimit, 'participate': this.participate}
       //this.varArray.push(this.Guilds, this.timeLimit, this.participate);
       console.log(this.configData);
-      for (let i = 0; i < this.Guilds; i++) {
-        var count = i + 1;
-        var guildname = 'Guildname '+count;
-        //console.log(guildname)
-        this.presentPrompt(guildname)
-        
-      }
+      this.navCtrl.push(DeclareGuildNamesComponent, {
+        guilds: this.Guilds,
+        timeLimit: this.timeLimit,
+        participate: this.participate
+      })
+      // for (let i = 0; i < this.Guilds; i++) {
+      //   var count = i + 1;
+      //   console.log(guildname)
+      //   var guildname = 'Guildname '+count;
+      //   this.presentPrompt(guildname)
+      // }
     }
     
   }
