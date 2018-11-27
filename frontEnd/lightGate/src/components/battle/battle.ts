@@ -15,7 +15,7 @@ import { CameraPreview, CameraPreviewOptions, CameraPreviewPictureOptions } from
   templateUrl: 'battle.html'
 })
 export class BattleComponent {
-
+  
   constructor(platform: Platform, private CameraPreview: CameraPreview, private StatusBar:StatusBar, private SplashScreen:SplashScreen) {
     platform.ready().then(() => {
 

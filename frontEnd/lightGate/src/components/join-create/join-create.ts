@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {NavController} from 'ionic-angular';
 
 /**
  * Generated class for the JoinCreateComponent component.
@@ -14,9 +15,17 @@ export class JoinCreateComponent {
 
   text: string;
 
-  constructor() {
+  constructor(public nacCtrl: NavController) {
     console.log('Hello JoinCreateComponent Component');
-    this.text = 'Hello World';
+    this.text = 'Join or Create';
+
+    function navigateCreate(){
+      console.log('create has been pressed');
+    }
+  }
+  toCreate(){
+    console.log("to Create screen");
+    this.nacCtrl.push('CreationOptionsComponent');
   }
 
 }
