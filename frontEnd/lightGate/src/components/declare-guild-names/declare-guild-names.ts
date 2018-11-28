@@ -37,10 +37,11 @@ export class DeclareGuildNamesComponent {
   addGuild(){
     this.guildnames['guild'+this.count] = this.guildname;
     this.count = this.count + 1;
+    this.guildname = "";
     if(this.count > this.Guilds){
       console.log(this.guildnames);
       this.navCtrl.push(JoinCreateComponent);
-      alert('all ' + this.Guilds +' have been created')
+      alert('all ' + this.Guilds +' guilds have been created')
     }
   }
 
