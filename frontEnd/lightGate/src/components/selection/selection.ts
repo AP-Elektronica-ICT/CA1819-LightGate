@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../../services/authentication.service';
-import { Storage } from '@ionic/storage';
+import { AuthenticationService, IPlayersRoot } from '../../services/authentication.service';
+import { StorageService } from '../../services/storage.service';
 
 /**
  * Generated class for the SelectionComponent component.
@@ -16,20 +16,25 @@ export class SelectionComponent implements OnInit {
 
   currentPlayerName: string;
   currentPlayerId: string;
+  result: string;
+  storage_result: IPlayersRoot;
 
-  constructor(private _svc : AuthenticationService, private _storage : Storage) { }
+  constructor(private _authSvc : AuthenticationService, private _storageSvc : StorageService) { }
 
-  ngOnInit()
-  {
-    if(this._storage.get('sessionId') != null)
+  async ngOnInit()
     {
-      console.log("Loading from storage...");
-      this._storage.get('sessionId').then(result => {
-        this._svc.getCurrentPlayer(result).subscribe(result => {
-          this.currentPlayerId = result.id;
-          this.currentPlayerName = result.name;
-        });
-      });
+      try{
+        this.result = await this._storageSvc.loadFromStorage('sessionId');
+        this.storage_result = await this._authSvc.getCurrentPlayer(this.result);
+          this.currentPlayerId = this.storage_result.id;
+          this.currentPlayerName = this.storage_result.name;
+      }
+      catch(e)
+      {
+        console.log(e);
+      }
     }
+
   }
-}
+
+

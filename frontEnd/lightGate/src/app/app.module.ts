@@ -13,6 +13,7 @@ import { LoginComponent } from '../components/login/login';
 import { SelectionComponent } from '../components/selection/selection';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
+import { StorageService } from '../services/storage.service';
 
 @NgModule({
   declarations: [
@@ -31,13 +32,16 @@ import { IonicStorageModule } from '@ionic/storage';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    LoginComponent,
+    SelectionComponent
   ],
   providers: [
     CameraPreview,
     StatusBar,
     SplashScreen,
     AuthenticationService,
+    StorageService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

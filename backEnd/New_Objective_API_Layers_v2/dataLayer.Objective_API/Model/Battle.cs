@@ -6,7 +6,7 @@ namespace Model
 {
     public class Battle
     {
-        public Guid? Id { get; set; }
+        public Guid Id { get; set; }
         public ICollection<Guild> Guilds { get; set; }
 
 
