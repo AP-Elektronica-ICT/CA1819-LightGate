@@ -1,0 +1,6 @@
+
+*.ide-wal
+
+*.ide-shm
+
+backEnd/New_Objective_API_Layers_v2/Objective_API/\.vs/Objective_API/DesignTimeBuild/

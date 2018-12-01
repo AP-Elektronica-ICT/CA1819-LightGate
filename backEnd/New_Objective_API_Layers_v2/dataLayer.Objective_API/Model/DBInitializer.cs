@@ -22,7 +22,7 @@ public class DBInitializer
                 var g = new Guild()
                 {
                     Id = System.Guid.NewGuid(),
-                    GuildName = "DevTeam",
+                    GuildName = "DevTeam",                  
                     BattleId = b.Id,
                     Battle = b
                 };
@@ -30,7 +30,7 @@ public class DBInitializer
                 var g2 = new Guild()
                 {
                     Id = System.Guid.NewGuid(),
-                    GuildName = "OpsTeam",
+                    GuildName = "OpsTeam",          
                     BattleId = b.Id,
                     Battle = b
                 };
@@ -85,9 +85,25 @@ public class DBInitializer
                     Guild = g2
                 };
 
-                //Add leader to guild
+                /*Add leader to guild
+                var l1 = new Leader()
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    GuildId = g.Id,
+                    Guild = g
+                };
 
-                //g.Leader = p;
+                var l2 = new Leader()
+                {
+                    Id = p4.Id,
+                    Name = p4.Name,
+                    GuildId = g2.Id,
+                    Guild = g2
+                };
+
+                //g.Leader = l1;
+                //g2.Leader = l2;*/
 
                 //Add everything to their respective collection
                 context.Players.Add(p);
