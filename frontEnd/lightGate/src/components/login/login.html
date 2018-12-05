@@ -1,37 +1,30 @@
 <!-- Generated template for the LoginComponent component -->
-<div>
+
+
+<ion-item>
+  <ion-label color="primary">Name:</ion-label>
+  <ion-input placeholder="Text Input" [(ngModel)]="player_name"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Job:</ion-label>
+  <ion-select [(ngModel)]="player_job">
+    <ion-option value="knight">Knight</ion-option>
+    <ion-option value="mage">Mage</ion-option>
+    <ion-option value="cleric">Cleric</ion-option>
+  </ion-select>
+</ion-item>
+
+<button ion-button full (click)="postRequest()">Full Button</button>
+
+
+
+<!-- <div>
   <form>
     <div class="alignCenter">
-        <!-- <input placeholder="name" type="text" id="player_name"> -->
-        <br>
-        <br>
-        <br>,
-        <ion-item>
-          <ion-label color="primary">Name:</ion-label>
-          <ion-input placeholder="Text Input" id ="player_name"></ion-input>
-        </ion-item>
-        <br>
-        <br>
-        <br>
-        <ion-item>
-          <ion-label>Job:</ion-label>
-          <ion-select id="player_Job">
-            <ion-option value="knight">Knight</ion-option>
-            <ion-option value="mage">Mage</ion-option>
-            <ion-option value="cleric">Cleric</ion-option>
-          </ion-select>
-        </ion-item>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <button ion-button full (click)="postRequest()">Full Button</button>
-
-        <!-- <input type="submit" name="submit" (click)="postRequest()">  -->
 
     </div>
     Register:<input placeholder="name" name="nameInput" type="text" id="player_name" [(ngModel)]="player_name">
     <input type="submit" name="submit" (click)="postPlayerRequest()">
   </form>
-</div>
+</div> -->
