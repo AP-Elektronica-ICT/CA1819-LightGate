@@ -15,5 +15,7 @@ namespace Model
 
         [ForeignKey("GuildId")]
         public Guild Guild { get; set; }
+
+        public Job MyJob { get; set; }
     }
 }
