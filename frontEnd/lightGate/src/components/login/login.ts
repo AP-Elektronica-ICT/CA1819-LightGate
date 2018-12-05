@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../../services/authentication.service';
+import { AuthenticationService, IPlayersRoot } from '../../services/authentication.service';
+import { NavController } from 'ionic-angular';
+import { SelectionComponent } from '../selection/selection';
+import { StorageService } from '../../services/storage.service';
 
 /**
  * Generated class for the LoginComponent component.
@@ -13,28 +16,48 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class LoginComponent implements OnInit{
 
-  constructor(private _svc : AuthenticationService) { }
+  result : IPlayersRoot
+  player_name: string
+
+  constructor(private _authSvc : AuthenticationService, private _storageSvc : StorageService, private _navCtrl: NavController) { }
   
   ngOnInit()
+  {
+    
+  }
+
+ async postPlayerRequest()
+  {
+    var body = {
+      name: this.player_name,
+      isCreator: false
+    }
+    
+
+    try{
+      this.result = await this._authSvc.postPlayerRequest(body);
+        console.log("Post Result: " + this.result.id);
+        this._authSvc.setSessionId(this.result.id);
+          //Save to Storage
+          await this._storageSvc.saveToStorage(this.result.id);
+          //Go to the selection screen
+            this._navCtrl.push(SelectionComponent);
+    }
+    catch(e)
+    {
+      console.log(e);
+    }     
+                               
+  }
+
+  postGuildRequest()
   {
 
   }
 
-  postRequest()
+  postBattleRequest()
   {
-    let myName:string = (<HTMLInputElement>document.getElementById("player_name")).value
-    let myJob:string = (<HTMLInputElement>document.getElementById("player_job")).value
 
-    if(myName!= "" && myJob != ""){
-      var body = {
-        name: myName,
-        job: myJob
-      }
-      this._svc.postPlayerRequest(body);
-    }
-    
-
-    
   }
 
   

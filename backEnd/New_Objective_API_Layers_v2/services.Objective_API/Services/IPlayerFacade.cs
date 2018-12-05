@@ -1,4 +1,4 @@
-﻿using dataLayer.Objective_API.Model;
+﻿
 using Model;
 using System;
 using System.Collections.Generic;
@@ -10,6 +10,6 @@ namespace services.Objective_API.Services
     {
         List<Player> GetPlayersLibrary();
         Player GetPlayer(Guid id);
-        void CreatePlayer(Player newPlayer);
+        Player CreatePlayer(Player newPlayer);
     }
 }

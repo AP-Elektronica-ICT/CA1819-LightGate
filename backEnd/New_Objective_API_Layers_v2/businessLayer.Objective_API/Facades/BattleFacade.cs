@@ -1,5 +1,4 @@
-﻿
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Model;
 using services.Objective_API.Services;
 using System;
@@ -9,42 +8,42 @@ using System.Text;
 
 namespace businessLayer.Objective_API.Facades
 {
-    public class GuildFacade : IGuildFacade
+    public class BattleFacade : IBattleFacade
     {
         private readonly LibraryContext context;
 
-        public GuildFacade(LibraryContext context)
+        public BattleFacade(LibraryContext context)
         {
             this.context = context;
         }
 
         // Get full library
 
-        public List<Guild> GetGuildsLibrary()
+        public List<Battle> GetBattlesLibrary()
         {
             try
             {
-                return context.Guilds.Include(d => d.Players).ToList();
+                return context.Battles.Include(d => d.Guilds).ThenInclude(d => d.Players).ToList();
             }
             catch (Exception e)
             {
-                Console.WriteLine("GET GuildsLibrary() - Status: Failed");
+                Console.WriteLine("GET BattlesLibrary() - Status: Failed");
                 throw e;
             }
         }
 
-        // Get specific guild
-        public Guild GetGuild(Guid id)
+        // Get specific battle
+        public Battle GetBattle(Guid id)
         {
             try
             {
-                var guild = context.Guilds
+                var battle = context.Battles
                    .SingleOrDefault(d => d.Id == id);
                 //SingleOrDefault is very important here!
 
-                if (guild != null)
+                if (battle != null)
                 {
-                    return guild;
+                    return battle;
                 }
                 else
                 {
@@ -53,24 +52,24 @@ namespace businessLayer.Objective_API.Facades
             }
             catch (Exception e)
             {
-                Console.WriteLine("GET Guild() - Status: Failed");
+                Console.WriteLine("GET Battle() - Status: Failed");
                 throw e;
             }
         }
 
-        // Add specific guild
+        // Add specific battle
 
-        public void CreateGuild(Guild newGuild)
+        public void CreateBattle(Battle newBattle)
         {
             try
             {
-                newGuild.Id = Guid.NewGuid();
-                context.Guilds.Add(newGuild);
+                newBattle.Id = Guid.NewGuid();
+                context.Battles.Add(newBattle);
                 context.SaveChanges();
             }
             catch (Exception e)
             {
-                Console.WriteLine("POST CreateGuild() - Status: Failed");
+                Console.WriteLine("POST CreateBattle() - Status: Failed");
                 throw e;
             }
         }
