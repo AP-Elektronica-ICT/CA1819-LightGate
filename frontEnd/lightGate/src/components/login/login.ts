@@ -17,6 +17,7 @@ import { StorageService } from '../../services/storage.service';
 export class LoginComponent implements OnInit{
 
   result : IPlayersRoot
+  player_name: string
 
   constructor(private _authSvc : AuthenticationService, private _storageSvc : StorageService, private _navCtrl: NavController) { }
   
@@ -28,7 +29,8 @@ export class LoginComponent implements OnInit{
  async postPlayerRequest()
   {
     var body = {
-      name: (<HTMLInputElement>document.getElementById("player_name")).value //Databinding!
+      name: this.player_name,
+      isCreator: false
     }
 
     try{

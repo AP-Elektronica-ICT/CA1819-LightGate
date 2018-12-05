@@ -1,7 +1,7 @@
 <!-- Generated template for the LoginComponent component -->
 <div>
   <form>
-    Register:<input placeholder="name" type="text" id="player_name">
+    Register:<input placeholder="name" name="nameInput" type="text" id="player_name" [(ngModel)]="player_name">
     <input type="submit" name="submit" (click)="postPlayerRequest()">
   </form>
 </div>
