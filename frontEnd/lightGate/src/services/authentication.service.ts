@@ -8,30 +8,48 @@ import "rxjs/add/observable/of";
 export class AuthenticationService
 {
     // Uncomment for mobile debug
-    //private url = "http://objective-creation-tool.azurewebsites.net/api/v1/players";
+    //private url = "http://objective-creation-tool.azurewebsites.net/api/v1/players/";
     
     // Uncomment for localhost debug
-    private url = "http://localhost:2052/api/v1/players";
+    private url = "http://localhost:2052/api/v1/players/";
+    public currentSessionId : string = null;
 
     constructor(private _http: HttpClient) { }
+
+    //Create and Get Players
 
     getPlayers(): Observable<IPlayersRoot>
     {
         return this._http.get<IPlayersRoot>(this.url);
     }
 
-    postPlayerRequest(body: any)
+   async postPlayerRequest(body: any)
     {
-        this._http.post(this.url, body).subscribe(result => {
-            console.log("Post Result: " + result);
-                
-        });
+        return this._http.post<IPlayersRoot>(this.url, body).toPromise(); //toPromise / Async Await                        
     }
 
     deletePlayerRequest(id: any, name: string)
     {
         this._http.delete(this.url + id).subscribe();
         console.log("Completed Objective #" + id + " - " + name);       
+    }
+
+    //Session Code
+
+    setSessionId(id: string)
+    {
+        this.currentSessionId = id;
+    }
+
+    getSessionId()
+    {
+        return this.currentSessionId;
+    }
+
+    async getCurrentPlayer(id: string)
+    {   
+        console.log("Getting current Player... [" + this.url + id + "]");
+        return this._http.get<IPlayersRoot>(this.url + id).toPromise();
     }
 }
 

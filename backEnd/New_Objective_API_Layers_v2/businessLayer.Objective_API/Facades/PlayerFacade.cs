@@ -1,4 +1,4 @@
-﻿using dataLayer.Objective_API.Model;
+﻿
 using Model;
 using services.Objective_API.Services;
 using System;
@@ -59,13 +59,15 @@ namespace businessLayer.Objective_API.Facades
 
         // Add specific player
 
-        public void CreatePlayer(Player newPlayer)
+        public Player CreatePlayer(Player newPlayer)
         {
             try
             {
                 newPlayer.Id = Guid.NewGuid();
-                context.Players.Add(newPlayer);
+
+                context.Players.Add(newPlayer);                
                 context.SaveChanges();
+                return newPlayer;
             }
             catch (Exception e)
             {
