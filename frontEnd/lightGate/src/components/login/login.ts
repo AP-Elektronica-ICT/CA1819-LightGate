@@ -22,11 +22,19 @@ export class LoginComponent implements OnInit{
 
   postRequest()
   {
-    var body = {
-      name: (<HTMLInputElement>document.getElementById("player_name")).value
-    }
+    let myName:string = (<HTMLInputElement>document.getElementById("player_name")).value
+    let myJob:string = (<HTMLInputElement>document.getElementById("player_job")).value
 
-    this._svc.postPlayerRequest(body);
+    if(myName!= "" && myJob != ""){
+      var body = {
+        name: myName,
+        job: myJob
+      }
+      this._svc.postPlayerRequest(body);
+    }
+    
+
+    
   }
 
   
