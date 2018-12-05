@@ -10,7 +10,6 @@ namespace Model
     public class Guild
     {
         public Guid Id { get; set; }
-        //public Player Leader { get; set; }
         public string GuildName { get; set; }
         public Guid? BattleId { get; set; }
 

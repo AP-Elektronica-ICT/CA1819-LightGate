@@ -10,12 +10,12 @@ namespace Model
     public class Player
     {
         public Guid Id { get; set; }
-        public string Name { get; set; }
-
+        public string Name { get; set; }        
         public Guid? GuildId { get; set; }
 
         [ForeignKey("GuildId")]
         [JsonIgnore]
         public Guild Guild { get; set; }
+        public bool IsCreator { get; set; }
     }
 }

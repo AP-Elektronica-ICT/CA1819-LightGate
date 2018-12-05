@@ -40,7 +40,8 @@ public class DBInitializer
                     Id = System.Guid.NewGuid(),
                     Name = "Denny",
                     GuildId = g.Id,
-                    Guild = g
+                    Guild = g,
+                    IsCreator = false
                 
                 };
                 
@@ -49,7 +50,8 @@ public class DBInitializer
                     Id = System.Guid.NewGuid(),
                     Name = "Steven",
                     GuildId = g.Id,
-                    Guild = g
+                    Guild = g,
+                    IsCreator = false
                 };
 
                 var p3 = new Player()
@@ -57,7 +59,8 @@ public class DBInitializer
                     Id = System.Guid.NewGuid(),
                     Name = "Stijn",
                     GuildId = g.Id,
-                    Guild = g
+                    Guild = g,
+                    IsCreator = false
                 };
 
                 var p4 = new Player()
@@ -65,8 +68,8 @@ public class DBInitializer
                     Id = System.Guid.NewGuid(),
                     Name = "Ynned",
                     GuildId = g2.Id,
-                    Guild = g2
-
+                    Guild = g2,
+                    IsCreator = false
                 };
 
                 var p5 = new Player()
@@ -74,7 +77,8 @@ public class DBInitializer
                     Id = System.Guid.NewGuid(),
                     Name = "Nevets",
                     GuildId = g2.Id,
-                    Guild = g2
+                    Guild = g2,
+                    IsCreator = false
                 };
 
                 var p6 = new Player()
@@ -82,28 +86,9 @@ public class DBInitializer
                     Id = System.Guid.NewGuid(),
                     Name = "Nijts",
                     GuildId = g2.Id,
-                    Guild = g2
+                    Guild = g2,
+                    IsCreator = false
                 };
-
-                /*Add leader to guild
-                var l1 = new Leader()
-                {
-                    Id = p.Id,
-                    Name = p.Name,
-                    GuildId = g.Id,
-                    Guild = g
-                };
-
-                var l2 = new Leader()
-                {
-                    Id = p4.Id,
-                    Name = p4.Name,
-                    GuildId = g2.Id,
-                    Guild = g2
-                };
-
-                //g.Leader = l1;
-                //g2.Leader = l2;*/
 
                 //Add everything to their respective collection
                 context.Players.Add(p);
