@@ -37,11 +37,11 @@ export class BattleComponent {
 
       const cameraPreviewOpts: CameraPreviewOptions = {
         //This will define the start coordinates of the camera view
-        x: 0,
-        y: 100,
+        x: 50,
+        y: 20,
         //defines the width and height of the view
-        width: cameraWidth,
-        height: camreaHeight - 290,
+        width: camreaHeight -20,
+        height: cameraWidth - 80,
         camera: 'rear',
         tapPhoto: true,
         previewDrag: true,

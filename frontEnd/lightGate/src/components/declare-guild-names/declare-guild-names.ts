@@ -35,6 +35,7 @@ export class DeclareGuildNamesComponent {
   }
 
   addGuild(){
+    //guildnames in array steken ipv json
     this.guildnames['guild'+this.count] = this.guildname;
     this.count = this.count + 1;
     this.guildname = "";
