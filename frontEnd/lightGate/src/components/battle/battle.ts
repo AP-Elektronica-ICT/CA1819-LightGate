@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { CameraPreview, CameraPreviewOptions } from '@ionic-native/camera-preview';
+import { CameraPreview, CameraPreviewOptions, CameraPreviewPictureOptions } from '@ionic-native/camera-preview';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 /**
  * Generated class for the BattleComponent component.
@@ -15,21 +16,32 @@ import { CameraPreview, CameraPreviewOptions } from '@ionic-native/camera-previe
   templateUrl: 'battle.html'
 })
 export class BattleComponent {
-
-  constructor(platform: Platform, private CameraPreview: CameraPreview, private StatusBar:StatusBar, private SplashScreen:SplashScreen) {
+  
+  constructor(platform: Platform, private CameraPreview: CameraPreview, private StatusBar:StatusBar, private SplashScreen:SplashScreen, private screenOrientation: ScreenOrientation) {
     platform.ready().then(() => {
+      //locks screen in landscape mode
+      try {
+        this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+      } catch (error) {
+        console.log("something went wrong during locking of screen");
+        throw(error);
+      }
 
+      //define variables
       this.StatusBar.styleDefault();
       this.SplashScreen.hide();
+      var cameraWidth = window.screen.width;
+      var camreaHeight = window.screen.height;
 
+      
 
       const cameraPreviewOpts: CameraPreviewOptions = {
         //This will define the start coordinates of the camera view
-        x: 100,
-        y: 200,
+        x: 50,
+        y: 20,
         //defines the width and height of the view
-        width: 300,
-        height: 300,
+        width: camreaHeight -20,
+        height: cameraWidth - 80,
         camera: 'rear',
         tapPhoto: true,
         previewDrag: true,
@@ -38,11 +50,28 @@ export class BattleComponent {
         alpha: 1
       };
 
-
       this.CameraPreview.startCamera(cameraPreviewOpts);
     });
     
   }
+  
+
+  pictureOpts: CameraPreviewPictureOptions = {
+    width: 1280,
+    height: 1280,
+    quality: 85
+  }
+  
+  picture : string;
+  takePicture() {
+    this.CameraPreview.takePicture(this.pictureOpts).then((imageData) => {
+      console.log("This button will end up taking a ");
+      this.picture = 'data:image/jpeg;base64,' + imageData;
+      console.log(this.picture)
+    }, (err) => {
+      console.log(err);
+    });
+  };
 
   Alert() {
     console.log("This button will end up taking a picture but has to function behind it just yet");
