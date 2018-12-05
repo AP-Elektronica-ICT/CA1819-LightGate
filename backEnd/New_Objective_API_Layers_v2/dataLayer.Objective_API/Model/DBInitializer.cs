@@ -41,7 +41,8 @@ public class DBInitializer
                     Name = "Denny",
                     GuildId = g.Id,
                     Guild = g,
-                    IsCreator = false
+                    IsCreator = false,
+                    MyJob="knight"
                 
                 };
                 
@@ -51,7 +52,8 @@ public class DBInitializer
                     Name = "Steven",
                     GuildId = g.Id,
                     Guild = g,
-                    IsCreator = false
+                    IsCreator = false,
+                    MyJob = "mage"
                 };
 
                 var p3 = new Player()
@@ -60,7 +62,8 @@ public class DBInitializer
                     Name = "Stijn",
                     GuildId = g.Id,
                     Guild = g,
-                    IsCreator = false
+                    IsCreator = false,
+                    MyJob = "cleric"
                 };
 
                 var p4 = new Player()
@@ -69,7 +72,8 @@ public class DBInitializer
                     Name = "Ynned",
                     GuildId = g2.Id,
                     Guild = g2,
-                    IsCreator = false
+                    IsCreator = false,
+                    MyJob = "cleric"
                 };
 
                 var p5 = new Player()
@@ -78,7 +82,8 @@ public class DBInitializer
                     Name = "Nevets",
                     GuildId = g2.Id,
                     Guild = g2,
-                    IsCreator = false
+                    IsCreator = false,
+                    MyJob = "knight"
                 };
 
                 var p6 = new Player()
@@ -87,7 +92,8 @@ public class DBInitializer
                     Name = "Nijts",
                     GuildId = g2.Id,
                     Guild = g2,
-                    IsCreator = false
+                    IsCreator = false,
+                    MyJob = "mage"
                 };
 
                 //Add everything to their respective collection

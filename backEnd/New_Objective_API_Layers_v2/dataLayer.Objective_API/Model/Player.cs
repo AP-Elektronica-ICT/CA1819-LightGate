@@ -17,7 +17,7 @@ namespace Model
         [JsonIgnore]
         public Guild Guild { get; set; }
 
-        public Job MyJob { get; set; }
+        public string MyJob { get; set; }
         public bool IsCreator { get; set; }
     }
 }

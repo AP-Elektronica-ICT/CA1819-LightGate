@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit{
     var body = {
       name: this.player_name,
       isCreator: false,
-      job: this.player_job
+      myJob: this.player_job
     }
     
 
