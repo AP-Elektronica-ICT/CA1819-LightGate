@@ -18,14 +18,14 @@ export class AuthenticationService
 
     //Create and Get Players
 
-    getPlayers(): Observable<IPlayersRoot>
+    getPlayers(): Observable<IPlayer>
     {
-        return this._http.get<IPlayersRoot>(this.url);
+        return this._http.get<IPlayer>(this.url);
     }
 
    async postPlayerRequest(body: any)
     {
-        return this._http.post<IPlayersRoot>(this.url, body).toPromise(); //toPromise / Async Await                        
+        return this._http.post<IPlayer>(this.url, body).toPromise(); //toPromise / Async Await                        
     }
 
     deletePlayerRequest(id: any, name: string)
@@ -49,12 +49,38 @@ export class AuthenticationService
     async getCurrentPlayer(id: string)
     {   
         console.log("Getting current Player... [" + this.url + id + "]");
-        return this._http.get<IPlayersRoot>(this.url + id).toPromise();
+        return this._http.get<IPlayer>(this.url + id).toPromise();
+    }
+
+    //Create Guilds and Battles
+
+    async postGuildRequest(body: any)
+    {
+        return this._http.post<IGuild>(this.url, body).toPromise(); 
+    }
+
+    async postBattleRequest(body: any)
+    {
+        return this._http.post<IBattleRoot>(this.url, body).toPromise();
     }
 }
 
-export interface IPlayersRoot {
+ export interface IBattleRoot {
+    id: string;
+    guilds: IGuild[];
+  }
+  
+  export interface IGuild {
+    id: string;
+    guildName: string;
+    battleId: string;
+    players: IPlayer[];
+  }
+  
+  export interface IPlayer {
     id: string;
     name: string;
+    guildId: string;
+    isCreator: boolean;
   }
   

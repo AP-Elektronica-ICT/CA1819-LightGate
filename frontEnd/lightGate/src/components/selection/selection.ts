@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService, IPlayersRoot } from '../../services/authentication.service';
+import { AuthenticationService, IPlayer } from '../../services/authentication.service';
 import { StorageService } from '../../services/storage.service';
 
 /**
@@ -17,7 +17,7 @@ export class SelectionComponent implements OnInit {
   currentPlayerName: string;
   currentPlayerId: string;
   result: string;
-  storage_result: IPlayersRoot;
+  storage_result: IPlayer;
 
   constructor(private _authSvc : AuthenticationService, private _storageSvc : StorageService) { }
 
