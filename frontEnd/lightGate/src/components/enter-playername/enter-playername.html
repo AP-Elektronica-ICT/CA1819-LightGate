@@ -1,4 +1,10 @@
 <!-- Generated template for the EnterPlayernameComponent component -->
-<div>
-  {{text}}
-</div>
+<!-- <div [innerHTML]="text" class="alignCenter"></div> -->
+<div class="alignCenter">Adventurer, <br> please hear our call. <br> Our kingdom is in dismay.<br> We plead to you to lend us your strength. <br> Please warrior, save our kingdom!</div>
+
+<ion-list inset padding>
+    <ion-item>
+        <ion-input [(ngModel)]="username" type="text" placeholder="username"></ion-input>
+        <button item-right (click)="confirmName()">OK</button>
+    </ion-item>
+</ion-list>
