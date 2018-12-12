@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit{
 
   result : IPlayer
   player_name: string
+  player_job: string
 
   constructor(private _authSvc : AuthenticationService, private _storageSvc : StorageService, private _navCtrl: NavController) { }
   
@@ -31,8 +32,10 @@ export class LoginComponent implements OnInit{
   {
     var body = {
       name: this.player_name,
-      isCreator: false
+      isCreator: false,
+      myJob: this.player_job
     }
+    
 
     try{
       this.result = await this._authSvc.postPlayerRequest(body);
