@@ -11,7 +11,7 @@ public class DBInitializer
         context.Database.EnsureCreated();            
         
         //Are there any players?
-        if(!context.Players.Any())
+        /*if(!context.Players.Any())
             {
                 var b = new Battle()
                 {
@@ -105,7 +105,7 @@ public class DBInitializer
                 
                 //Save all changes to the DB
                 context.SaveChanges();
-            }
+            }*/
         
             
 

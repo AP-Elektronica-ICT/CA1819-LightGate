@@ -10,6 +10,6 @@ namespace services.Objective_API.Services
     {
         List<Guild> GetGuildsLibrary();
         Guild GetGuild(Guid id);
-        void CreateGuild(Guild newGuild);
+        Guild CreateGuild(Guild newGuild);
     }
 }

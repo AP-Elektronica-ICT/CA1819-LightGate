@@ -59,13 +59,14 @@ namespace businessLayer.Objective_API.Facades
 
         // Add specific battle
 
-        public void CreateBattle(Battle newBattle)
+        public Battle CreateBattle(Battle newBattle)
         {
             try
             {
                 newBattle.Id = Guid.NewGuid();
                 context.Battles.Add(newBattle);
                 context.SaveChanges();
+                return newBattle;
             }
             catch (Exception e)
             {

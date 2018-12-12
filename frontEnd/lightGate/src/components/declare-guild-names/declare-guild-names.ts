@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NavController, NavParams } from 'ionic-angular';
 import { JoinCreateComponent } from "../join-create/join-create";
-import { AuthenticationService, IPlayer } from '../../services/authentication.service';
+import { AuthenticationService, IPlayer, IGuild, IBattleRoot } from '../../services/authentication.service';
 import { StorageService } from '../../services/storage.service';
 
 /**
@@ -20,6 +20,7 @@ export class DeclareGuildNamesComponent implements OnInit {
   participate: boolean;
   
   guildnames = {};
+  guildNamesArray = [];
   guildname: any;
   count: any = 1;
  
@@ -29,6 +30,8 @@ export class DeclareGuildNamesComponent implements OnInit {
   currentPlayerId: string;
   result: string;
   storage_result: IPlayer;
+
+  firstGuild: Boolean = true;
   
   constructor(public navCtrl: NavController, public navParams: NavParams, private _authSvc : AuthenticationService, private _storageSvc : StorageService) {
     console.log('Hello DeclareGuildNamesComponent Component');
@@ -56,45 +59,79 @@ export class DeclareGuildNamesComponent implements OnInit {
 
   addGuild(){
     //guildnames in array steken ipv json
-    this.guildnames['guild'+this.count] = this.guildname;
-
-    //Post Request
-    this.postGuildRequest();
+    //this.guildnames['guild'+this.count] = this.guildname;
+    this.guildNamesArray[this.count - 1] = this.guildname;
 
     this.count = this.count + 1;
     this.guildname = "";
 
     if(this.count > this.Guilds){
       console.log(this.guildnames);
+
+      //Post guild
+      this.postGuildRequest();
+
       this.navCtrl.push(JoinCreateComponent);
       alert('all ' + this.Guilds +' guilds have been created')
     }
   }
 
   async postGuildRequest()
-  {
-    var body = {
-        guildName: this.guildname
-    };
+  {    
+      var battleId = await this.postBattleRequest();
 
-    console.log("BEFORE: " + this.guildname);
-    var test = await this._authSvc.postGuildRequest(body);
-    console.log(test.guildName + " | " + test.id);
+      this.guildNamesArray.forEach(async guildName => {
+        let body = {
+          guildName: guildName,
+          battleId: battleId
+        }
 
-    //TODO
-    //PUT REQ to Player and add guild there
-    //Add more to body
-    //Add battle
-    //First Guild = Join Creator if selected
-  }
+        try{
+          let result: IGuild = await this._authSvc.postGuildRequest(body);
+              
+              //Add the player, if participating, to the guild (using guild ID)
+              if(this.participate && this.firstGuild)
+              {
+                var putResult: IPlayer = await this.putPlayerRequest(result.id);
+                    console.log("Guild: " + result.guildName + " | Id: " + result.id + " | Participate: " + this.participate) + " | Player Id: " + putResult.id;
+                    this.firstGuild = false;
+              }
+
+        }
+        catch(e)
+        {
+          console.log(e);
+        }
+      });
+
+      
+    } 
 
   async postBattleRequest()
   {
-    var body = {
 
+    //A battle only has an ID attached to it. You do HAVE to send a body with a post request though.
+    var body = {
+    
     };
 
-    await this._authSvc.postBattleRequest(body);
+    var result: IBattleRoot = await this._authSvc.postBattleRequest(body);
+        return result.id;
+  }
+
+  async putPlayerRequest(guildId: any)
+  {
+    console.log("GUILD-ID: " + guildId);
+
+    var body = {
+      id: this.currentPlayerId,
+      guildId: guildId,
+      isCreator: true
+    }
+
+    var result: IPlayer = await this._authSvc.putPlayerRequest(this.currentPlayerId, body);    
+        return result;
+    
   }
 
 }

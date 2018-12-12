@@ -41,8 +41,8 @@ public class BattlesController : Controller
 
     [HttpPost]
 
-    public void CreateBattle([FromBody] Battle newBattle)
+    public Battle CreateBattle([FromBody] Battle newBattle)
     {
-        facade.CreateBattle(newBattle);
+        return facade.CreateBattle(newBattle);
     }
 }
