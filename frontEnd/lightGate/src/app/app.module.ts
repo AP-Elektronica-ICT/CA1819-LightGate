@@ -14,6 +14,9 @@ import { LoginComponent } from '../components/login/login';
 import { JoinCreateComponent } from '../components/join-create/join-create';
 import { CreationOptionsComponent } from '../components/creation-options/creation-options';
 import { DeclareGuildNamesComponent } from "../components/declare-guild-names/declare-guild-names";
+import { SelectBattleScreenComponent } from "../components/select-battle-screen/select-battle-screen";
+import { EnterPlayernameComponent } from "../components/enter-playername/enter-playername";
+import { ObjectivesService } from '../services/objectives.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -24,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     JoinCreateComponent,
     CreationOptionsComponent,
-    DeclareGuildNamesComponent
+    DeclareGuildNamesComponent,
+    SelectBattleScreenComponent,
+    EnterPlayernameComponent
   ],
   imports: [
     BrowserModule,
@@ -35,17 +40,21 @@ import { HttpClientModule } from '@angular/common/http';
   entryComponents: [
     MyApp,
     HomePage,
+    BattleComponent,
     CreationOptionsComponent,
     DeclareGuildNamesComponent,
-    JoinCreateComponent
+    JoinCreateComponent,
+    SelectBattleScreenComponent,
+    EnterPlayernameComponent
   ],
   providers: [
     ScreenOrientation,
     CameraPreview,
     StatusBar,
     SplashScreen,
+    ObjectivesService,
     AuthenticationService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 export class AppModule {}

@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import {NavController, NavParams } from 'ionic-angular';
-import { JoinCreateComponent } from "../join-create/join-create";
+//import { JoinCreateComponent } from "../join-create/join-create";
+import { BattleComponent } from '../battle/battle';
+// import { HttpClient, Headers, RequestOptions } from '@angular/common/http';
+
+
 
 /**
  * Generated class for the DeclareGuildNamesComponent component.
@@ -34,16 +38,29 @@ export class DeclareGuildNamesComponent {
     console.log(this.participate);
   }
 
+  sendPostRequest() {
+    
+  }
+
+
   addGuild(){
-    //guildnames in array steken ipv json
-    this.guildnames['guild'+this.count] = this.guildname;
-    this.count = this.count + 1;
-    this.guildname = "";
-    if(this.count > this.Guilds){
-      console.log(this.guildnames);
-      this.navCtrl.push(JoinCreateComponent);
-      alert('all ' + this.Guilds +' guilds have been created')
+    if(this.guildname === undefined || this.guildname === ""){
+      alert('value is undefined')
+      
     }
+    else {
+      this.guildnames['guild'+this.count] = this.guildname;
+      this.count = this.count + 1;
+      this.guildname = "";
+      if(this.count > this.Guilds){
+        console.log(this.guildnames);
+        this.navCtrl.push(BattleComponent);
+        alert('all ' + this.Guilds +' guilds have been created')
+
+        // TODO Add call to backend here
+       }
+    }
+    
   }
 
 }

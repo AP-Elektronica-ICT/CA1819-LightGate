@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {NavController} from 'ionic-angular';
-//import { CreationOptionsComponent } from '../components/creation-options/creation-options';
 import { CreationOptionsComponent } from "../creation-options/creation-options";
 /**
  * Generated class for the JoinCreateComponent component.
