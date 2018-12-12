@@ -7,6 +7,7 @@ import { CreationOptionsComponent } from './creation-options/creation-options';
 import { DeclareGuildNamesComponent } from './declare-guild-names/declare-guild-names';
 import { SelectBattleScreenComponent } from './select-battle-screen/select-battle-screen';
 import { EnterPlayernameComponent } from './enter-playername/enter-playername';
+import { OverviewScreenComponent } from './overview-screen/overview-screen';
 
 @NgModule({
 	declarations: [LoginComponent,
@@ -16,7 +17,8 @@ import { EnterPlayernameComponent } from './enter-playername/enter-playername';
     CreationOptionsComponent,
     DeclareGuildNamesComponent,
     SelectBattleScreenComponent,
-    EnterPlayernameComponent],
+    EnterPlayernameComponent,
+    OverviewScreenComponent],
 	imports: [],
 	exports: [LoginComponent,
     BattleComponent,
@@ -25,6 +27,7 @@ import { EnterPlayernameComponent } from './enter-playername/enter-playername';
     CreationOptionsComponent,
     DeclareGuildNamesComponent,
     SelectBattleScreenComponent,
-    EnterPlayernameComponent]
+    EnterPlayernameComponent,
+    OverviewScreenComponent]
 })
 export class ComponentsModule {}
