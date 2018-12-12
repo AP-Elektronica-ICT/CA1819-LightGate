@@ -41,8 +41,8 @@ public class GuildsController : Controller
 
     [HttpPost]
     
-    public void CreateGuild([FromBody] Guild newGuild)
+    public Guild CreateGuild([FromBody] Guild newGuild)
     {
-        facade.CreateGuild(newGuild);
+        return facade.CreateGuild(newGuild);
     }   
 }

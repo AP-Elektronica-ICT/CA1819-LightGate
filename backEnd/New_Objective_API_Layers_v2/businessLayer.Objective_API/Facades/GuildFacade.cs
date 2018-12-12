@@ -60,13 +60,15 @@ namespace businessLayer.Objective_API.Facades
 
         // Add specific guild
 
-        public void CreateGuild(Guild newGuild)
+        public Guild CreateGuild(Guild newGuild)
         {
             try
             {
                 newGuild.Id = Guid.NewGuid();
+
                 context.Guilds.Add(newGuild);
                 context.SaveChanges();
+                return newGuild;
             }
             catch (Exception e)
             {
