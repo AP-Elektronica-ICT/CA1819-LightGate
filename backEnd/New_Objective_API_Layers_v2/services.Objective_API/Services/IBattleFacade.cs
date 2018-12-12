@@ -10,6 +10,6 @@ namespace services.Objective_API.Services
     {
         List<Battle> GetBattlesLibrary();
         Battle GetBattle(Guid id);
-        void CreateBattle(Battle newBattle);
+        Battle CreateBattle(Battle newBattle);
     }
 }

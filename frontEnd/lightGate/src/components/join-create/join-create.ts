@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {NavController} from 'ionic-angular';
 //import { CreationOptionsComponent } from '../components/creation-options/creation-options';
 import { CreationOptionsComponent } from "../creation-options/creation-options";
+import { AuthenticationService, IPlayer } from '../../services/authentication.service';
+import { StorageService } from '../../services/storage.service';
 /**
  * Generated class for the JoinCreateComponent component.
  *
@@ -12,16 +14,33 @@ import { CreationOptionsComponent } from "../creation-options/creation-options";
   selector: 'join-create',
   templateUrl: 'join-create.html'
 })
-export class JoinCreateComponent {
+export class JoinCreateComponent implements OnInit {
 
   text: string;
 
-  constructor(public navCtrl: NavController) {
+  currentPlayerName: string;
+  currentPlayerId: string;
+  result: string;
+  storage_result: IPlayer;
+
+  constructor(public navCtrl: NavController, private _authSvc : AuthenticationService, private _storageSvc : StorageService) {
     console.log('Hello JoinCreateComponent Component');
     this.text = 'Join or Create';
 
     function navigateCreate(){
       console.log('create has been pressed');
+    }
+  }
+
+  async ngOnInit()
+  {
+    try{
+      this.result = await this._storageSvc.loadFromStorage('sessionId');
+      this.currentPlayerId = this.result;
+    }
+    catch(e)
+    {
+      console.log(e);
     }
   }
 

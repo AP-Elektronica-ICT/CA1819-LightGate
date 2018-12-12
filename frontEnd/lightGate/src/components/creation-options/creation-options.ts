@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertController } from 'ionic-angular';
 import {NavController} from 'ionic-angular';
 import { DeclareGuildNamesComponent } from "../declare-guild-names/declare-guild-names";
+import { AuthenticationService, IPlayer } from '../../services/authentication.service';
+import { StorageService } from '../../services/storage.service';
 /**
  * Generated class for the CreationOptionsComponent component.
  *
@@ -12,7 +14,7 @@ import { DeclareGuildNamesComponent } from "../declare-guild-names/declare-guild
   selector: 'creation-options',
   templateUrl: 'creation-options.html'
 })
-export class CreationOptionsComponent {
+export class CreationOptionsComponent implements OnInit {
   configData = {};
   guildnames = {};
   Guilds: any;
@@ -20,9 +22,26 @@ export class CreationOptionsComponent {
   participate: boolean = false;
   text: string;
 
-  constructor(private alertCtrl: AlertController, public navCtrl: NavController) {
+  currentPlayerName: string;
+  currentPlayerId: string;
+  result: string;
+  storage_result: IPlayer;
+
+  constructor(private alertCtrl: AlertController, public navCtrl: NavController, private _authSvc : AuthenticationService, private _storageSvc : StorageService) {
     console.log('Hello CreationOptionsComponent Component');
     this.text = 'Creation Option';
+  }
+
+  async ngOnInit()
+  {
+    try{
+      this.result = await this._storageSvc.loadFromStorage('sessionId');
+      this.currentPlayerId = this.result;
+    }
+    catch(e)
+    {
+      console.log(e);
+    }
   }
 
   values(){
@@ -48,6 +67,7 @@ export class CreationOptionsComponent {
     }
     
   }
+
 
   presentPrompt(guildname) {
     let alert = this.alertCtrl.create({

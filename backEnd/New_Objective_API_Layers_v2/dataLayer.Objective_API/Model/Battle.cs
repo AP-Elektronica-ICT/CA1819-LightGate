@@ -9,8 +9,6 @@ namespace Model
         public Guid Id { get; set; }
         public ICollection<Guild> Guilds { get; set; }
 
-
-
         // Time
         // ...
     }
