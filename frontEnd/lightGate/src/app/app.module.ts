@@ -34,7 +34,7 @@ import { StorageService } from '../services/storage.service';
     CreationOptionsComponent,
     DeclareGuildNamesComponent,
     SelectBattleScreenComponent,
-    EnterPlayernameComponent
+    EnterPlayernameComponent,
     DeclareGuildNamesComponent,
     OverviewScreenComponent,
 
