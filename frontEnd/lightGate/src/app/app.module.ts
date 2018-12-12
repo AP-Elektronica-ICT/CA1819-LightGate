@@ -15,6 +15,7 @@ import { SelectionComponent } from '../components/selection/selection';
 import { JoinCreateComponent } from '../components/join-create/join-create';
 import { CreationOptionsComponent } from '../components/creation-options/creation-options';
 import { DeclareGuildNamesComponent } from "../components/declare-guild-names/declare-guild-names";
+import { OverviewScreenComponent } from '../components/overview-screen/overview-screen';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { StorageService } from '../services/storage.service';
@@ -28,7 +29,8 @@ import { StorageService } from '../services/storage.service';
     SelectionComponent,
     JoinCreateComponent,
     CreationOptionsComponent,
-    DeclareGuildNamesComponent
+    DeclareGuildNamesComponent,
+    OverviewScreenComponent,
 
   ],
   imports: [
