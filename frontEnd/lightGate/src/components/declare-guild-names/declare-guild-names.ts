@@ -30,8 +30,6 @@ export class DeclareGuildNamesComponent implements OnInit {
   currentPlayerId: string;
   result: string;
   storage_result: IPlayer;
-
-  firstGuild: Boolean = true;
   
   constructor(public navCtrl: NavController, public navParams: NavParams, private _authSvc : AuthenticationService, private _storageSvc : StorageService) {
     console.log('Hello DeclareGuildNamesComponent Component');
@@ -80,9 +78,10 @@ export class DeclareGuildNamesComponent implements OnInit {
   {    
       var battleId = await this.postBattleRequest();
 
-      this.guildNamesArray.forEach(async guildName => {
+      for (let index = 0; index < this.guildNamesArray.length; index++) {
+                      
         let body = {
-          guildName: guildName,
+          guildName: this.guildNamesArray[index],
           battleId: battleId
         }
 
@@ -90,11 +89,17 @@ export class DeclareGuildNamesComponent implements OnInit {
           let result: IGuild = await this._authSvc.postGuildRequest(body);
               
               //Add the player, if participating, to the guild (using guild ID)
-              if(this.participate && this.firstGuild)
+              if(this.participate && index == 0)
               {
-                var putResult: IPlayer = await this.putPlayerRequest(result.id);
-                    console.log("Guild: " + result.guildName + " | Id: " + result.id + " | Participate: " + this.participate) + " | Player Id: " + putResult.id;
-                    this.firstGuild = false;
+                var pBody = {
+                  id: this.currentPlayerId,
+                  guildId: result.id,
+                  isCreator: true
+                }
+            
+                var pResult: IPlayer = await this._authSvc.putPlayerRequest(this.currentPlayerId, pBody); 
+                //var putResult: IPlayer = await this.putPlayerRequest(result.id);
+                    console.log("Guild: " + result.guildName + " | Id: " + result.id + " | Participate: " + this.participate + " | Player Id: " + pResult.id);                    
               }
 
         }
@@ -102,7 +107,7 @@ export class DeclareGuildNamesComponent implements OnInit {
         {
           console.log(e);
         }
-      });
+      };
 
       
     } 
@@ -119,7 +124,7 @@ export class DeclareGuildNamesComponent implements OnInit {
         return result.id;
   }
 
-  async putPlayerRequest(guildId: any)
+  /*async putPlayerRequest(guildId: any)
   {
     console.log("GUILD-ID: " + guildId);
 
@@ -129,9 +134,9 @@ export class DeclareGuildNamesComponent implements OnInit {
       isCreator: true
     }
 
-    var result: IPlayer = await this._authSvc.putPlayerRequest(this.currentPlayerId, body);    
+    var result = await this._authSvc.putPlayerRequest(this.currentPlayerId, body);    
         return result;
     
-  }
+  }*/
 
 }

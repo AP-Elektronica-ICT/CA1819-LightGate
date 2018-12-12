@@ -39,7 +39,7 @@ export class AuthenticationService
 
     async putPlayerRequest(id: any, body: any)
     {
-        this._http.put<IPlayer>(this.player_url + id, body).toPromise();
+        return this._http.put<IPlayer>(this.player_url + id, body).toPromise();
     }
 
     //Session Code
