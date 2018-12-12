@@ -1,4 +1,4 @@
-﻿using dataLayer.Objective_API.Model;
+﻿
 using Model;
 using services.Objective_API.Services;
 using System;
@@ -59,19 +59,51 @@ namespace businessLayer.Objective_API.Facades
 
         // Add specific player
 
-        public void CreatePlayer(Player newPlayer)
+        public Player CreatePlayer(Player newPlayer)
         {
             try
             {
                 newPlayer.Id = Guid.NewGuid();
-                context.Players.Add(newPlayer);
+
+                context.Players.Add(newPlayer);                
                 context.SaveChanges();
+                return newPlayer;
             }
             catch (Exception e)
             {
                 Console.WriteLine("POST CreatePlayer() - Status: Failed");
                 throw e;
             }
+        }
+
+        public Player UpdatePlayer(Player updatePlayer)
+        {
+            try
+            {
+                var orgPlayer = context.Players
+                   .SingleOrDefault(d => d.Id == updatePlayer.Id);
+
+                if (orgPlayer != null)
+                {
+                    orgPlayer.IsCreator = updatePlayer.IsCreator;
+                    orgPlayer.GuildId = updatePlayer.GuildId;
+                    orgPlayer.Guild = updatePlayer.Guild;
+
+                    context.SaveChanges();
+                    return orgPlayer;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("PUT UpdatePlayer() - Status: Failed");
+                throw e;
+            }
+
+            
         }
 
         // -- END -- 

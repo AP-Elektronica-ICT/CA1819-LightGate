@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using businessLayer.Objective_API.Facades;
-using dataLayer.Objective_API.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Model;
@@ -42,8 +41,8 @@ public class GuildsController : Controller
 
     [HttpPost]
     
-    public void CreateGuild([FromBody] Guild newGuild)
+    public Guild CreateGuild([FromBody] Guild newGuild)
     {
-        facade.CreateGuild(newGuild);
+        return facade.CreateGuild(newGuild);
     }   
 }

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using businessLayer.Objective_API.Facades;
-using dataLayer.Objective_API.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Model;
@@ -42,8 +41,17 @@ public class PlayersController : Controller
 
     [HttpPost]
     
-    public void CreatePlayer([FromBody] Player newPlayer)
+    public Player CreatePlayer([FromBody] Player newPlayer)
     {
-        facade.CreatePlayer(newPlayer);
-    }   
+        return facade.CreatePlayer(newPlayer);
+    }
+
+    // Update specific player
+    [Route("{id}")]
+    [HttpPut]
+
+    public Player UpdatePlayer([FromBody] Player updatePlayer)
+    {
+        return facade.UpdatePlayer(updatePlayer);
+    }
 }

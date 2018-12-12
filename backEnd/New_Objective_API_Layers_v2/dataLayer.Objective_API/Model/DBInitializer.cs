@@ -1,4 +1,3 @@
-using dataLayer.Objective_API.Model;
 using System.Linq;
 
 namespace Model{
@@ -12,12 +11,28 @@ public class DBInitializer
         context.Database.EnsureCreated();            
         
         //Are there any players?
-        if(!context.Players.Any())
+        /*if(!context.Players.Any())
             {
+                var b = new Battle()
+                {
+                    Id = System.Guid.NewGuid()
+                };
+
+
                 var g = new Guild()
                 {
                     Id = System.Guid.NewGuid(),
-                    GuildName = "DevTeam"                    
+                    GuildName = "DevTeam",                  
+                    BattleId = b.Id,
+                    Battle = b
+                };
+
+                var g2 = new Guild()
+                {
+                    Id = System.Guid.NewGuid(),
+                    GuildName = "OpsTeam",          
+                    BattleId = b.Id,
+                    Battle = b
                 };
 
                 var p = new Player()
@@ -25,7 +40,9 @@ public class DBInitializer
                     Id = System.Guid.NewGuid(),
                     Name = "Denny",
                     GuildId = g.Id,
-                    Guild = g
+                    Guild = g,
+                    IsCreator = false,
+                    MyJob="knight"
                 
                 };
                 
@@ -34,7 +51,9 @@ public class DBInitializer
                     Id = System.Guid.NewGuid(),
                     Name = "Steven",
                     GuildId = g.Id,
-                    Guild = g
+                    Guild = g,
+                    IsCreator = false,
+                    MyJob = "mage"
                 };
 
                 var p3 = new Player()
@@ -42,22 +61,57 @@ public class DBInitializer
                     Id = System.Guid.NewGuid(),
                     Name = "Stijn",
                     GuildId = g.Id,
-                    Guild = g
+                    Guild = g,
+                    IsCreator = false,
+                    MyJob = "cleric"
                 };
 
-                //Add leader to guild
+                var p4 = new Player()
+                {
+                    Id = System.Guid.NewGuid(),
+                    Name = "Ynned",
+                    GuildId = g2.Id,
+                    Guild = g2,
+                    IsCreator = false,
+                    MyJob = "cleric"
+                };
 
-                //g.Leader = p;
+                var p5 = new Player()
+                {
+                    Id = System.Guid.NewGuid(),
+                    Name = "Nevets",
+                    GuildId = g2.Id,
+                    Guild = g2,
+                    IsCreator = false,
+                    MyJob = "knight"
+                };
+
+                var p6 = new Player()
+                {
+                    Id = System.Guid.NewGuid(),
+                    Name = "Nijts",
+                    GuildId = g2.Id,
+                    Guild = g2,
+                    IsCreator = false,
+                    MyJob = "mage"
+                };
 
                 //Add everything to their respective collection
                 context.Players.Add(p);
                 context.Players.Add(p2);
                 context.Players.Add(p3);
-                context.Guilds.Add(g);
+                context.Players.Add(p4);
+                context.Players.Add(p5);
+                context.Players.Add(p6);
 
+                context.Guilds.Add(g);
+                context.Guilds.Add(g2);
+                
+                context.Battles.Add(b);
+                
                 //Save all changes to the DB
                 context.SaveChanges();
-            }
+            }*/
         
             
 

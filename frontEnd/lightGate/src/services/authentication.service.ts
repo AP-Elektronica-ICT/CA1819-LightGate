@@ -8,35 +8,87 @@ import "rxjs/add/observable/of";
 export class AuthenticationService
 {
     // Uncomment for mobile debug
-    //private url = "http://objective-creation-tool.azurewebsites.net/api/v1/players";
+    //private url = "http://objective-creation-tool.azurewebsites.net/api/v1/players/";
     
     // Uncomment for localhost debug
-    private url = "http://localhost:2052/api/v1/players";
+    private player_url = "http://localhost:2052/api/v1/players/";
+    private guild_url = "http://localhost:2052/api/v1/guilds/";
+    private battle_url = "http://localhost:2052/api/v1/battles/";
+
+    public currentSessionId : string = null;
 
     constructor(private _http: HttpClient) { }
 
-    getPlayers(): Observable<IPlayersRoot>
+    //Create, Get, Update and Delete Players
+
+    getPlayers(): Observable<IPlayer>
     {
-        return this._http.get<IPlayersRoot>(this.url);
+        return this._http.get<IPlayer>(this.player_url);
     }
 
-    postPlayerRequest(body: any)
+   async postPlayerRequest(body: any)
     {
-        this._http.post(this.url, body).subscribe(result => {
-            console.log("Post Result: " + result);
-                
-        });
+        return this._http.post<IPlayer>(this.player_url, body).toPromise(); //toPromise / Async Await                        
     }
 
     deletePlayerRequest(id: any, name: string)
     {
-        this._http.delete(this.url + id).subscribe();
+        this._http.delete(this.player_url + id).subscribe();
         console.log("Completed Objective #" + id + " - " + name);       
+    }
+
+    async putPlayerRequest(id: any, body: any)
+    {
+        return this._http.put<IPlayer>(this.player_url + id, body).toPromise();
+    }
+
+    //Session Code
+
+    setSessionId(id: string)
+    {
+        this.currentSessionId = id;
+    }
+
+    getSessionId()
+    {
+        return this.currentSessionId;
+    }
+
+    async getCurrentPlayer(id: string)
+    {   
+        console.log("Getting current Player... [" + this.player_url + id + "]");
+        return this._http.get<IPlayer>(this.player_url + id).toPromise();
+    }
+
+    //Create Guilds and Battles
+
+    async postGuildRequest(body: any)
+    {
+        return this._http.post<IGuild>(this.guild_url, body).toPromise(); 
+    }
+
+    async postBattleRequest(body: any)
+    {
+        return this._http.post<IBattleRoot>(this.battle_url, body).toPromise();
     }
 }
 
-export interface IPlayersRoot {
+ export interface IBattleRoot {
+    id: string;
+    guilds: IGuild[];
+  }
+  
+  export interface IGuild {
+    id: string;
+    guildName: string;
+    battleId: string;
+    players: IPlayer[];
+  }
+  
+  export interface IPlayer {
     id: string;
     name: string;
+    guildId: string;
+    isCreator: boolean;
   }
   
