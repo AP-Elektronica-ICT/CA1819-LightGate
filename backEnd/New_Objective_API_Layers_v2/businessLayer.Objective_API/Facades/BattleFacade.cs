@@ -75,6 +75,34 @@ namespace businessLayer.Objective_API.Facades
             }
         }
 
+        public List<Battle> GetAllBattlesWith(string name, int? page, string sort, int length = 3, string dir = "asc")
+        {
+            IQueryable<Battle> query = context.Battles.Include(d => d.Guilds).ThenInclude(d => d.Players);
+
+            if (!string.IsNullOrWhiteSpace(name))
+                query = query.Where(d => d.Name.Contains(name));
+
+            if (!string.IsNullOrWhiteSpace(sort))
+            {
+                switch (sort)
+                {
+                    case "name":
+                        if (dir == "asc")
+                            query = query.OrderBy(d => d.Name);
+                        else if (dir == "desc")
+                            query = query.OrderByDescending(d => d.Name);
+                        break;
+                }
+            }
+
+            if (page.HasValue)
+                query = query.Skip(page.Value * length);
+                query = query.Take(length);
+
+            return query.ToList();
+        }
+
+
         // -- END -- 
     }
 }

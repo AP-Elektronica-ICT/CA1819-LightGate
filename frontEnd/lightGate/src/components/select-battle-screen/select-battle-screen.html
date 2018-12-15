@@ -1,30 +1,41 @@
 <!-- Generated template for the SelectBattleScreenComponent component -->
+
 <h1 class="alignCenter">
   {{text}}
 </h1>
+
 <br>
+
+<ion-searchbar
+  [(ngModel)]="myInput"
+  [showCancelButton]="shouldShowCancel"
+  [debounce]="500"
+  (ionInput)="onInput($event)"
+  (ionCancel)="onCancel($event)">
+</ion-searchbar>
+
+<br>
+
 <ion-list radio-group>
 
-  <h3>Select a team</h3>
-
-  <ion-list>
+  <ion-list *ngIf="battles != null" >
+    
     <ion-list-header>
+      <ion-label>Name</ion-label>
+      <ion-label>Time Limit</ion-label>
+      <ion-label></ion-label>
     </ion-list-header>
 
-    <ion-item>
-      <ion-label>Battle 1</ion-label>
+    <ion-item *ngFor="let battle of battles">
+      <ion-label>{{battle.name}}</ion-label>
+      <ion-label>{{battle.battleTimeInMinutes}} min</ion-label>
       <button ion-button (click)="join()" outline item-end>Join</button>
     </ion-item>
-    <ion-item>
-      <ion-label>Battle 2</ion-label>
-      <button ion-button (click)="join()"  outline item-end>Join</button>
-    </ion-item>
-    <ion-item>
-      <ion-label>Battle 3</ion-label>
-      <button ion-button (click)="join()" outline item-end>Join</button>
-    </ion-item>
-    <ion-item>
-      <ion-label>Battle 4</ion-label>
-      <button ion-button (click)="join()" outline item-end>Join</button>
-    </ion-item>
+    
   </ion-list>
+
+  <div class="alignCenterHorizontal">
+    <button ion-button (click)="previous()">Previous</button> <button ion-button (click)="next()">Next</button>
+  </div>
+  
+

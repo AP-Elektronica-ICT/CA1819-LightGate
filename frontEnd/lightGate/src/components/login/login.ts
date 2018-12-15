@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService, IPlayer } from '../../services/authentication.service';
 import { NavController } from 'ionic-angular';
-import { SelectionComponent } from '../selection/selection';
 import { StorageService } from '../../services/storage.service';
 import { JoinCreateComponent } from '../join-create/join-create';
 

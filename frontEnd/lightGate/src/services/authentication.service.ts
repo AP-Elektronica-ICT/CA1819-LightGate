@@ -7,6 +7,9 @@ import "rxjs/add/observable/of";
 @Injectable()
 export class AuthenticationService
 {
+    private currentPage = 0;
+    private currentName = "";
+
     // Uncomment for mobile debug
     //private url = "http://objective-creation-tool.azurewebsites.net/api/v1/players/";
     
@@ -14,6 +17,8 @@ export class AuthenticationService
     private player_url = "http://localhost:2052/api/v1/players/";
     private guild_url = "http://localhost:2052/api/v1/guilds/";
     private battle_url = "http://localhost:2052/api/v1/battles/";
+    //private battle_offset_url = "http://localhost:2052/api/v1/battles?name=" + this.currentName + "&page=" + this.currentPage + "/";
+    private battle_offset_url = "http://localhost:2052/api/v1/battles?page=";
 
     public currentSessionId : string = null;
 
@@ -71,10 +76,50 @@ export class AuthenticationService
     {
         return this._http.post<IBattleRoot>(this.battle_url, body).toPromise();
     }
+
+    //Pagination
+
+    setCurrentName(currentName: string)
+    {
+        this.currentName = currentName;        
+    }
+
+    next()
+    {
+        this.currentPage += 1;
+    }
+
+    previous()
+    {
+        if(this.currentPage != 0)
+        {
+            this.currentPage -= 1;
+        }
+        else
+        {
+            this.currentPage = 0;
+        }
+    }
+
+    //Get Guilds and Battles
+
+    async getBattles()
+    {
+        return this._http.get<IBattleRoot[]>(this.battle_url).toPromise();
+    }
+
+    async getBattlesWith()
+    {
+        console.log(this.battle_offset_url + this.currentPage);
+        return this._http.get<IBattleRoot[]>(this.battle_offset_url + this.currentPage + "&name=" + this.currentName).toPromise();
+    }
+    
 }
 
  export interface IBattleRoot {
     id: string;
+    name: string;
+    battleTimeInMinutes: string;
     guilds: IGuild[];
   }
   

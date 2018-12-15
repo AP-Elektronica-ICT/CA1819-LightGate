@@ -1,13 +1,18 @@
 <!-- Generated template for the DeclareGuildNamesComponent component -->
+
+<body class="alignCenter">
+
 <h1>
   {{text}}
 </h1>
-<div class="alignCenter">Create {{Guilds}} guilds</div>
-<ion-item class="alignCenter">
+
+<div>Create {{Guilds}} guilds</div>
+<ion-item class="form">
   <ion-label color="primary" stacked>Enter guildname n#{{count}}</ion-label>
   <ion-input [(ngModel)]="guildname" type="text" placeholder="guildname" clearInput="true"></ion-input>
 </ion-item>
 
-<div class="alignCenter">
+<div>
   <button ion-button large (click)="addGuild()">Create Guild</button> 
 </div>
+</body>
