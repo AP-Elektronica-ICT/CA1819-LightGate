@@ -48,11 +48,6 @@ export class SelectBattleScreenComponent implements OnInit {
     this.getBattlesWith();      
   }
 
-  onCancel(canceledInput)
-  {
-    console.log(canceledInput);
-  }
-
   previous()
   {
     this._authSvc.previous();

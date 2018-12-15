@@ -81,6 +81,10 @@ export class AuthenticationService
 
     setCurrentName(currentName: string)
     {
+        //Search in all pages
+        this.currentPage = null;
+
+        //Set current name
         this.currentName = currentName;        
     }
 

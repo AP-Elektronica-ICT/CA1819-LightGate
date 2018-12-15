@@ -8,10 +8,9 @@
 
 <ion-searchbar
   [(ngModel)]="myInput"
-  [showCancelButton]="shouldShowCancel"
   [debounce]="500"
-  (ionInput)="onInput($event)"
-  (ionCancel)="onCancel($event)">
+  (ionInput)="onInput($event)"  
+  >
 </ion-searchbar>
 
 <br>
