@@ -15,9 +15,9 @@ export class ObjectivesService
 
     constructor(private _http: HttpClient) { }
 
-    getObjectives(): Observable<IObjectivesRoot>
+    getObjectives(): Observable<IObjectivesRoot[]>
     {
-        return this._http.get<IObjectivesRoot>(this.url);
+        return this._http.get<IObjectivesRoot[]>(this.url);
     }
 
     postObjectiveRequest(body: any)

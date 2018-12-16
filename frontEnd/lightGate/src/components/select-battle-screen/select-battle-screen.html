@@ -1,4 +1,30 @@
 <!-- Generated template for the SelectBattleScreenComponent component -->
-<div>
+<h1 class="alignCenter">
   {{text}}
-</div>
+</h1>
+<br>
+<ion-list radio-group>
+
+  <h3>Select a team</h3>
+
+  <ion-list>
+    <ion-list-header>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Battle 1</ion-label>
+      <button ion-button (click)="join()" outline item-end>Join</button>
+    </ion-item>
+    <ion-item>
+      <ion-label>Battle 2</ion-label>
+      <button ion-button (click)="join()"  outline item-end>Join</button>
+    </ion-item>
+    <ion-item>
+      <ion-label>Battle 3</ion-label>
+      <button ion-button (click)="join()" outline item-end>Join</button>
+    </ion-item>
+    <ion-item>
+      <ion-label>Battle 4</ion-label>
+      <button ion-button (click)="join()" outline item-end>Join</button>
+    </ion-item>
+  </ion-list>

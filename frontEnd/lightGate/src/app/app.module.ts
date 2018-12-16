@@ -15,10 +15,14 @@ import { SelectionComponent } from '../components/selection/selection';
 import { JoinCreateComponent } from '../components/join-create/join-create';
 import { CreationOptionsComponent } from '../components/creation-options/creation-options';
 import { DeclareGuildNamesComponent } from "../components/declare-guild-names/declare-guild-names";
+import { SelectBattleScreenComponent } from "../components/select-battle-screen/select-battle-screen";
+import { EnterPlayernameComponent } from "../components/enter-playername/enter-playername";
+import { ObjectivesService } from '../services/objectives.service';
 import { OverviewScreenComponent } from '../components/overview-screen/overview-screen';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { StorageService } from '../services/storage.service';
+import { JoinTeamComponent } from '../components/join-team/join-team';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { StorageService } from '../services/storage.service';
     JoinCreateComponent,
     CreationOptionsComponent,
     DeclareGuildNamesComponent,
+    SelectBattleScreenComponent,
+    EnterPlayernameComponent,
+    DeclareGuildNamesComponent,
     OverviewScreenComponent,
+    JoinTeamComponent,
 
   ],
   imports: [
@@ -43,20 +51,24 @@ import { StorageService } from '../services/storage.service';
   entryComponents: [
     MyApp,
     HomePage,
+    BattleComponent,
     LoginComponent,
     SelectionComponent,
     CreationOptionsComponent,
     DeclareGuildNamesComponent,
-    JoinCreateComponent
+    JoinCreateComponent,
+    SelectBattleScreenComponent,
+    EnterPlayernameComponent
   ],
   providers: [
     ScreenOrientation,
     CameraPreview,
     StatusBar,
     SplashScreen,
+    ObjectivesService,
     AuthenticationService,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
     StorageService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}

@@ -1,0 +1,20 @@
+join-team {
+
+    ion-card-header, ion-card-content{
+        position: relative;
+        text-align: center;
+    }
+
+    .col1{text-align: right;}
+    .col2{text-align: center;}
+    .col3{text-align: left;}
+
+    img{
+        display: block;
+        width: 1rem;
+    }
+    .col3p p{
+        display: block;
+    }
+
+}

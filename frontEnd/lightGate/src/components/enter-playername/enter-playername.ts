@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {NavController} from 'ionic-angular';
+import { JoinCreateComponent } from "../join-create/join-create";
 
 /**
  * Generated class for the EnterPlayernameComponent component.
@@ -11,12 +13,15 @@ import { Component } from '@angular/core';
   templateUrl: 'enter-playername.html'
 })
 export class EnterPlayernameComponent {
-
+  username: string
   text: string;
 
-  constructor() {
+  constructor(public navCtrl: NavController) {
     console.log('Hello EnterPlayernameComponent Component');
-    this.text = 'Hello World';
   }
 
+  confirmName(){
+    console.log(this.username);
+    this.navCtrl.push(JoinCreateComponent);
+  }
 }
