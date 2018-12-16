@@ -35,9 +35,19 @@ export class SelectBattleScreenComponent implements OnInit {
     console.log(this.battles);
   }
 
-  join(){
-    //console.log("clicked on Join");
-    this.navCtrl.push(EnterPlayernameComponent);
+  join(index: number){
+    console.log("INDEX: " + index);
+
+    //Steven, dit is het battle ID dat meegegeven zal moeten worden naar het scherm waar jij aan bezig bent.
+    //Dit kan ofterwijl met de NavParams worden meegegeven, of je kan een variabele in authentication.service.ts voorzien (bv. currentBattleId).
+    //Hier kan je dan een methode voor maken: setCurrentBattleId. Deze roep je hier dan aan en dan geef je daar dit ID aan mee.
+    //Als je dan nog een get request voorziet die naar de url: api/v1/battles/{id}/guilds gaat, dan kan je hier automatisch 
+    //"this.currentBattleId" aan toevoegen in de service zelf. Als je nog vragen moest hebben over de backend kan je altijd de documentatie raadplegen 
+    //(die ik straks nog ga updaten) of je kan het altijd aan mij vragen. Deze commentaar mag trouwens volledig weg als alles duidelijk is.
+    console.log(this.battles[index].id);
+
+
+    //this.navCtrl.push(EnterPlayernameComponent);
   }
 
   onInput(input)
@@ -59,7 +69,5 @@ export class SelectBattleScreenComponent implements OnInit {
     this._authSvc.next();
     this.getBattlesWith();  
   }
-
-  
 
 }

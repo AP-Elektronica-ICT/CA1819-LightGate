@@ -25,10 +25,10 @@
       <ion-label></ion-label>
     </ion-list-header>
 
-    <ion-item *ngFor="let battle of battles">
+    <ion-item *ngFor="let battle of battles; let i = index">
       <ion-label>{{battle.name}}</ion-label>
       <ion-label>{{battle.battleTimeInMinutes}} min</ion-label>
-      <button ion-button (click)="join()" outline item-end>Join</button>
+      <button ion-button (click)="join(i)" outline item-end>Join</button>
     </ion-item>
     
   </ion-list>

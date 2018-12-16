@@ -58,6 +58,31 @@ namespace businessLayer.Objective_API.Facades
             }
         }
 
+        // Get all players from a specific guild
+        public List<Player> GetAllPlayersFromGuild(Guid id)
+        {
+            try
+            {
+                var players = context.Guilds.Include(d => d.Players)
+                   .SingleOrDefault(d => d.Id == id).Players;
+                //SingleOrDefault is very important here!
+
+                if (players != null)
+                {
+                    return players.ToList();
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("GET AllPlayersFromGuild() - Status: Failed");
+                throw e;
+            }
+        }
+
         // Add specific guild
 
         public Guild CreateGuild(Guild newGuild)

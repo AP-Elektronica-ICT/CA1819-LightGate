@@ -52,4 +52,13 @@ public class BattlesController : Controller
     {
         return facade.GetAllBattlesWith(name, page, sort, length, dir);
     }
+
+    // Get all players from a specific guild
+    [Route("{id}/guilds")]
+    [HttpGet]
+
+    public List<Guild> GetAllGuildsFromBattle(Guid id)
+    {
+        return facade.GetAllGuildsFromBattle(id);
+    }
 }

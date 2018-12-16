@@ -37,7 +37,7 @@ namespace businessLayer.Objective_API.Facades
         {
             try
             {
-                var battle = context.Battles
+                var battle = context.Battles.Include(d => d.Guilds).ThenInclude(d => d.Players)
                    .SingleOrDefault(d => d.Id == id);
                 //SingleOrDefault is very important here!
 
@@ -53,6 +53,31 @@ namespace businessLayer.Objective_API.Facades
             catch (Exception e)
             {
                 Console.WriteLine("GET Battle() - Status: Failed");
+                throw e;
+            }
+        }
+
+        // Get specific battle
+        public List<Guild> GetAllGuildsFromBattle(Guid id)
+        {
+            try
+            {
+                var guilds = context.Battles.Include(d => d.Guilds).ThenInclude(d => d.Players)
+                   .SingleOrDefault(d => d.Id == id).Guilds;
+                //SingleOrDefault is very important here!
+
+                if (guilds != null)
+                {
+                    return guilds.ToList();
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("GET AllGuildsFromBattle() - Status: Failed");
                 throw e;
             }
         }
