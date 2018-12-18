@@ -11,7 +11,6 @@ import { HomePage } from '../pages/home/home';
 import { AuthenticationService } from '../services/authentication.service';
 import { BattleComponent } from '../components/battle/battle';
 import { LoginComponent } from '../components/login/login';
-import { SelectionComponent } from '../components/selection/selection';
 import { JoinCreateComponent } from '../components/join-create/join-create';
 import { CreationOptionsComponent } from '../components/creation-options/creation-options';
 import { DeclareGuildNamesComponent } from "../components/declare-guild-names/declare-guild-names";
@@ -30,7 +29,6 @@ import { JoinTeamComponent } from '../components/join-team/join-team';
     HomePage,
     BattleComponent,
     LoginComponent,
-    SelectionComponent,
     JoinCreateComponent,
     CreationOptionsComponent,
     DeclareGuildNamesComponent,
@@ -53,12 +51,12 @@ import { JoinTeamComponent } from '../components/join-team/join-team';
     HomePage,
     BattleComponent,
     LoginComponent,
-    SelectionComponent,
     CreationOptionsComponent,
     DeclareGuildNamesComponent,
     JoinCreateComponent,
     SelectBattleScreenComponent,
-    EnterPlayernameComponent
+    EnterPlayernameComponent,
+    JoinTeamComponent
   ],
   providers: [
     ScreenOrientation,

@@ -7,8 +7,8 @@
   <ion-list scroll="true">
 
     <ion-item>
-      <ion-card *ngFor="let team of teams">
-        <ion-card-header><h1>{{team}}</h1></ion-card-header>
+      <ion-card *ngFor="let guild of guilds">
+        <ion-card-header><h1>{{guild.name}}</h1></ion-card-header>
 
         <ion-card-content>
           <ion-grid>
@@ -17,14 +17,14 @@
               <ion-col><h2 class="col2">Members</h2></ion-col>
             </ion-row>
 
-            <!-- <ion-row *ngFor="let member of team.members">
-              <ion-col><p class="col1">{{member.name}}</p></ion-col>
+            <ion-row *ngFor="let player of guild.players">
+              <ion-col><p class="col1">{{player.name}}</p></ion-col>
               <ion-col><p class="col2">-</p></ion-col>
               <ion-col col-1><ion-icon name="color-filter"></ion-icon></ion-col>
-              <ion-col><p class="col3">{{member.class}}</p></ion-col>
-            </ion-row> -->
+              <ion-col><p class="col3">{{player.myJob}}</p></ion-col>
+            </ion-row>
 
-            <ion-row>
+            <!-- <ion-row>
               <ion-col><p class="col1">Trump</p></ion-col>
               <ion-col><p class="col2">-</p></ion-col>
               <ion-col col-1><ion-icon name="color-filter"></ion-icon></ion-col>
@@ -47,7 +47,7 @@
               <ion-col><p class="col2">-</p></ion-col>
               <ion-col col-1><ion-icon name="color-wand"></ion-icon></ion-col>
               <ion-col><p class="col3">Mage</p></ion-col>
-            </ion-row>
+            </ion-row> -->
 
             <ion-row>
               <ion-col><button ion-button (click)="join()" outline item-end>Join</button></ion-col>
