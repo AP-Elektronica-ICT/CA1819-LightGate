@@ -37,6 +37,15 @@ public class GuildsController : Controller
         return facade.GetGuild(id);
     }
 
+    // Get all players from a specific guild
+    [Route("{id}/players")]
+    [HttpGet]
+
+    public List<Player> GetAllPlayersFromGuild(Guid id)
+    {
+        return facade.GetAllPlayersFromGuild(id);
+    }
+
     // Add specific guild
 
     [HttpPost]

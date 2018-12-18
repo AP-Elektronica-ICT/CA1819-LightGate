@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { LoginComponent } from './login/login';
 import { BattleComponent } from './battle/battle';
-import { SelectionComponent } from './selection/selection';
 import { JoinCreateComponent } from './join-create/join-create';
 import { CreationOptionsComponent } from './creation-options/creation-options';
 import { DeclareGuildNamesComponent } from './declare-guild-names/declare-guild-names';
@@ -12,7 +11,6 @@ import { OverviewScreenComponent } from './overview-screen/overview-screen';
 @NgModule({
 	declarations: [LoginComponent,
     BattleComponent,
-    SelectionComponent,
     JoinCreateComponent,
     CreationOptionsComponent,
     DeclareGuildNamesComponent,
@@ -22,7 +20,6 @@ import { OverviewScreenComponent } from './overview-screen/overview-screen';
 	imports: [],
 	exports: [LoginComponent,
     BattleComponent,
-    SelectionComponent,
     JoinCreateComponent,
     CreationOptionsComponent,
     DeclareGuildNamesComponent,

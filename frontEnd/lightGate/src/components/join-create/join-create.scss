@@ -1,6 +1,14 @@
 join-create {
 
 }
+
+.button{
+    width: 20rem;
+}
+
 .alignCenter{
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
