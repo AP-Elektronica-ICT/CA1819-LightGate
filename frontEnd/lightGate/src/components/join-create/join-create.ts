@@ -3,6 +3,7 @@ import {NavController} from 'ionic-angular';
 import { CreationOptionsComponent } from "../creation-options/creation-options";
 import { AuthenticationService, IPlayer } from '../../services/authentication.service';
 import { StorageService } from '../../services/storage.service';
+import { SelectBattleScreenComponent } from '../select-battle-screen/select-battle-screen';
 /**
  * Generated class for the JoinCreateComponent component.
  *
@@ -45,7 +46,7 @@ export class JoinCreateComponent implements OnInit {
 
   toJoin(){
     console.log("This naviates to Join session");
-    //this.nacCtrl.push('CreationOptionsComponent');
+    this.navCtrl.push(SelectBattleScreenComponent);
   }
 
   toCreate(){

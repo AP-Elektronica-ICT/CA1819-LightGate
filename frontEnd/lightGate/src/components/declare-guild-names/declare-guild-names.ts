@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NavController, NavParams } from 'ionic-angular';
+import {NavController, NavParams, DateTime } from 'ionic-angular';
 //import { JoinCreateComponent } from "../join-create/join-create";
 // import { HttpClient, Headers, RequestOptions } from '@angular/common/http';
 
@@ -22,6 +22,7 @@ export class DeclareGuildNamesComponent implements OnInit {
   Guilds: any;
   timeLimit: any;
   participate: boolean;
+  name: string;
 
   guildnames = {};
   guildNamesArray = [];
@@ -41,6 +42,7 @@ export class DeclareGuildNamesComponent implements OnInit {
     this.Guilds = navParams.get('guilds');
     this.timeLimit = navParams.get('timeLimit');
     this.participate = navParams.get('participate');
+    this.name = navParams.get('name');
     console.log(this.Guilds);
     console.log(this.timeLimit);
     console.log(this.participate);
@@ -132,7 +134,8 @@ export class DeclareGuildNamesComponent implements OnInit {
 
     //A battle only has an ID attached to it. You do HAVE to send a body with a post request though.
     var body = {
-
+      name: this.name,
+      battleTimeInMinutes: this.timeLimit
     };
 
     var result: IBattleRoot = await this._authSvc.postBattleRequest(body);

@@ -21,6 +21,7 @@ export class CreationOptionsComponent implements OnInit {
   timeLimit: any;
   participate: boolean = false;
   text: string;
+  name: string;
 
   currentPlayerName: string;
   currentPlayerId: string;
@@ -45,8 +46,8 @@ export class CreationOptionsComponent implements OnInit {
   }
 
   values(){
-    if(this.Guilds === undefined || this.timeLimit === undefined){
-      alert("either Guilds or Time limit was not defined")
+    if(this.Guilds === undefined || this.timeLimit === undefined || this.name === undefined){
+      alert("either Guilds, Time limit or name was not defined")
     } else {
       this.configData = {}
       this.guildnames = {};
@@ -56,7 +57,8 @@ export class CreationOptionsComponent implements OnInit {
       this.navCtrl.push(DeclareGuildNamesComponent, {
         guilds: this.Guilds,
         timeLimit: this.timeLimit,
-        participate: this.participate
+        participate: this.participate,
+        name: this.name
       })
       // for (let i = 0; i < this.Guilds; i++) {
       //   var count = i + 1;
