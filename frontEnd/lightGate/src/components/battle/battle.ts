@@ -6,6 +6,8 @@ import { CameraPreview, CameraPreviewOptions, CameraPreviewPictureOptions } from
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { ObjectivesService, IObjectivesRoot } from '../../services/objectives.service';
 import { resolveDefinition } from '@angular/core/src/view/util';
+import { AuthenticationService, IImage } from '../../services/authentication.service';
+import { StorageService } from '../../services/storage.service';
 
 
 
@@ -21,7 +23,7 @@ import { resolveDefinition } from '@angular/core/src/view/util';
 })
 export class BattleComponent implements OnInit {
   
-  constructor(platform: Platform, private CameraPreview: CameraPreview, private StatusBar:StatusBar, private SplashScreen:SplashScreen, private screenOrientation: ScreenOrientation, private _svc : ObjectivesService) {
+  constructor(platform: Platform, private CameraPreview: CameraPreview, private StatusBar:StatusBar, private SplashScreen:SplashScreen, private screenOrientation: ScreenOrientation, private _svc : ObjectivesService, private _authSvc: AuthenticationService, private _storageSvc: StorageService) {
     platform.ready().then(() => {
       //locks screen in landscape mode
       
@@ -36,7 +38,7 @@ export class BattleComponent implements OnInit {
       this.StatusBar.styleDefault();
       this.SplashScreen.hide();
       var cameraWidth = window.screen.width;
-      var camreaHeight = window.screen.height;
+      var camreaHeight = window.screen.height;      
 
       
 
@@ -64,9 +66,10 @@ export class BattleComponent implements OnInit {
   picture : string;
   randomObjCount : number;
   randomObjective: string;
+  currentPlayerId: string;
 
   //get Random objectieve from database
-  ngOnInit()
+  async ngOnInit()
   {
     this._svc.getObjectives().subscribe(result => {
       this.objectives = result;
@@ -74,8 +77,18 @@ export class BattleComponent implements OnInit {
       //console.log(result[0].description);
       this.randomObjCount = this.getRandomInt(this.objectives.length);
       console.log();
-      this.randomObjective = this.objectives[this.randomObjCount].description;
+      this.randomObjective = this.objectives[this.randomObjCount].description;         
     });
+
+    try{
+      this.currentPlayerId = await this._storageSvc.loadFromStorage('sessionId');
+    }
+    catch(e)
+    {
+      console.log(e);
+    }
+
+    
   }
   getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -95,6 +108,7 @@ export class BattleComponent implements OnInit {
       this.picture = 'data:image/jpeg;base64,' + imageData;
       console.log(this.picture)
 
+      this.postImageRequest();
       
     }, (err) => {
       console.log(err);
@@ -112,6 +126,22 @@ export class BattleComponent implements OnInit {
 
   Alert() {
     console.log("This button will end up taking a picture but has to function behind it just yet");
+  }
+
+  async postImageRequest()
+  {
+    var body = {
+      base64String: this.picture,
+      playerId: this.currentPlayerId
+    }
+
+    try {
+      var result = await this._authSvc.postImageRequest(body);  
+      console.log("postImageRequest: " + result);
+    } catch (e) {
+      console.log(e);
+    }
+    
   }
 
 }

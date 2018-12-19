@@ -19,6 +19,7 @@ export class AuthenticationService
     private battle_url = "http://localhost:2052/api/v1/battles/";
     //private battle_offset_url = "http://localhost:2052/api/v1/battles?name=" + this.currentName + "&page=" + this.currentPage + "/";
     private battle_offset_url = "http://localhost:2052/api/v1/battles?page=";
+    private image_url = "http://localhost:2052/api/v1/images";
 
     public currentSessionId : string = null;
 
@@ -117,6 +118,14 @@ export class AuthenticationService
         console.log(this.battle_offset_url + this.currentPage);
         return this._http.get<IBattleRoot[]>(this.battle_offset_url + this.currentPage + "&name=" + this.currentName).toPromise();
     }
+
+    //Post Images
+    async postImageRequest(body: any)
+    {
+        return this._http.post<IImage>(this.image_url, body).toPromise();
+    }
+
+    
     
 }
 
@@ -139,5 +148,11 @@ export class AuthenticationService
     name: string;
     guildId: string;
     isCreator: boolean;
+  }
+
+  export interface IImage {
+      id: string
+      base64String: string
+      playerId: string
   }
   

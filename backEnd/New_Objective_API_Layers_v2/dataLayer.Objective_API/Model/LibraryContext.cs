@@ -15,6 +15,7 @@ namespace Model{
         public DbSet<Player> Players { get; set; }
         public DbSet<Guild> Guilds { get; set; }
         public DbSet<Battle> Battles { get; set; }
+        public DbSet<Image> Images { get; set; }
        
     }
 }

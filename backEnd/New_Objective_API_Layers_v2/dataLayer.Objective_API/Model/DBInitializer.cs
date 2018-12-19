@@ -11,11 +11,13 @@ public class DBInitializer
         context.Database.EnsureCreated();            
         
         //Are there any players?
-        /*if(!context.Players.Any())
+        if(!context.Players.Any())
             {
                 var b = new Battle()
                 {
-                    Id = System.Guid.NewGuid()
+                    Id = System.Guid.NewGuid(),
+                    Name = "myFirstBattle",
+                    BattleTimeInMinutes = "30"
                 };
 
 
@@ -111,7 +113,7 @@ public class DBInitializer
                 
                 //Save all changes to the DB
                 context.SaveChanges();
-            }*/
+            }
         
             
 
