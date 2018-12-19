@@ -1,30 +1,30 @@
 <!-- Generated template for the LoginComponent component -->
 
-<body class="alignCenter">
-
-  <div>
-  <br>
-  <br> Adventurer,
-  <br> please hear our call.
-  <br> Our kingdom is in dismay.
-  <br> We plead to you to lend us your strength.
-  <br> Please warrior, save our kingdom!
-  <br><br></div>
 
 <ion-item>
   <ion-label color="primary">Name:</ion-label>
-  <ion-input placeholder="" [(ngModel)]="player_name"></ion-input>
+  <ion-input placeholder="Text Input" [(ngModel)]="player_name"></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label color="primary">Job:</ion-label>
+  <ion-label>Job:</ion-label>
   <ion-select [(ngModel)]="player_job">
-    <ion-option value="knight"><ion-icon name="nutrition"></ion-icon>Knight</ion-option>
-    <ion-option  value="mage"><ion-icon name="color-wand"></ion-icon>Mage</ion-option>
-    <ion-option value="cleric"><ion-icon name="sunny"></ion-icon>Cleric</ion-option>
+    <ion-option value="knight">Knight</ion-option>
+    <ion-option value="mage">Mage</ion-option>
+    <ion-option value="cleric">Cleric</ion-option>
   </ion-select>
 </ion-item>
 
-<button ion-button full (click)="postPlayerRequest()">LET'S GO!</button>
+<button ion-button full (click)="postPlayerRequest()">Full Button</button>
 
-</body>
+
+
+<!-- <div>
+  <form>
+    <div class="alignCenter">
+
+    </div>
+    Register:<input placeholder="name" name="nameInput" type="text" id="player_name" [(ngModel)]="player_name">
+    <input type="submit" name="submit" (click)="postPlayerRequest()">
+  </form>
+</div> -->

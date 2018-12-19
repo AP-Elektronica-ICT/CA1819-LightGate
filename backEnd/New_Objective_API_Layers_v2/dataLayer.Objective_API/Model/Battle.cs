@@ -7,9 +7,11 @@ namespace Model
     public class Battle
     {
         public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string BattleTimeInMinutes { get; set; }
         public ICollection<Guild> Guilds { get; set; }
-        
+
+
+
+        // Time
+        // ...
     }
 }

@@ -1,18 +1,6 @@
 <!-- Generated template for the CreationOptionsComponent component -->
-
-<body class="alignCenter">
-
-<h1>  
-    {{text}} 
-</h1>
-
-<br>
+<h1 class="pageTitle">  {{text}} </h1>
 <div class="selectors">
-    <ion-item>
-        <ion-label>Name</ion-label>
-        <ion-input [(ngModel)] ="name" placeholder="..."></ion-input>
-    </ion-item>
-
     <ion-item>
             <ion-label>Guilds</ion-label>
             <ion-select [(ngModel)]="Guilds" interface="popover">
@@ -24,7 +12,7 @@
         </ion-item>
 
     <ion-item>
-        <ion-label>Time Limit</ion-label>
+        <ion-label>Time limit</ion-label>
         <ion-select [(ngModel)]="timeLimit" interface="popover">
             <ion-option value="30">30 minuten</ion-option>
             <ion-option value="40">40 minuten</ion-option>
@@ -39,7 +27,12 @@
         </ion-item>
 </div>
 
+
+
+
+  
+
 <div class="createButton"> 
     <button ion-button large (click)="values()">Create battle</button>
 </div>
-</body>
+ 
