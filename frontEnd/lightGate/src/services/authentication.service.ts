@@ -117,6 +117,11 @@ export class AuthenticationService
         console.log(this.battle_offset_url + this.currentPage);
         return this._http.get<IBattleRoot[]>(this.battle_offset_url + this.currentPage + "&name=" + this.currentName).toPromise();
     }
+
+    async GetGuildsFromBattle(id:string)
+    {
+        return this._http.get<IGuild[]>(this.battle_url + id + "/guilds/").toPromise();
+    }
     
 }
 
@@ -139,5 +144,6 @@ export class AuthenticationService
     name: string;
     guildId: string;
     isCreator: boolean;
+    myJob: string;
   }
   

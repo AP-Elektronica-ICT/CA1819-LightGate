@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NavController} from 'ionic-angular';
 import { EnterPlayernameComponent } from "../enter-playername/enter-playername";
 import { AuthenticationService, IBattleRoot } from '../../services/authentication.service';
+import { JoinTeamComponent } from '../join-team/join-team';
 
 /**
  * Generated class for the SelectBattleScreenComponent component.
@@ -45,6 +46,9 @@ export class SelectBattleScreenComponent implements OnInit {
     //"this.currentBattleId" aan toevoegen in de service zelf. Als je nog vragen moest hebben over de backend kan je altijd de documentatie raadplegen 
     //(die ik straks nog ga updaten) of je kan het altijd aan mij vragen. Deze commentaar mag trouwens volledig weg als alles duidelijk is.
     console.log(this.battles[index].id);
+    this.navCtrl.push(JoinTeamComponent, {
+      battleId: this.battles[index].id
+    });
 
 
     //this.navCtrl.push(EnterPlayernameComponent);
