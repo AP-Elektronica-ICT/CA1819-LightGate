@@ -8,7 +8,7 @@
 
     <ion-item>
       <ion-card *ngFor="let guild of guilds; let i = index">
-        <ion-card-header><h1>{{guild.name}}</h1></ion-card-header>
+        <ion-card-header><h1>naam: {{guild.guildName}}</h1></ion-card-header>
 
         <ion-card-content>
           <ion-grid>
@@ -20,7 +20,7 @@
             <ion-row *ngFor="let player of guild.players">
               <ion-col><p class="col1">{{player.name}}</p></ion-col>
               <ion-col><p class="col2">-</p></ion-col>
-              <ion-col col-1><ion-icon name="color-filter"></ion-icon></ion-col>
+              <ion-col col-1><ion-icon name={{getJobIcon(player.myJob)}}></ion-icon></ion-col>
               <ion-col><p class="col3">{{player.myJob}}</p></ion-col>
             </ion-row>
 
