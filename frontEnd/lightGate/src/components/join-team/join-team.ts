@@ -20,7 +20,6 @@ export class JoinTeamComponent implements OnInit {
   battleId: string;
   guilds: IGuild[];
   currentPlayerId: number;
-  jobLogo: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _authSvc: AuthenticationService, private _storageSvc: StorageService) {
     console.log('Hello JoinTeamComponent');
@@ -39,29 +38,6 @@ export class JoinTeamComponent implements OnInit {
     }
 
     this.guilds = await this._authSvc.GetGuildsFromBattle(this.battleId);
-  }
-
-  getJobIcon(job: string){
-    let iconName:string;
-    switch(job){
-      case "knight": {
-        iconName = "color-filter";
-        break;
-      } 
-      case "mage": {
-        iconName = "color-wand";
-        break;
-      }
-      case "cleric":{
-        iconName = "sunny";
-        break;
-      }
-      default: {
-        iconName = "help";
-        break;
-      }
-    }
-    return iconName;
   }
 
   join(index: number){
