@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CameraPreview, CameraPreviewOptions, CameraPreviewPictureOptions } from '@ionic-native/camera-preview';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { ObjectivesService, IObjectivesRoot } from '../../services/objectives.service';
+import { resolveDefinition } from '@angular/core/src/view/util';
+
+
 
 /**
  * Generated class for the BattleComponent component.
@@ -15,17 +19,18 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
   selector: 'app-battle',
   templateUrl: 'battle.html'
 })
-export class BattleComponent {
+export class BattleComponent implements OnInit {
   
-  constructor(platform: Platform, private CameraPreview: CameraPreview, private StatusBar:StatusBar, private SplashScreen:SplashScreen, private screenOrientation: ScreenOrientation) {
+  constructor(platform: Platform, private CameraPreview: CameraPreview, private StatusBar:StatusBar, private SplashScreen:SplashScreen, private screenOrientation: ScreenOrientation, private _svc : ObjectivesService) {
     platform.ready().then(() => {
       //locks screen in landscape mode
-      try {
-        this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
-      } catch (error) {
-        console.log("something went wrong during locking of screen");
-        throw(error);
-      }
+      
+      // try {
+      //   this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+      // } catch (error) {
+      //   console.log("something went wrong during locking of screen");
+      //   throw(error);
+      // }
 
       //define variables
       this.StatusBar.styleDefault();
@@ -55,6 +60,27 @@ export class BattleComponent {
     
   }
   
+  objectives: IObjectivesRoot[];
+  picture : string;
+  randomObjCount : number;
+  randomObjective: string;
+
+  //get Random objectieve from database
+  ngOnInit()
+  {
+    this._svc.getObjectives().subscribe(result => {
+      this.objectives = result;
+      console.log(result);
+      //console.log(result[0].description);
+      this.randomObjCount = this.getRandomInt(this.objectives.length);
+      console.log();
+      this.randomObjective = this.objectives[this.randomObjCount].description;
+    });
+  }
+  getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+  
 
   pictureOpts: CameraPreviewPictureOptions = {
     width: 1280,
@@ -62,16 +88,27 @@ export class BattleComponent {
     quality: 85
   }
   
-  picture : string;
+  
   takePicture() {
     this.CameraPreview.takePicture(this.pictureOpts).then((imageData) => {
       console.log("This button will end up taking a ");
       this.picture = 'data:image/jpeg;base64,' + imageData;
       console.log(this.picture)
+
+      
     }, (err) => {
       console.log(err);
     });
   };
+
+  // postRequest()
+  // {
+  //   var body = {
+  //     name: (<HTMLInputElement>document.getElementById("player_name")).value
+  //   }
+
+  //   this._svc.postBase64(body);
+  // }
 
   Alert() {
     console.log("This button will end up taking a picture but has to function behind it just yet");

@@ -1,4 +1,40 @@
 <!-- Generated template for the SelectBattleScreenComponent component -->
-<div>
+
+<h1 class="alignCenter">
   {{text}}
-</div>
+</h1>
+
+<br>
+
+<ion-searchbar
+  [(ngModel)]="myInput"
+  [debounce]="500"
+  (ionInput)="onInput($event)"  
+  >
+</ion-searchbar>
+
+<br>
+
+<ion-list radio-group>
+
+  <ion-list *ngIf="battles != null" >
+    
+    <ion-list-header>
+      <ion-label>Name</ion-label>
+      <ion-label>Time Limit</ion-label>
+      <ion-label></ion-label>
+    </ion-list-header>
+
+    <ion-item *ngFor="let battle of battles; let i = index">
+      <ion-label>{{battle.name}}</ion-label>
+      <ion-label>{{battle.battleTimeInMinutes}} min</ion-label>
+      <button ion-button (click)="join(i)" outline item-end>Join</button>
+    </ion-item>
+    
+  </ion-list>
+
+  <div class="alignCenterHorizontal">
+    <button ion-button (click)="previous()">Previous</button> <button ion-button (click)="next()">Next</button>
+  </div>
+  
+

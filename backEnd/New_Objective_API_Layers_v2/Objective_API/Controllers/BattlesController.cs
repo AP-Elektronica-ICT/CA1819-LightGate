@@ -18,14 +18,14 @@ public class BattlesController : Controller
         this.facade = facade;
     }
 
-    // Get full library
+    /* Get full library
 
     [HttpGet]
 
     public List<Battle> GetBattlesLibrary()
     {
         return facade.GetBattlesLibrary();
-    }
+    }*/
 
     // Get specific battle
 
@@ -41,8 +41,24 @@ public class BattlesController : Controller
 
     [HttpPost]
 
-    public void CreateBattle([FromBody] Battle newBattle)
+    public Battle CreateBattle([FromBody] Battle newBattle)
     {
-        facade.CreateBattle(newBattle);
+        return facade.CreateBattle(newBattle);
+    }
+
+    //Search specific battle using pagination
+    [HttpGet]
+    public List<Battle> GetAllBattlesWith(string name, int? page, string sort, int length = 5, string dir = "asc")
+    {
+        return facade.GetAllBattlesWith(name, page, sort, length, dir);
+    }
+
+    // Get all players from a specific guild
+    [Route("{id}/guilds")]
+    [HttpGet]
+
+    public List<Guild> GetAllGuildsFromBattle(Guid id)
+    {
+        return facade.GetAllGuildsFromBattle(id);
     }
 }

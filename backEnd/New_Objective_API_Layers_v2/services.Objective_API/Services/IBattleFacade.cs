@@ -10,6 +10,8 @@ namespace services.Objective_API.Services
     {
         List<Battle> GetBattlesLibrary();
         Battle GetBattle(Guid id);
-        void CreateBattle(Battle newBattle);
+        Battle CreateBattle(Battle newBattle);
+        List<Battle> GetAllBattlesWith(string name, int? page, string sort, int length = 3, string dir = "asc");
+        List<Guild> GetAllGuildsFromBattle(Guid id);
     }
 }

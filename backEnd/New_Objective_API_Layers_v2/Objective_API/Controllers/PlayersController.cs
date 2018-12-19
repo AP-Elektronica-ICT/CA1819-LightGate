@@ -44,5 +44,14 @@ public class PlayersController : Controller
     public Player CreatePlayer([FromBody] Player newPlayer)
     {
         return facade.CreatePlayer(newPlayer);
-    }   
+    }
+
+    // Update specific player
+    [Route("{id}")]
+    [HttpPut]
+
+    public Player UpdatePlayer([FromBody] Player updatePlayer)
+    {
+        return facade.UpdatePlayer(updatePlayer);
+    }
 }
