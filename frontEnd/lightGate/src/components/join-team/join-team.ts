@@ -19,10 +19,9 @@ export class JoinTeamComponent implements OnInit {
   text: string;
   battleId: string;
   guilds: IGuild[];
-  //teams: string[] = ["Dunkey", "Unraveller", "Knack2Baby!"];
-  //members = [["Mario", "Knight"], ["Link", "Mage"], ["Kirby", "Cleric"], ["Samus", "Knight"]];
+  currentPlayerId: number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _authSvc: AuthenticationService, private _storage:StorageService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _authSvc: AuthenticationService, private _storageSvc: StorageService) {
     console.log('Hello JoinTeamComponent');
     this.text = 'Select a team you would like to join';
     this.battleId = navParams.get('battleId');
@@ -31,19 +30,25 @@ export class JoinTeamComponent implements OnInit {
 
   async ngOnInit()
   {
+    try{
+      this.currentPlayerId = await this._storageSvc.loadFromStorage('sessionId');
+    }
+    catch(e){
+      console.log(e);
+    }
+
     this.guilds = await this._authSvc.GetGuildsFromBattle(this.battleId);
   }
 
-  join(index:number){
+  join(index: number){
     console.log("index:" + index);
     console.log("clicked on Join");
 
     var pBody = {
       id: this.currentPlayerId,
-      guildId: result.id,
-      isCreator: true}
+      guildId: this.guilds[index].id}
 
-    this._authSvc.putPlayerRequest()
+    this._authSvc.putPlayerRequest(this.currentPlayerId, pBody);
 
     this.navCtrl.push(BattleComponent);
   }

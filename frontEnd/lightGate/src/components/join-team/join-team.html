@@ -7,7 +7,7 @@
   <ion-list scroll="true">
 
     <ion-item>
-      <ion-card *ngFor="let guild of guilds">
+      <ion-card *ngFor="let guild of guilds; let i = index">
         <ion-card-header><h1>{{guild.name}}</h1></ion-card-header>
 
         <ion-card-content>
@@ -50,7 +50,7 @@
             </ion-row> -->
 
             <ion-row>
-              <ion-col><button ion-button (click)="join()" outline item-end>Join</button></ion-col>
+              <ion-col><button ion-button (click)="join(i)" outline item-end>Join</button></ion-col>
             </ion-row>
 
           </ion-grid>
