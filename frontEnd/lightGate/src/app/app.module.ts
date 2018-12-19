@@ -21,6 +21,7 @@ import { OverviewScreenComponent } from '../components/overview-screen/overview-
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { StorageService } from '../services/storage.service';
+import { JoinTeamComponent } from '../components/join-team/join-team';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { StorageService } from '../services/storage.service';
     EnterPlayernameComponent,
     DeclareGuildNamesComponent,
     OverviewScreenComponent,
+    JoinTeamComponent,
 
   ],
   imports: [
@@ -53,7 +55,8 @@ import { StorageService } from '../services/storage.service';
     DeclareGuildNamesComponent,
     JoinCreateComponent,
     SelectBattleScreenComponent,
-    EnterPlayernameComponent
+    EnterPlayernameComponent,
+    JoinTeamComponent
   ],
   providers: [
     ScreenOrientation,

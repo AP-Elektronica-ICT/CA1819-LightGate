@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!-- <ion-scroll > -->
+
+  <ion-list scroll="true">
+
+    <ion-item>
+      <ion-card *ngFor="let guild of guilds; let i = index">
+        <ion-card-header><h1>naam: {{guild.guildName}}</h1></ion-card-header>
+
+        <ion-card-content>
+          <ion-grid>
+
+            <ion-row>
+              <ion-col><h2 class="col2">Members</h2></ion-col>
+            </ion-row>
+
+            <ion-row *ngFor="let player of guild.players">
+              <ion-col><p class="col1">{{player.name}}</p></ion-col>
+              <ion-col><p class="col2">-</p></ion-col>
+              <ion-col col-1><ion-icon name={{getJobIcon(player.myJob)}}></ion-icon></ion-col>
+              <ion-col><p class="col3">{{player.myJob}}</p></ion-col>
+            </ion-row>
+
+            <!-- <ion-row>
+              <ion-col><p class="col1">Trump</p></ion-col>
+              <ion-col><p class="col2">-</p></ion-col>
+              <ion-col col-1><ion-icon name="color-filter"></ion-icon></ion-col>
+              <ion-col><p class="col3">Knight</p></ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col><p class="col1">Denny</p></ion-col>
+              <ion-col><p class="col2">-</p></ion-col>
+              <ion-col col-1><ion-icon name="color-wand"></ion-icon></ion-col>
+              <ion-col><p class="col3">Mage</p></ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col><p class="col1">Stijn</p></ion-col>
+              <ion-col><p class="col2">-</p></ion-col>
+              <ion-col col-1><ion-icon name="sunny"></ion-icon></ion-col>
+              <ion-col><p class="col3">Cleric</p></ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col><p class="col1">Steven</p></ion-col>
+              <ion-col><p class="col2">-</p></ion-col>
+              <ion-col col-1><ion-icon name="color-wand"></ion-icon></ion-col>
+              <ion-col><p class="col3">Mage</p></ion-col>
+            </ion-row> -->
+
+            <ion-row>
+              <ion-col><button ion-button (click)="join(i)" outline item-end>Join</button></ion-col>
+            </ion-row>
+
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+<!-- </ion-scroll> -->
+
+

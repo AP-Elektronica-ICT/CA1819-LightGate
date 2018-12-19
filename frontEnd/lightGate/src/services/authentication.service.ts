@@ -125,6 +125,11 @@ export class AuthenticationService
         return this._http.post<IImage>(this.image_url, body).toPromise();
     }
 
+
+    async GetGuildsFromBattle(id:string)
+    {
+        return this._http.get<IGuild[]>(this.battle_url + id + "/guilds/").toPromise();
+    }
     
     
 }
@@ -148,6 +153,7 @@ export class AuthenticationService
     name: string;
     guildId: string;
     isCreator: boolean;
+    myJob: string;
   }
 
   export interface IImage {
