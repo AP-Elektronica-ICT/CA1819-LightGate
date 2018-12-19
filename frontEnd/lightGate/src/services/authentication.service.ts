@@ -7,44 +7,31 @@ import "rxjs/add/observable/of";
 @Injectable()
 export class AuthenticationService
 {
-    private currentPage = 0;
-    private currentName = "";
-
     // Uncomment for mobile debug
     //private url = "http://objective-creation-tool.azurewebsites.net/api/v1/players/";
     
     // Uncomment for localhost debug
-    private player_url = "http://localhost:2052/api/v1/players/";
-    private guild_url = "http://localhost:2052/api/v1/guilds/";
-    private battle_url = "http://localhost:2052/api/v1/battles/";
-    //private battle_offset_url = "http://localhost:2052/api/v1/battles?name=" + this.currentName + "&page=" + this.currentPage + "/";
-    private battle_offset_url = "http://localhost:2052/api/v1/battles?page=";
-
+    private url = "http://localhost:2052/api/v1/players/";
     public currentSessionId : string = null;
 
     constructor(private _http: HttpClient) { }
 
-    //Create, Get, Update and Delete Players
+    //Create and Get Players
 
-    getPlayers(): Observable<IPlayer>
+    getPlayers(): Observable<IPlayersRoot>
     {
-        return this._http.get<IPlayer>(this.player_url);
+        return this._http.get<IPlayersRoot>(this.url);
     }
 
    async postPlayerRequest(body: any)
     {
-        return this._http.post<IPlayer>(this.player_url, body).toPromise(); //toPromise / Async Await                        
+        return this._http.post<IPlayersRoot>(this.url, body).toPromise(); //toPromise / Async Await                        
     }
 
     deletePlayerRequest(id: any, name: string)
     {
-        this._http.delete(this.player_url + id).subscribe();
+        this._http.delete(this.url + id).subscribe();
         console.log("Completed Objective #" + id + " - " + name);       
-    }
-
-    async putPlayerRequest(id: any, body: any)
-    {
-        return this._http.put<IPlayer>(this.player_url + id, body).toPromise();
     }
 
     //Session Code
@@ -61,83 +48,13 @@ export class AuthenticationService
 
     async getCurrentPlayer(id: string)
     {   
-        console.log("Getting current Player... [" + this.player_url + id + "]");
-        return this._http.get<IPlayer>(this.player_url + id).toPromise();
+        console.log("Getting current Player... [" + this.url + id + "]");
+        return this._http.get<IPlayersRoot>(this.url + id).toPromise();
     }
-
-    //Create Guilds and Battles
-
-    async postGuildRequest(body: any)
-    {
-        return this._http.post<IGuild>(this.guild_url, body).toPromise(); 
-    }
-
-    async postBattleRequest(body: any)
-    {
-        return this._http.post<IBattleRoot>(this.battle_url, body).toPromise();
-    }
-
-    //Pagination
-
-    setCurrentName(currentName: string)
-    {
-        //Search in all pages
-        this.currentPage = null;
-
-        //Set current name
-        this.currentName = currentName;        
-    }
-
-    next()
-    {
-        this.currentPage += 1;
-    }
-
-    previous()
-    {
-        if(this.currentPage != 0)
-        {
-            this.currentPage -= 1;
-        }
-        else
-        {
-            this.currentPage = 0;
-        }
-    }
-
-    //Get Guilds and Battles
-
-    async getBattles()
-    {
-        return this._http.get<IBattleRoot[]>(this.battle_url).toPromise();
-    }
-
-    async getBattlesWith()
-    {
-        console.log(this.battle_offset_url + this.currentPage);
-        return this._http.get<IBattleRoot[]>(this.battle_offset_url + this.currentPage + "&name=" + this.currentName).toPromise();
-    }
-    
 }
 
- export interface IBattleRoot {
+export interface IPlayersRoot {
     id: string;
     name: string;
-    battleTimeInMinutes: string;
-    guilds: IGuild[];
-  }
-  
-  export interface IGuild {
-    id: string;
-    guildName: string;
-    battleId: string;
-    players: IPlayer[];
-  }
-  
-  export interface IPlayer {
-    id: string;
-    name: string;
-    guildId: string;
-    isCreator: boolean;
   }
   

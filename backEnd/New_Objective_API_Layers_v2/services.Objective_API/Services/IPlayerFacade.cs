@@ -11,6 +11,5 @@ namespace services.Objective_API.Services
         List<Player> GetPlayersLibrary();
         Player GetPlayer(Guid id);
         Player CreatePlayer(Player newPlayer);
-        Player UpdatePlayer(Player updatePlayer);
     }
 }

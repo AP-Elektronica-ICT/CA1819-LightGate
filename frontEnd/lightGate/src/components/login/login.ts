@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService, IPlayer } from '../../services/authentication.service';
+import { AuthenticationService, IPlayersRoot } from '../../services/authentication.service';
 import { NavController } from 'ionic-angular';
+import { SelectionComponent } from '../selection/selection';
 import { StorageService } from '../../services/storage.service';
-import { JoinCreateComponent } from '../join-create/join-create';
 
 /**
  * Generated class for the LoginComponent component.
@@ -16,7 +16,7 @@ import { JoinCreateComponent } from '../join-create/join-create';
 })
 export class LoginComponent implements OnInit{
 
-  result : IPlayer
+  result : IPlayersRoot
   player_name: string
   player_job: string
 
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit{
           //Save to Storage
           await this._storageSvc.saveToStorage(this.result.id);
           //Go to the selection screen
-            this._navCtrl.push(JoinCreateComponent);
+            this._navCtrl.push(SelectionComponent);
     }
     catch(e)
     {

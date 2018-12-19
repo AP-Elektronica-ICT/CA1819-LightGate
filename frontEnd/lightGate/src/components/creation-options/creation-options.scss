@@ -1,19 +1,12 @@
 creation-options {
 
 }
-
+.pageTitle{
+    text-align: center;
+}
+.createButton{
+    text-align: center;
+}
 .selectors{
     color: black;
-    width: 30rem;
-}
-
-.button{
-    width: 20rem;
-}
-
-.alignCenter{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
