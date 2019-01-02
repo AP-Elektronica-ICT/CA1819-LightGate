@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
+import { BattleComponent } from "../battle/battle";
+import { AuthenticationService, IGuild } from '../../services/authentication.service';
+import { StorageService } from '../../services/storage.service';
 
-/**
- * Generated class for the OverviewScreenComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
+
 @Component({
   selector: 'overview-screen',
   templateUrl: 'overview-screen.html'
