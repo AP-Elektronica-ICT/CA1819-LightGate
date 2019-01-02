@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { BattleComponent } from "../battle/battle";
 import { AuthenticationService, IGuild } from '../../services/authentication.service';
@@ -9,13 +9,36 @@ import { StorageService } from '../../services/storage.service';
   selector: 'overview-screen',
   templateUrl: 'overview-screen.html'
 })
-export class OverviewScreenComponent {
+export class OverviewScreenComponent implements OnInit{
 
-  text: string;
+  battleId: string;
+  guilds: IGuild[];
+  currentPlayerId: number;
 
-  constructor() {
-    console.log('Hello OverviewScreenComponent Component');
-    this.text = 'Hello World';
+  constructor(public navParams: NavParams,
+              private _storageSvc: StorageService,
+              private _authSvc: AuthenticationService,
+              public navCtrl: NavController) {
+    console.log('Hello OverviewScreenComponent');
+    this.battleId = navParams.get('battleId');
+    console.log(this.battleId);
   }
+
+  async ngOnInit()
+  {
+    try{
+      this.currentPlayerId = await this._storageSvc.loadFromStorage('sessionId');
+    }
+    catch(e){
+      console.log(e);
+    }
+    this.guilds = await this._authSvc.GetGuildsFromBattle(this.battleId);
+  }
+
+  toBattle(){
+    console.log("This naviates to the battle screen");
+    this.navCtrl.push(BattleComponent);
+  }
+
 
 }

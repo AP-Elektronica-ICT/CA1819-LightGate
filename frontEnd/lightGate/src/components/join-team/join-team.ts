@@ -4,12 +4,6 @@ import { BattleComponent } from "../battle/battle";
 import { AuthenticationService, IGuild } from '../../services/authentication.service';
 import { StorageService } from '../../services/storage.service';
 
-/**
- * Generated class for the JoinTeamComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'join-team',
   templateUrl: 'join-team.html'
@@ -22,7 +16,10 @@ export class JoinTeamComponent implements OnInit {
   currentPlayerId: number;
   jobLogo: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _authSvc: AuthenticationService, private _storageSvc: StorageService) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private _authSvc: AuthenticationService,
+              private _storageSvc: StorageService) {
     console.log('Hello JoinTeamComponent');
     this.text = 'Select a team you would like to join';
     this.battleId = navParams.get('battleId');

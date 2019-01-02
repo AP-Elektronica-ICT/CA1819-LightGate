@@ -1,5 +1,24 @@
 overview-screen {
 
+    .backButton{
+        position: fixed;
+        top: 15pt;
+        left: 15pt;
+        width: 40pt;
+        height: 40pt;
+        line-height: 29pt;
+        background-color: royalblue;
+        color: white;
+        font-size: 35pt;
+        border-radius: 50pt;
+        text-align: center;
+    }
+
+    span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
     ion-card-header{
         position: relative;
         text-align: center;
@@ -33,6 +52,10 @@ overview-screen {
     }
     .col{
         height: 20pt;
+    }
+
+    .whiteSpace{
+        height: 50pt;
     }
 
 }
