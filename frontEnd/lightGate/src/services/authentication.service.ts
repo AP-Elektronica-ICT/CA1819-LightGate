@@ -119,6 +119,11 @@ export class AuthenticationService
         return this._http.get<IBattleRoot[]>(this.battle_offset_url + this.currentPage + "&name=" + this.currentName).toPromise();
     }
 
+    async getCurrentBattle(id: string)
+    {
+        return this._http.get<IBattleRoot>(this.battle_url + id).toPromise();
+    }
+
     //Post Images
     async postImageRequest(body: any)
     {
@@ -126,9 +131,15 @@ export class AuthenticationService
     }
 
 
-    async GetGuildsFromBattle(id:string)
+    async getGuildsFromBattle(id:string)
     {
         return this._http.get<IGuild[]>(this.battle_url + id + "/guilds/").toPromise();
+    }
+
+    //Put Battle
+    async putBattleRequest(id: any, body: any)
+    {
+        return this._http.put<IBattleRoot>(this.battle_url + id, body).toPromise();
     }
     
     
@@ -139,6 +150,7 @@ export class AuthenticationService
     name: string;
     battleTimeInMinutes: string;
     guilds: IGuild[];
+    inSession: boolean;
   }
   
   export interface IGuild {

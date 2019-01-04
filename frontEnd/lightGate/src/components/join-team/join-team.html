@@ -3,12 +3,12 @@
 
 
 <!-- <ion-scroll > -->
-
+<ion-content>
   <ion-list scroll="true">
 
     <ion-item>
       <ion-card *ngFor="let guild of guilds; let i = index">
-        <ion-card-header><h1>naam: {{guild.guildName}}</h1></ion-card-header>
+        <ion-card-header><h1>{{guild.guildName}}</h1></ion-card-header>
 
         <ion-card-content>
           <ion-grid>
@@ -24,33 +24,12 @@
               <ion-col><p class="col3">{{player.myJob}}</p></ion-col>
             </ion-row>
 
-            <!-- <ion-row>
-              <ion-col><p class="col1">Trump</p></ion-col>
-              <ion-col><p class="col2">-</p></ion-col>
-              <ion-col col-1><ion-icon name="color-filter"></ion-icon></ion-col>
-              <ion-col><p class="col3">Knight</p></ion-col>
-            </ion-row>
             <ion-row>
-              <ion-col><p class="col1">Denny</p></ion-col>
-              <ion-col><p class="col2">-</p></ion-col>
-              <ion-col col-1><ion-icon name="color-wand"></ion-icon></ion-col>
-              <ion-col><p class="col3">Mage</p></ion-col>
+              <ion-col><button ion-button (click)="join(i)" outline item-end>Join</button></ion-col>             
             </ion-row>
-            <ion-row>
-              <ion-col><p class="col1">Stijn</p></ion-col>
-              <ion-col><p class="col2">-</p></ion-col>
-              <ion-col col-1><ion-icon name="sunny"></ion-icon></ion-col>
-              <ion-col><p class="col3">Cleric</p></ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col><p class="col1">Steven</p></ion-col>
-              <ion-col><p class="col2">-</p></ion-col>
-              <ion-col col-1><ion-icon name="color-wand"></ion-icon></ion-col>
-              <ion-col><p class="col3">Mage</p></ion-col>
-            </ion-row> -->
 
             <ion-row>
-              <ion-col><button ion-button (click)="join(i)" outline item-end>Join</button></ion-col>
+                <ion-col><p class="error">{{error}}</p></ion-col>
             </ion-row>
 
           </ion-grid>
@@ -58,6 +37,13 @@
       </ion-card>
     </ion-item>
   </ion-list>
+
+
+  <div class="alignCenter">
+    <button *ngIf="isCreator != false || inSession != false" ion-button (click)="startBattle()">Start Battle</button>
+    <button ion-button (click)="refresh()">Refresh</button>
+  </div>
+</ion-content>
 
 <!-- </ion-scroll> -->
 

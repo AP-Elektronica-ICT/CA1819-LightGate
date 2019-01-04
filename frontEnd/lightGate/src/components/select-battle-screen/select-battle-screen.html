@@ -1,5 +1,13 @@
 <!-- Generated template for the SelectBattleScreenComponent component -->
 
+<!-- <ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+</ion-content> -->
+
 <h1 class="alignCenter">
   {{text}}
 </h1>
@@ -34,7 +42,9 @@
   </ion-list>
 
   <div class="alignCenterHorizontal">
-    <button ion-button (click)="previous()">Previous</button> <button ion-button (click)="next()">Next</button>
+    <button ion-button (click)="previous()">Previous</button> <button ion-button (click)="refresh()">Refresh</button> <button ion-button (click)="next()">Next</button>    
   </div>
+
+  
   
 
