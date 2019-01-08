@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Clarifai;
+using businessLayer.Objective_API.Clarifai;
 
 namespace businessLayer.Objective_API.Facades
 {
     public class ImageFacade: IImageFacade
     {
         private readonly LibraryContext context;
+        ImageRecognizer clarifai = new ImageRecognizer();
 
         public ImageFacade(LibraryContext context)
         {
@@ -65,9 +67,12 @@ namespace businessLayer.Objective_API.Facades
             try
             {
                 newImage.Id = Guid.NewGuid();
-
+                Console.WriteLine("THE POSTED IMAGE IS " + newImage.Base64String);
                 context.Images.Add(newImage);
                 context.SaveChanges();
+
+                PredictLabels(newImage.Base64String);
+
                 return newImage;
             }
             catch (Exception e)
@@ -76,6 +81,12 @@ namespace businessLayer.Objective_API.Facades
                 throw e;
             }
         }
+
+        async void PredictLabels(string base64)
+        {
+            await clarifai.PredictLabels(base64);
+        }
+
 
         // -- END -- 
     }
