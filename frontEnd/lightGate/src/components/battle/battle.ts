@@ -147,6 +147,9 @@ export class BattleComponent implements OnInit {
           console.log(data);
           this.imgurUrl = data.data.link;
           console.log(this.imgurUrl);
+
+          // TODO: Remove postImageRequest here
+          this.postImageRequest();
       },
       (err: HttpErrorResponse) => {
           if (err.error instanceof Error) {
