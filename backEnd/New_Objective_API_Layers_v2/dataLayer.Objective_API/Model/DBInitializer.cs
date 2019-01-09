@@ -17,7 +17,8 @@ public class DBInitializer
                 {
                     Id = System.Guid.NewGuid(),
                     Name = "myFirstBattle",
-                    BattleTimeInMinutes = "30"
+                    BattleTimeInMinutes = "30",
+                    InSession = false
                 };
 
 

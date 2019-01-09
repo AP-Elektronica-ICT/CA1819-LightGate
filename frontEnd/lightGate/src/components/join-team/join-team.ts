@@ -1,15 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { BattleComponent } from "../battle/battle";
-import { AuthenticationService, IGuild } from '../../services/authentication.service';
+import { AuthenticationService, IGuild, IBattleRoot } from '../../services/authentication.service';
 import { StorageService } from '../../services/storage.service';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-/**
- * Generated class for the JoinTeamComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'join-team',
   templateUrl: 'join-team.html'
@@ -19,10 +14,17 @@ export class JoinTeamComponent implements OnInit {
   text: string;
   battleId: string;
   guilds: IGuild[];
-  currentPlayerId: number;
+  currentBattle: IBattleRoot;
+  currentPlayerId: string;
   jobLogo: string;
+  isCreator: boolean = false;
+  inSession: boolean = false;
+  error: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _authSvc: AuthenticationService, private _storageSvc: StorageService) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private _authSvc: AuthenticationService,
+              private _storageSvc: StorageService) {
     console.log('Hello JoinTeamComponent');
     this.text = 'Select a team you would like to join';
     this.battleId = navParams.get('battleId');
@@ -33,12 +35,14 @@ export class JoinTeamComponent implements OnInit {
   {
     try{
       this.currentPlayerId = await this._storageSvc.loadFromStorage('sessionId');
+      var currentPlayer = await this._authSvc.getCurrentPlayer(this.currentPlayerId);
+      this.isCreator = currentPlayer.isCreator;
     }
     catch(e){
       console.log(e);
     }
 
-    this.guilds = await this._authSvc.GetGuildsFromBattle(this.battleId);
+    this.refresh();
   }
 
   getJobIcon(job: string){
@@ -64,17 +68,52 @@ export class JoinTeamComponent implements OnInit {
     return iconName;
   }
 
-  join(index: number){
+  async join(index: number){
+    
+    if(this.guilds[index].players.length < 4)
+    {
     console.log("index:" + index);
-    console.log("clicked on Join");
 
     var pBody = {
       id: this.currentPlayerId,
       guildId: this.guilds[index].id}
 
-    this._authSvc.putPlayerRequest(this.currentPlayerId, pBody);
+    await this._authSvc.putPlayerRequest(this.currentPlayerId, pBody);
 
+    this.refresh();
+    }
+    else
+    {
+      this.error = "this group is full".toUpperCase();
+    }
+  }
+
+  async startBattle()
+  {
+    if(this.isCreator)
+    {
+      var body = {
+        id: this.battleId,
+        inSession: true
+      }
+      //put request
+      await this._authSvc.putBattleRequest(this.battleId, body);            
+    }
+    
     this.navCtrl.push(BattleComponent);
+  }
+
+  async refresh()
+  {
+    this.currentBattle = await this._authSvc.getCurrentBattle(this.battleId);
+    this.guilds = this.currentBattle.guilds;
+
+    console.log(this.currentBattle);
+
+    if(this.currentBattle.inSession)
+    {
+      this.inSession = true;
+    }
   }
 
 }
