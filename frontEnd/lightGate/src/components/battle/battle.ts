@@ -6,7 +6,7 @@ import { CameraPreview, CameraPreviewOptions, CameraPreviewPictureOptions } from
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { ObjectivesService, IObjectivesRoot } from '../../services/objectives.service';
 import { resolveDefinition } from '@angular/core/src/view/util';
-import { AuthenticationService, IImage } from '../../services/authentication.service';
+import {AuthenticationService, IImage, IPlayer} from '../../services/authentication.service';
 import { StorageService } from '../../services/storage.service';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
@@ -26,7 +26,7 @@ export class BattleComponent implements OnInit {
   constructor(private httpClient:HttpClient, platform: Platform, private CameraPreview: CameraPreview, private StatusBar:StatusBar, private SplashScreen:SplashScreen, private screenOrientation: ScreenOrientation, private _svc : ObjectivesService, private _authSvc: AuthenticationService, private _storageSvc: StorageService) {
     platform.ready().then(() => {
       //locks screen in landscape mode
-
+      // TODO: Uncommend when deploying on mobile devide
       // try {
       //   this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
       // } catch (error) {
@@ -142,8 +142,8 @@ export class BattleComponent implements OnInit {
       //image: base64Image
     };
     const headers = new HttpHeaders({'Authorization':'Client-ID e89b61d9f20f749'});
-    this.httpClient.post(url, body, {headers: headers}).subscribe(
-      (data) => {
+    this.httpClient.post<IResult>(url, body, {headers: headers}).subscribe(
+      (data : IResult) => {
           console.log(data);
           this.imgurUrl = data.data.link;
           console.log(this.imgurUrl);
@@ -164,4 +164,22 @@ export class BattleComponent implements OnInit {
   }
 
 
+  Playername1Placeholder: string;
+  Playername2Placeholder: string;
+  Playername1Placeholder = "Left";
+  Playername2Placeholder = "Right";
+
+
+  getPlayers(){
+    this._authSvc.get
+  }
+
+
+}
+
+export interface IInfo{
+  link: string;
+}
+export interface IResult {
+  data:IInfo;
 }

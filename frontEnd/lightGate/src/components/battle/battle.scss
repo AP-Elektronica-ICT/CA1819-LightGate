@@ -1,3 +1,19 @@
 battle {
 
 }
+.TopRow{
+  display: flex;
+}
+.TopLeft {
+  flex-flow: row nowrap;
+  flex-grow: 1;
+}
+.Topmid {
+  flex-flow: row nowrap;
+  flex-grow: 2;
+}
+.TopRight {
+  flex-flow: row nowrap;
+  flex-grow: 1;
+  text-align: right;
+}
