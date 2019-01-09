@@ -54,7 +54,7 @@ export class JoinTeamComponent implements OnInit {
       case "knight": {
         iconName = "color-filter";
         break;
-      } 
+      }
       case "mage": {
         iconName = "color-wand";
         break;
@@ -72,7 +72,7 @@ export class JoinTeamComponent implements OnInit {
   }
 
   async join(index: number){
-    
+
     if(this.guilds[index].players.length < 4)
     {
     console.log("index:" + index);
@@ -100,10 +100,10 @@ export class JoinTeamComponent implements OnInit {
         inSession: true
       }
       //put request
-      await this._authSvc.putBattleRequest(this.battleId, body);            
+      await this._authSvc.putBattleRequest(this.battleId, body);
     }
-    
-    this.navCtrl.push(OverviewScreenComponent, {
+
+    this.navCtrl.push(BattleComponent, {
       battleId: this.battleId
     });
   }

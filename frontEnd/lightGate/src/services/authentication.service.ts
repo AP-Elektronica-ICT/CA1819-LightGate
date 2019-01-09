@@ -17,7 +17,7 @@ export class AuthenticationService
     private battle_url = this.base_url + "battles/";
     private battle_offset_url = this.base_url + "battles?page=";
     private image_url = this.base_url + "images/"
-    
+
     // Uncomment for localhost debug
     // private player_url = "http://localhost:2052/api/v1/players/";
     // private guild_url = "http://localhost:2052/api/v1/guilds/";
@@ -145,8 +145,13 @@ export class AuthenticationService
     {
         return this._http.put<IBattleRoot>(this.battle_url + id, body).toPromise();
     }
-    
-    
+
+    //get Specific guild from battle
+    async getSpesificGuildFromBattle(battleId: any, guildId: any){
+        return this._http.get<IGuild>(this.battle_url + battleId + "/guilds/" + guildId).toPromise();
+    }
+
+
 }
 
  export interface IBattleRoot {

@@ -8,30 +8,31 @@ import "rxjs/add/observable/of";
 export class ObjectivesService
 {
     // Uncomment for mobile debug
-    // private url = "http://objective-creation-tool.azurewebsites.net/api/v1/objectives";
-    
+    private base_url = "https://lightgate-api.azurewebsites.net/api/v1/";
+    private objective_url = this.base_url + "objectives";
+
     // Uncomment for localhost debug
-    private url = "http://localhost:2052/api/v1/objectives";
+
 
     constructor(private _http: HttpClient) { }
 
     getObjectives(): Observable<IObjectivesRoot[]>
     {
-        return this._http.get<IObjectivesRoot[]>(this.url);
+        return this._http.get<IObjectivesRoot[]>(this.objective_url);
     }
 
     postObjectiveRequest(body: any)
     {
-        this._http.post(this.url, body).subscribe(result => {
+        this._http.post(this.objective_url, body).subscribe(result => {
             console.log("Post Result: " + result);
-                
+
         });
     }
 
     deleteObjectiveRequest(id: any, description: string)
     {
-        this._http.delete(this.url + id).subscribe();
-        console.log("Completed Objective #" + id + " - " + description);       
+        this._http.delete(this.objective_url + id).subscribe();
+        console.log("Completed Objective #" + id + " - " + description);
     }
 }
 
@@ -40,7 +41,7 @@ export interface IObjectivesRoot {
     description: string;
     labels: ILabel[];
   }
-  
+
 export interface ILabel {
     id: number;
     feature: string;

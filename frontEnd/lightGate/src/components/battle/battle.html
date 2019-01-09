@@ -1,23 +1,57 @@
 <ion-content padding>
 
   <!--<button ion-button round (click)="PostToImgur()">Snap Da Pic</button>-->
-  <button ion-button round (click)="PostToImgur()">Snap Da Pic</button>
+  <!--<button ion-button round (click)="PostToImgur()">Snap Da Pic</button>-->
   <!-- <button ion-button round (click)="lockScreenOrientation()">Lock Screen</button> -->
   <!-- <button ion-button round (click)="lockScreenOrientation()">Lock this bitch</button>
   <button ion-button round (click)="getCurrentScreenOrientation()">check screen</button> -->
   <p id="msg"></p>
-
+  <div class="container">
   <div class="TopRow">
-    <div class="TopLeft">
-      {{ Playername1Placeholder }}
+    <!--<div *ngIf="players != null && players.length > 0" class="TopLeft">-->
+    <div *ngIf="players[0] != null" class="TopLeft">
+      {{ players[0].name }} <br>
+      {{ players[0].myJob }}
     </div>
     <div class="TopMid">
       <div>
         {{ randomObjective }}
       </div>
     </div>
-    <div class="TopRight">
-      {{ Playername2Placeholder }}
+    <div *ngIf="players[1] != null" class="TopRight">
+      {{ players[1].name }} <br>
+      {{ players[1].myJob }}
     </div>
+  </div>
+
+  <div class="MidRow">
+    <div class="MidLeft">
+      <button ion-button round (click)="PostToImgur()">Overview</button>
+    </div>
+    <div class="MidMid">
+      <div>
+
+      </div>
+    </div>
+    <div class="MidRight">
+      <button ion-button round (click)="PostToImgur()">Attack</button>
+    </div>
+  </div>
+
+  <div class="BottomRow">
+    <div *ngIf="players[2] != null" class="BottomLeft">
+      {{ players[2].name }} <br>
+      {{ players[2].myJob }}
+    </div>
+    <div class="BottomMid">
+      <div>
+
+      </div>
+    </div>
+    <div *ngIf="players[3] != null" class="BottomRight">
+      {{ players[3].name }} <br>
+      {{ players[3].myJob }}
+    </div>
+  </div>
   </div>
 </ion-content>
