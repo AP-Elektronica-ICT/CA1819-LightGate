@@ -1,13 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {NavController, NavParams, DateTime } from 'ionic-angular';
 //import { JoinCreateComponent } from "../join-create/join-create";
 // import { HttpClient, Headers, RequestOptions } from '@angular/common/http';
 
-
-import { JoinCreateComponent } from "../join-create/join-create";
 import { AuthenticationService, IPlayer, IGuild, IBattleRoot } from '../../services/authentication.service';
 import { StorageService } from '../../services/storage.service';
-
+import { JoinTeamComponent } from '../join-team/join-team';
 /**
  * Generated class for the DeclareGuildNamesComponent component.
  *
@@ -19,6 +17,7 @@ import { StorageService } from '../../services/storage.service';
   templateUrl: 'declare-guild-names.html'
 })
 export class DeclareGuildNamesComponent implements OnInit {
+
   Guilds: any;
   timeLimit: any;
   participate: boolean;
@@ -60,12 +59,6 @@ export class DeclareGuildNamesComponent implements OnInit {
     }
   }
 
-
-  sendPostRequest() {
-
-  }
-
-
   addGuild(){
     if(this.guildname === undefined || this.guildname === ""){
       alert('value is undefined')
@@ -84,8 +77,6 @@ export class DeclareGuildNamesComponent implements OnInit {
         //Post guild
         this.postGuildRequest();
 
-        this.navCtrl.push(JoinCreateComponent);
-        alert('all ' + this.Guilds +' guilds have been created')
       }
     }
 
@@ -119,7 +110,11 @@ export class DeclareGuildNamesComponent implements OnInit {
                 //var putResult: IPlayer = await this.putPlayerRequest(result.id);
                     console.log("Guild: " + result.guildName + " | Id: " + result.id + " | Participate: " + this.participate + " | Player Id: " + pResult.id);
               }
-
+              
+              //Push to JoinTeamComponent
+              this.navCtrl.push(JoinTeamComponent, {
+                battleId: battleId
+              });
         }
         catch(e)
         {
@@ -136,26 +131,11 @@ export class DeclareGuildNamesComponent implements OnInit {
     //A battle only has an ID attached to it. You do HAVE to send a body with a post request though.
     var body = {
       name: this.name,
-      battleTimeInMinutes: this.timeLimit
+      battleTimeInMinutes: this.timeLimit,
+      inSession: false
     };
 
     var result: IBattleRoot = await this._authSvc.postBattleRequest(body);
         return result.id;
   }
-
-  /*async putPlayerRequest(guildId: any)
-  {
-    console.log("GUILD-ID: " + guildId);
-
-    var body = {
-      id: this.currentPlayerId,
-      guildId: guildId,
-      isCreator: true
-    }
-
-    var result = await this._authSvc.putPlayerRequest(this.currentPlayerId, body);
-        return result;
-
-  }*/
-
 }

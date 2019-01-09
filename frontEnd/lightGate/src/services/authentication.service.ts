@@ -9,16 +9,21 @@ export class AuthenticationService
 {
     private currentPage = 0;
     private currentName = "";
+    private base_url = "https://lightgate-api.azurewebsites.net/api/v1/";
 
     // Uncomment for mobile debug
-    //private url = "http://objective-creation-tool.azurewebsites.net/api/v1/players/";
+    private player_url = this.base_url + "players/";
+    private guild_url = this.base_url + "guilds/";
+    private battle_url = this.base_url + "battles/";
+    private battle_offset_url = this.base_url + "battles?page=";
+    private image_url = this.base_url + "images/"
     
     // Uncomment for localhost debug
-    private player_url = "http://localhost:2052/api/v1/players/";
-    private guild_url = "http://localhost:2052/api/v1/guilds/";
-    private battle_url = "http://localhost:2052/api/v1/battles/";
-    //private battle_offset_url = "http://localhost:2052/api/v1/battles?name=" + this.currentName + "&page=" + this.currentPage + "/";
-    private battle_offset_url = "http://localhost:2052/api/v1/battles?page=";
+    // private player_url = "http://localhost:2052/api/v1/players/";
+    // private guild_url = "http://localhost:2052/api/v1/guilds/";
+    // private battle_url = "http://localhost:2052/api/v1/battles/";
+    // private battle_offset_url = "http://localhost:2052/api/v1/battles?page=";
+    // private image_url = "http://localhost:2052/api/v1/images/";
 
     public currentSessionId : string = null;
 
@@ -33,13 +38,13 @@ export class AuthenticationService
 
    async postPlayerRequest(body: any)
     {
-        return this._http.post<IPlayer>(this.player_url, body).toPromise(); //toPromise / Async Await                        
+        return this._http.post<IPlayer>(this.player_url, body).toPromise(); //toPromise / Async Await
     }
 
     deletePlayerRequest(id: any, name: string)
     {
         this._http.delete(this.player_url + id).subscribe();
-        console.log("Completed Objective #" + id + " - " + name);       
+        console.log("Completed Objective #" + id + " - " + name);
     }
 
     async putPlayerRequest(id: any, body: any)
@@ -60,7 +65,7 @@ export class AuthenticationService
     }
 
     async getCurrentPlayer(id: string)
-    {   
+    {
         console.log("Getting current Player... [" + this.player_url + id + "]");
         return this._http.get<IPlayer>(this.player_url + id).toPromise();
     }
@@ -69,7 +74,7 @@ export class AuthenticationService
 
     async postGuildRequest(body: any)
     {
-        return this._http.post<IGuild>(this.guild_url, body).toPromise(); 
+        return this._http.post<IGuild>(this.guild_url, body).toPromise();
     }
 
     async postBattleRequest(body: any)
@@ -85,7 +90,7 @@ export class AuthenticationService
         this.currentPage = null;
 
         //Set current name
-        this.currentName = currentName;        
+        this.currentName = currentName;
     }
 
     next()
@@ -118,10 +123,29 @@ export class AuthenticationService
         return this._http.get<IBattleRoot[]>(this.battle_offset_url + this.currentPage + "&name=" + this.currentName).toPromise();
     }
 
-    async GetGuildsFromBattle(id:string)
+    async getCurrentBattle(id: string)
+    {
+        return this._http.get<IBattleRoot>(this.battle_url + id).toPromise();
+    }
+
+    //Post Images
+    async postImageRequest(body: any)
+    {
+        return this._http.post<IImage>(this.image_url, body).toPromise();
+    }
+
+
+    async getGuildsFromBattle(id:string)
     {
         return this._http.get<IGuild[]>(this.battle_url + id + "/guilds/").toPromise();
     }
+
+    //Put Battle
+    async putBattleRequest(id: any, body: any)
+    {
+        return this._http.put<IBattleRoot>(this.battle_url + id, body).toPromise();
+    }
+    
     
 }
 
@@ -130,8 +154,9 @@ export class AuthenticationService
     name: string;
     battleTimeInMinutes: string;
     guilds: IGuild[];
+    inSession: boolean;
   }
-  
+
   export interface IGuild {
     id: string;
     guildName: string;
@@ -139,7 +164,7 @@ export class AuthenticationService
     players: IPlayer[];
     //health: number;
   }
-  
+
   export interface IPlayer {
     id: string;
     name: string;
@@ -147,4 +172,9 @@ export class AuthenticationService
     isCreator: boolean;
     myJob: string;
   }
-  
+
+  export interface IImage {
+      id: string
+      base64String: string
+      playerId: string
+  }

@@ -61,4 +61,13 @@ public class BattlesController : Controller
     {
         return facade.GetAllGuildsFromBattle(id);
     }
+
+    //Update specific battle
+    [Route("{id}")]
+    [HttpPut]
+
+    public Battle UpdateBattle([FromBody] Battle updateBattle)
+    {
+        return facade.UpdateBattle(updateBattle);
+    }
 }

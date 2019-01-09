@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { BattleComponent } from "../battle/battle";
-import { AuthenticationService, IGuild } from '../../services/authentication.service';
+import { AuthenticationService, IGuild, IBattleRoot, IPlayer } from '../../services/authentication.service';
 import { StorageService } from '../../services/storage.service';
-import { OverviewScreenComponent } from "../overview-screen/overview-screen"
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { OverviewScreenComponent } from '../overview-screen/overview-screen';
+import { SelectBattleScreenComponent } from '../select-battle-screen/select-battle-screen';
 
 @Component({
   selector: 'join-team',
@@ -14,8 +16,13 @@ export class JoinTeamComponent implements OnInit {
   text: string;
   battleId: string;
   guilds: IGuild[];
-  currentPlayerId: number;
+  currentBattle: IBattleRoot;
+  currentPlayerId: string;
   jobLogo: string;
+  isCreator: boolean = false;
+  inSession: boolean = false;
+  error: string;
+  currentPlayer: IPlayer;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -31,12 +38,14 @@ export class JoinTeamComponent implements OnInit {
   {
     try{
       this.currentPlayerId = await this._storageSvc.loadFromStorage('sessionId');
+      this.currentPlayer = await this._authSvc.getCurrentPlayer(this.currentPlayerId);
+      this.isCreator = this.currentPlayer.isCreator;
     }
     catch(e){
       console.log(e);
     }
 
-    this.guilds = await this._authSvc.GetGuildsFromBattle(this.battleId);
+    this.refresh();
   }
 
   getJobIcon(job: string){
@@ -62,18 +71,59 @@ export class JoinTeamComponent implements OnInit {
     return iconName;
   }
 
-  join(index: number){
+  async join(index: number){
+    
+    if(this.guilds[index].players.length < 4)
+    {
     console.log("index:" + index);
-    console.log("clicked on Join");
 
     var pBody = {
       id: this.currentPlayerId,
       guildId: this.guilds[index].id}
 
-    this._authSvc.putPlayerRequest(this.currentPlayerId, pBody);
+    await this._authSvc.putPlayerRequest(this.currentPlayerId, pBody);
 
-    //this.navCtrl.push(BattleComponent);
-    this.navCtrl.push(OverviewScreenComponent);
+    this.refresh();
+    }
+    else
+    {
+      this.error = "this group is full".toUpperCase();
+    }
+  }
+
+  async startBattle()
+  {
+    if(this.isCreator)
+    {
+      var body = {
+        id: this.battleId,
+        inSession: true
+      }
+      //put request
+      await this._authSvc.putBattleRequest(this.battleId, body);            
+    }
+    
+    this.navCtrl.push(OverviewScreenComponent, {
+      battleId: this.battleId
+    });
+  }
+
+  async refresh()
+  {
+    this.currentBattle = await this._authSvc.getCurrentBattle(this.battleId);
+    this.guilds = this.currentBattle.guilds;
+
+    console.log(this.currentBattle);
+
+    if(this.currentBattle.inSession && this.currentPlayer.guildId != null)
+    {
+      this.inSession = true;
+    }
+  }
+
+  toSelectBattle()
+  {
+    this.navCtrl.push(SelectBattleScreenComponent);
   }
 
 }

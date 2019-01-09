@@ -18,3 +18,30 @@ join-team {
     }
 
 }
+
+.alignCenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error{
+    color: red;
+    font-size: 1rem;
+}
+
+.backButton{
+    position: fixed;
+    top: 15pt;
+    left: 15pt;
+    width: 40pt;
+    height: 40pt;
+    line-height: 29pt;
+    background-color: royalblue;
+    color: white;
+    font-size: 35pt;
+    border-radius: 50pt;
+    text-align: center;
+}
+
