@@ -56,7 +56,8 @@ import { JoinTeamComponent } from '../components/join-team/join-team';
     JoinCreateComponent,
     SelectBattleScreenComponent,
     EnterPlayernameComponent,
-    JoinTeamComponent
+    JoinTeamComponent,
+    OverviewScreenComponent
   ],
   providers: [
     ScreenOrientation,
