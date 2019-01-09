@@ -1,12 +1,12 @@
 <ion-content padding>
 
   <!--<button ion-button round (click)="PostToImgur()">Snap Da Pic</button>-->
-  <button ion-button round (click)="PostToImgur()">Snap Da Pic</button>
+  <!--<button ion-button round (click)="PostToImgur()">Snap Da Pic</button>-->
   <!-- <button ion-button round (click)="lockScreenOrientation()">Lock Screen</button> -->
   <!-- <button ion-button round (click)="lockScreenOrientation()">Lock this bitch</button>
   <button ion-button round (click)="getCurrentScreenOrientation()">check screen</button> -->
   <p id="msg"></p>
-
+  <div class="container">
   <div class="TopRow">
     <div class="TopLeft">
       {{ Playername1Placeholder }}
@@ -19,5 +19,34 @@
     <div class="TopRight">
       {{ Playername2Placeholder }}
     </div>
+  </div>
+
+  <div class="MidRow">
+    <div class="MidLeft">
+      <button ion-button round (click)="PostToImgur()">Snap Da Pic</button>
+    </div>
+    <div class="MidMid">
+      <div>
+
+      </div>
+    </div>
+    <div class="MidRight">
+      <button ion-button round (click)="PostToImgur()">Snap Da Pic</button>
+    </div>
+  </div>
+
+  <div class="BottomRow">
+    <div class="BottomLeft">
+      {{ Playername3Placeholder }}
+    </div>
+    <div class="BottomMid">
+      <div>
+
+      </div>
+    </div>
+    <div class="BottomRight">
+      {{ Playername4Placeholder }}
+    </div>
+  </div>
   </div>
 </ion-content>

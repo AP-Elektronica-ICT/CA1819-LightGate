@@ -177,13 +177,21 @@ export class BattleComponent implements OnInit {
   }
 
 
-  // Playername1Placeholder: string;
-  // Playername2Placeholder: string;
+  Playername1Placeholder: string;
+  Playername2Placeholder: string;
+  Playername3Placeholder: string;
+  Playername4Placeholder: string;
+  Playername1Placeholder = "test1";
+  Playername2Placeholder = "test2";
+  Playername3Placeholder = "test3";
+  Playername4Placeholder = "test4";
+
   // Playername1Placeholder = "Left";
   // Playername2Placeholder = "Right";
 
 
   async getPlayers(){
+    //API/v1/battles/-battleID-/guilds/-guildID-
     console.log('begin')
     this.currentBattle = await this._authSvc.getCurrentBattle(this.battleId);
     console.log('BATTLEID: ' + this.battleId);
