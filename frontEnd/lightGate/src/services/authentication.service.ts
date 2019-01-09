@@ -12,7 +12,7 @@ export class AuthenticationService
 
     // Uncomment for mobile debug
     //private url = "http://objective-creation-tool.azurewebsites.net/api/v1/players/";
-    
+
     // Uncomment for localhost debug
     private player_url = "http://localhost:2052/api/v1/players/";
     private guild_url = "http://localhost:2052/api/v1/guilds/";
@@ -34,13 +34,13 @@ export class AuthenticationService
 
    async postPlayerRequest(body: any)
     {
-        return this._http.post<IPlayer>(this.player_url, body).toPromise(); //toPromise / Async Await                        
+        return this._http.post<IPlayer>(this.player_url, body).toPromise(); //toPromise / Async Await
     }
 
     deletePlayerRequest(id: any, name: string)
     {
         this._http.delete(this.player_url + id).subscribe();
-        console.log("Completed Objective #" + id + " - " + name);       
+        console.log("Completed Objective #" + id + " - " + name);
     }
 
     async putPlayerRequest(id: any, body: any)
@@ -61,7 +61,7 @@ export class AuthenticationService
     }
 
     async getCurrentPlayer(id: string)
-    {   
+    {
         console.log("Getting current Player... [" + this.player_url + id + "]");
         return this._http.get<IPlayer>(this.player_url + id).toPromise();
     }
@@ -70,7 +70,7 @@ export class AuthenticationService
 
     async postGuildRequest(body: any)
     {
-        return this._http.post<IGuild>(this.guild_url, body).toPromise(); 
+        return this._http.post<IGuild>(this.guild_url, body).toPromise();
     }
 
     async postBattleRequest(body: any)
@@ -86,7 +86,7 @@ export class AuthenticationService
         this.currentPage = null;
 
         //Set current name
-        this.currentName = currentName;        
+        this.currentName = currentName;
     }
 
     next()
@@ -130,8 +130,7 @@ export class AuthenticationService
     {
         return this._http.get<IGuild[]>(this.battle_url + id + "/guilds/").toPromise();
     }
-    
-    
+
 }
 
  export interface IBattleRoot {
@@ -140,14 +139,15 @@ export class AuthenticationService
     battleTimeInMinutes: string;
     guilds: IGuild[];
   }
-  
+
   export interface IGuild {
     id: string;
     guildName: string;
     battleId: string;
     players: IPlayer[];
+    //health: number;
   }
-  
+
   export interface IPlayer {
     id: string;
     name: string;
@@ -161,4 +161,3 @@ export class AuthenticationService
       base64String: string
       playerId: string
   }
-  
