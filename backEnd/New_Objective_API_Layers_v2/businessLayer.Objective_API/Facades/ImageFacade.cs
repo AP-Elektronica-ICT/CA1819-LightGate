@@ -67,7 +67,8 @@ namespace businessLayer.Objective_API.Facades
                 newImage.Id = Guid.NewGuid();
 
                 context.Images.Add(newImage);
-                context.SaveChanges();
+                context.SaveChanges();                
+
                 return newImage;
             }
             catch (Exception e)
@@ -76,7 +77,7 @@ namespace businessLayer.Objective_API.Facades
                 throw e;
             }
         }
-
+        
         // -- END -- 
     }
 }

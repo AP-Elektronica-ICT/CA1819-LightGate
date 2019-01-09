@@ -14,6 +14,7 @@ namespace Model
         public Guid? BattleId { get; set; }
         public Guild AttackedBy { get; set; }
         public Guild Attacking { get; set; }
+        public int Health { get; set; }
 
         [ForeignKey("BattleId")]
         [JsonIgnore]
