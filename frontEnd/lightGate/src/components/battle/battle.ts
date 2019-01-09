@@ -78,7 +78,7 @@ export class BattleComponent implements OnInit {
   currentGuild: IGuild;
   guildId: string;
   index: number;
-  players: IPlayer[];
+  players: IPlayer[]= [];
 
 
   //get Random objectieve from database
@@ -191,6 +191,11 @@ export class BattleComponent implements OnInit {
 
 
   async getPlayers(){
+    this.Playername1Placeholder = "test1";
+    this.Playername2Placeholder = "test2";
+    this.Playername3Placeholder = "test3";
+    this.Playername4Placeholder = "test4";
+
     //API/v1/battles/-battleID-/guilds/-guildID-
     console.log('begin')
     this.currentBattle = await this._authSvc.getCurrentBattle(this.battleId);
@@ -200,7 +205,8 @@ export class BattleComponent implements OnInit {
     this.guildId = this.currentPlayer.guildId;
     console.log('GUILDID: ' + this.guildId);
     this.currentGuild = await this._authSvc.getSpesificGuildFromBattle(this.battleId, this.guildId);
-    console.log(this.currentGuild.players);
+    console.log(this.currentGuild.players[1]);
+    this.players = this.currentGuild.players;
 
     // TODO: request naar nieuwe route
 
