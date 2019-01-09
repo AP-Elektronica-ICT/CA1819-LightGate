@@ -6,9 +6,11 @@ import { CameraPreview, CameraPreviewOptions, CameraPreviewPictureOptions } from
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { ObjectivesService, IObjectivesRoot } from '../../services/objectives.service';
 import { resolveDefinition } from '@angular/core/src/view/util';
-import {AuthenticationService, IImage, IPlayer} from '../../services/authentication.service';
+import {AuthenticationService, IImage, IPlayer, IBattleRoot, IGuild} from '../../services/authentication.service';
 import { StorageService } from '../../services/storage.service';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { NavController, NavParams } from 'ionic-angular';
+
 
 
 /**
@@ -23,7 +25,8 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 })
 export class BattleComponent implements OnInit {
 
-  constructor(private httpClient:HttpClient, platform: Platform, private CameraPreview: CameraPreview, private StatusBar:StatusBar, private SplashScreen:SplashScreen, private screenOrientation: ScreenOrientation, private _svc : ObjectivesService, private _authSvc: AuthenticationService, private _storageSvc: StorageService) {
+  constructor(private httpClient:HttpClient, platform: Platform, private CameraPreview: CameraPreview, private StatusBar:StatusBar, private SplashScreen:SplashScreen, private screenOrientation: ScreenOrientation, private _svc : ObjectivesService, private _authSvc: AuthenticationService, private _storageSvc: StorageService, public navCtrl: NavController,
+              public navParams: NavParams) {
     platform.ready().then(() => {
       //locks screen in landscape mode
       // TODO: Uncommend when deploying on mobile devide
@@ -35,6 +38,8 @@ export class BattleComponent implements OnInit {
       // }
 
       //define variables
+      this.battleId = navParams.get('battleId');
+      this.index = navParams.get('index');
       this.StatusBar.styleDefault();
       this.SplashScreen.hide();
       var cameraWidth = window.screen.width;
@@ -68,6 +73,13 @@ export class BattleComponent implements OnInit {
   randomObjCount : number;
   randomObjective: string;
   currentPlayerId: string;
+  battleId: string;
+  currentBattle: IBattleRoot;
+  currentPlayer: IPlayer;
+  guildId: string;
+  index: number;
+  players: IPlayer[];
+
 
   //get Random objectieve from database
   async ngOnInit()
@@ -83,6 +95,7 @@ export class BattleComponent implements OnInit {
 
     try{
       this.currentPlayerId = await this._storageSvc.loadFromStorage('sessionId');
+      await this.getPlayers();
     }
     catch(e)
     {
@@ -168,11 +181,26 @@ export class BattleComponent implements OnInit {
   // Playername2Placeholder: string;
   // Playername1Placeholder = "Left";
   // Playername2Placeholder = "Right";
-  //
-  //
-  // getPlayers(){
-  //   this._authSvc.get
-  // }
+
+
+  async getPlayers(){
+    console.log('begin')
+    this.currentBattle = await this._authSvc.getCurrentBattle(this.battleId);
+    console.log('BATTLEID: ' + this.battleId);
+    this.currentPlayer = await this._authSvc.getCurrentPlayer(this.currentPlayerId);
+    console.log('CURRENTPLAYER: ' + this.currentPlayer);
+    this.guildId = this.currentPlayer.guildId;
+    console.log('GUILDID: ' + this.guildId);
+
+    // TODO: request naar nieuwe route
+
+
+    // this.guilds = await this.currentBattle.guilds;
+    // console.log('after guilds')
+    // this.players = await this.guilds[this.index].players;
+    // console.log('---------PLAYERS----------' + this.players);
+
+  }
 
 
 }
