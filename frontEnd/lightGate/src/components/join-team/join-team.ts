@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { BattleComponent } from "../battle/battle";
 import { AuthenticationService, IGuild } from '../../services/authentication.service';
 import { StorageService } from '../../services/storage.service';
+import { OverviewScreenComponent } from "../overview-screen/overview-screen"
 
 @Component({
   selector: 'join-team',
@@ -71,7 +72,8 @@ export class JoinTeamComponent implements OnInit {
 
     this._authSvc.putPlayerRequest(this.currentPlayerId, pBody);
 
-    this.navCtrl.push(BattleComponent);
+    //this.navCtrl.push(BattleComponent);
+    this.navCtrl.push(OverviewScreenComponent);
   }
 
 }

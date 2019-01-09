@@ -28,30 +28,22 @@
             </ion-row>
             <ion-row>
                 <ion-col><h2>Attacking:</h2></ion-col>
-                <ion-col><p>{{guild.attacking}}</p></ion-col>
+                <ion-col *ngIf="guild.attacking != NULL"><p>{{guild.attacking}}</p></ion-col>
+                <ion-col *ngIf="guild.attacking == NULL"><p>no team yet</p></ion-col>
             </ion-row>
             <ion-row>
                 <ion-col><h2>Attacked by:</h2></ion-col>
-                <ion-col><p>{{guild.attackedBy}}</p></ion-col>
+                <ion-col *ngIf="guild.attacking != NULL"><p>{{guild.attackedBy}}</p></ion-col>
+                <ion-col *ngIf="guild.attacking == NULL"><p>no team yet</p></ion-col>
             </ion-row>
           </ion-grid>
 
         </ion-card-content>
       </ion-card>
-
-      
-
-
-
-
-
-
     </ion-item>
   </ion-list>
 
-
 </ion-content>
-
 
 <div class="backButton" (click)="toBattle()">
   <span>&#8678;</span>
