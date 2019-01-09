@@ -57,6 +57,30 @@ namespace businessLayer.Objective_API.Facades
             }
         }
 
+        //Get specific guild from a specific battle
+        public Guild GetSpecificGuildFromBattle(Guid battleId, Guid guildId)
+        {
+            try
+            {
+                var guild = context.Battles.Include(d => d.Guilds).ThenInclude(d => d.Players)
+                   .SingleOrDefault(d => d.Id == battleId).Guilds.SingleOrDefault(d => d.Id == guildId);
+                //SingleOrDefault is very important here!
+
+                if (guild != null)
+                {
+                    return guild;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("GET SpecificGuildFromBattle() - Status: Failed");
+                throw e;
+            }
+        }
         // Get all guilds from a specific battle
         public List<Guild> GetAllGuildsFromBattle(Guid id)
         {

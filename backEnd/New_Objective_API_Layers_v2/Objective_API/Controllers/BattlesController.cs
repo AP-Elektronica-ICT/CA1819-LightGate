@@ -62,6 +62,13 @@ public class BattlesController : Controller
         return facade.GetAllGuildsFromBattle(id);
     }
 
+    [Route("{battleId}/guilds/{guildId}")]
+    [HttpGet]
+    public Guild GetSpecificGuildFromBattle(Guid battleId, Guid guildId)
+    {
+        return facade.GetSpecificGuildFromBattle(battleId, guildId);
+    }
+
     //Update specific battle
     [Route("{id}")]
     [HttpPut]
