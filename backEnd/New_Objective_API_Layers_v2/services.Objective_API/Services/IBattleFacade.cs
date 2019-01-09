@@ -14,5 +14,6 @@ namespace services.Objective_API.Services
         List<Battle> GetAllBattlesWith(string name, int? page, string sort, int length = 3, string dir = "asc");
         List<Guild> GetAllGuildsFromBattle(Guid id);
         Battle UpdateBattle(Battle updateBattle);
+        Guild GetSpecificGuildFromBattle(Guid battleId, Guid guildId);
     }
 }
