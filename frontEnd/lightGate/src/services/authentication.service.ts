@@ -137,6 +137,7 @@ export class AuthenticationService
     guildName: string;
     battleId: string;
     players: IPlayer[];
+    //health: number;
   }
   
   export interface IPlayer {
