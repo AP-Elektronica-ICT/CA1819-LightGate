@@ -57,7 +57,7 @@ namespace businessLayer.Objective_API.Facades
             }
         }
 
-        // Get specific battle
+        // Get all guilds from a specific battle
         public List<Guild> GetAllGuildsFromBattle(Guid id)
         {
             try
@@ -126,6 +126,36 @@ namespace businessLayer.Objective_API.Facades
 
             return query.ToList();
         }
+
+        public Battle UpdateBattle(Battle updateBattle)
+        {
+            try
+            {
+                var orgBattle = context.Battles
+                   .SingleOrDefault(d => d.Id == updateBattle.Id);
+
+                if (orgBattle != null)
+                {
+                    orgBattle.InSession = updateBattle.InSession;
+
+                    context.SaveChanges();
+                    return orgBattle;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("PUT UpdateBattle() - Status: Failed");
+                throw e;
+            }
+
+
+        }
+
+
 
 
         // -- END -- 

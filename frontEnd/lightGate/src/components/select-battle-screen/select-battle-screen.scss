@@ -1,9 +1,13 @@
 select-battle-screen {
 
 }
-.button{
+button{
     width: 10rem;
   }
+
+  ::-webkit-scrollbar{
+    display:none;
+    }
   
   .alignCenter{
     display: flex;

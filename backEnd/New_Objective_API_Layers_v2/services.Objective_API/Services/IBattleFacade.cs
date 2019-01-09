@@ -13,5 +13,6 @@ namespace services.Objective_API.Services
         Battle CreateBattle(Battle newBattle);
         List<Battle> GetAllBattlesWith(string name, int? page, string sort, int length = 3, string dir = "asc");
         List<Guild> GetAllGuildsFromBattle(Guid id);
+        Battle UpdateBattle(Battle updateBattle);
     }
 }

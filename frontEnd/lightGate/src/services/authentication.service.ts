@@ -9,17 +9,21 @@ export class AuthenticationService
 {
     private currentPage = 0;
     private currentName = "";
+    private base_url = "https://lightgate-api.azurewebsites.net/api/v1/";
 
     // Uncomment for mobile debug
-    //private url = "http://objective-creation-tool.azurewebsites.net/api/v1/players/";
-
+    private player_url = this.base_url + "players/";
+    private guild_url = this.base_url + "guilds/";
+    private battle_url = this.base_url + "battles/";
+    private battle_offset_url = this.base_url + "battles?page=";
+    private image_url = this.base_url + "images/"
+    
     // Uncomment for localhost debug
-    private player_url = "http://localhost:2052/api/v1/players/";
-    private guild_url = "http://localhost:2052/api/v1/guilds/";
-    private battle_url = "http://localhost:2052/api/v1/battles/";
-    //private battle_offset_url = "http://localhost:2052/api/v1/battles?name=" + this.currentName + "&page=" + this.currentPage + "/";
-    private battle_offset_url = "http://localhost:2052/api/v1/battles?page=";
-    private image_url = "http://localhost:2052/api/v1/images";
+    // private player_url = "http://localhost:2052/api/v1/players/";
+    // private guild_url = "http://localhost:2052/api/v1/guilds/";
+    // private battle_url = "http://localhost:2052/api/v1/battles/";
+    // private battle_offset_url = "http://localhost:2052/api/v1/battles?page=";
+    // private image_url = "http://localhost:2052/api/v1/images/";
 
     public currentSessionId : string = null;
 
@@ -119,6 +123,11 @@ export class AuthenticationService
         return this._http.get<IBattleRoot[]>(this.battle_offset_url + this.currentPage + "&name=" + this.currentName).toPromise();
     }
 
+    async getCurrentBattle(id: string)
+    {
+        return this._http.get<IBattleRoot>(this.battle_url + id).toPromise();
+    }
+
     //Post Images
     async postImageRequest(body: any)
     {
@@ -126,11 +135,18 @@ export class AuthenticationService
     }
 
 
-    async GetGuildsFromBattle(id:string)
+    async getGuildsFromBattle(id:string)
     {
         return this._http.get<IGuild[]>(this.battle_url + id + "/guilds/").toPromise();
     }
 
+    //Put Battle
+    async putBattleRequest(id: any, body: any)
+    {
+        return this._http.put<IBattleRoot>(this.battle_url + id, body).toPromise();
+    }
+    
+    
 }
 
  export interface IBattleRoot {
@@ -138,6 +154,7 @@ export class AuthenticationService
     name: string;
     battleTimeInMinutes: string;
     guilds: IGuild[];
+    inSession: boolean;
   }
 
   export interface IGuild {

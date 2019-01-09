@@ -1,5 +1,24 @@
 overview-screen {
 
+    .backButton{
+        position: fixed;
+        top: 15pt;
+        left: 15pt;
+        width: 40pt;
+        height: 40pt;
+        line-height: 29pt;
+        background-color: royalblue;
+        color: white;
+        font-size: 35pt;
+        border-radius: 50pt;
+        text-align: center;
+    }
+
+    span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
     ion-card-header{
         position: relative;
         text-align: center;
@@ -7,25 +26,36 @@ overview-screen {
 
     .health-outer{
         width: 96%;
-        margin: 10px 2%;
-        padding: 3px;
+        margin: 2%;
+        padding: 3pt;
         text-align: center;
         background-color: #f4f4f4;
         border: 1px solid #dcdcdc;
-        color: #fff;
-        border-radius: 20px;
+        border-radius: 20pt;
     }
  
     .health-inner{
         min-width: 15%;
         white-space: nowrap;
         overflow: hidden;
-        padding: 5px;
-        border-radius: 20px;
-        background-color: green;
+        padding: 1pt;
+        border-radius: 20pt;
+        background-color: limegreen;
+        color: #f4f4f4;
     }
 
-    .col1{text-align: left;}
-    .col2{text-align: center;}
+    .col1{
+        text-align: center;
+    }
+    .col2{
+        text-align: center;
+    }
+    .col{
+        height: 20pt;
+    }
+
+    .whiteSpace{
+        height: 50pt;
+    }
 
 }
