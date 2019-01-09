@@ -164,15 +164,15 @@ export class BattleComponent implements OnInit {
   }
 
 
-  Playername1Placeholder: string;
-  Playername2Placeholder: string;
-  Playername1Placeholder = "Left";
-  Playername2Placeholder = "Right";
-
-
-  getPlayers(){
-    this._authSvc.get
-  }
+  // Playername1Placeholder: string;
+  // Playername2Placeholder: string;
+  // Playername1Placeholder = "Left";
+  // Playername2Placeholder = "Right";
+  //
+  //
+  // getPlayers(){
+  //   this._authSvc.get
+  // }
 
 
 }
