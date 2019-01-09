@@ -2,6 +2,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+<!-- <ion-scroll > -->
+<ion-content>
   <ion-list scroll="true">
 
     <ion-item>
@@ -23,7 +25,11 @@
             </ion-row>
 
             <ion-row>
-              <ion-col><button ion-button (click)="join(i)" outline item-end>Join</button></ion-col>
+              <ion-col><button ion-button (click)="join(i)" outline item-end>Join</button></ion-col>             
+            </ion-row>
+
+            <ion-row>
+                <ion-col><p class="error">{{error}}</p></ion-col>
             </ion-row>
 
           </ion-grid>
@@ -32,5 +38,13 @@
     </ion-item>
   </ion-list>
 
+
+  <div class="alignCenter">
+    <button *ngIf="isCreator != false || inSession != false" ion-button (click)="startBattle()">Start Battle</button>
+    <button ion-button (click)="refresh()">Refresh</button>
+  </div>
+</ion-content>
+
+<!-- </ion-scroll> -->
 
 

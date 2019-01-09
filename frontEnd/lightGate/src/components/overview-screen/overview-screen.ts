@@ -32,7 +32,7 @@ export class OverviewScreenComponent implements OnInit{
     catch(e){
       console.log(e);
     }
-    this.guilds = await this._authSvc.GetGuildsFromBattle(this.battleId);
+    this.guilds = await this._authSvc.getGuildsFromBattle(this.battleId);
   }
 
   toBattle(){

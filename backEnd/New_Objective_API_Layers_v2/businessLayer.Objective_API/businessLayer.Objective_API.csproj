@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Clarifai" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\dataLayer.Objective_API\dataLayer.Objective_API.csproj" />
     <ProjectReference Include="..\services.Objective_API\services.Objective_API.csproj" />
   </ItemGroup>

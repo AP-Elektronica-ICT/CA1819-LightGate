@@ -18,3 +18,15 @@ join-team {
     }
 
 }
+
+.alignCenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error{
+    color: red;
+    font-size: 1rem;
+}
