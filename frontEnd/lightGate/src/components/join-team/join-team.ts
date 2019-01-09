@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { BattleComponent } from "../battle/battle";
-import { AuthenticationService, IGuild, IBattleRoot } from '../../services/authentication.service';
+import { AuthenticationService, IGuild, IBattleRoot, IPlayer } from '../../services/authentication.service';
 import { StorageService } from '../../services/storage.service';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { OverviewScreenComponent } from '../overview-screen/overview-screen';
+import { SelectBattleScreenComponent } from '../select-battle-screen/select-battle-screen';
 
 @Component({
   selector: 'join-team',
@@ -20,6 +22,7 @@ export class JoinTeamComponent implements OnInit {
   isCreator: boolean = false;
   inSession: boolean = false;
   error: string;
+  currentPlayer: IPlayer;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -35,8 +38,8 @@ export class JoinTeamComponent implements OnInit {
   {
     try{
       this.currentPlayerId = await this._storageSvc.loadFromStorage('sessionId');
-      var currentPlayer = await this._authSvc.getCurrentPlayer(this.currentPlayerId);
-      this.isCreator = currentPlayer.isCreator;
+      this.currentPlayer = await this._authSvc.getCurrentPlayer(this.currentPlayerId);
+      this.isCreator = this.currentPlayer.isCreator;
     }
     catch(e){
       console.log(e);
@@ -100,7 +103,9 @@ export class JoinTeamComponent implements OnInit {
       await this._authSvc.putBattleRequest(this.battleId, body);            
     }
     
-    this.navCtrl.push(BattleComponent);
+    this.navCtrl.push(OverviewScreenComponent, {
+      battleId: this.battleId
+    });
   }
 
   async refresh()
@@ -110,10 +115,15 @@ export class JoinTeamComponent implements OnInit {
 
     console.log(this.currentBattle);
 
-    if(this.currentBattle.inSession)
+    if(this.currentBattle.inSession && this.currentPlayer.guildId != null)
     {
       this.inSession = true;
     }
+  }
+
+  toSelectBattle()
+  {
+    this.navCtrl.push(SelectBattleScreenComponent);
   }
 
 }

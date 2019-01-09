@@ -27,12 +27,13 @@ export class OverviewScreenComponent implements OnInit{
   async ngOnInit()
   {
     try{
-      this.currentPlayerId = await this._storageSvc.loadFromStorage('sessionId');
+      this.currentPlayerId = await this._storageSvc.loadFromStorage('sessionId');    
+      this.guilds = await this._authSvc.getGuildsFromBattle(this.battleId);
     }
     catch(e){
       console.log(e);
     }
-    this.guilds = await this._authSvc.getGuildsFromBattle(this.battleId);
+
   }
 
   toBattle(){
