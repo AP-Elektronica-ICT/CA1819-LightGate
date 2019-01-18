@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using businessLayer.Objective_API.Facades;
+using businessLayer.Objective_API.Hubs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -42,7 +43,10 @@ namespace Objective_API
             services.AddScoped<IBattleFacade, BattleFacade>();
             services.AddScoped<IImageFacade, ImageFacade>();
 
+            services.AddSignalR();
+
             services.AddCors();
+
             services.AddMvc().AddJsonOptions(options => {
                 options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
@@ -58,11 +62,18 @@ namespace Objective_API
 
             app.UseCors(builder =>{
                 builder.AllowAnyOrigin()
+                    .AllowCredentials()
                     .AllowAnyHeader()
                     .AllowAnyMethod();
             });
 
+            
+
             app.UseMvc();
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<BattleHub>("/battleHub");
+            });
 
             DBInitializer.Initialize(objectiveLibrary);
         }

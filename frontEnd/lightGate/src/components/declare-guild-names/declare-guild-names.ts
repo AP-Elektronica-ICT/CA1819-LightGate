@@ -6,6 +6,8 @@ import {NavController, NavParams, DateTime } from 'ionic-angular';
 import { AuthenticationService, IPlayer, IGuild, IBattleRoot } from '../../services/authentication.service';
 import { StorageService } from '../../services/storage.service';
 import { JoinTeamComponent } from '../join-team/join-team';
+import { HubConnection, HubConnectionBuilder } from '@aspnet/signalr';
+import * as signalR from '@aspnet/signalr';
 /**
  * Generated class for the DeclareGuildNamesComponent component.
  *
@@ -35,6 +37,8 @@ export class DeclareGuildNamesComponent implements OnInit {
   result: string;
   storage_result: IPlayer;
 
+  private hubConnection: HubConnection;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private _authSvc : AuthenticationService, private _storageSvc : StorageService) {
     console.log('Hello DeclareGuildNamesComponent Component');
     this.text = 'Create guild names';
@@ -49,6 +53,19 @@ export class DeclareGuildNamesComponent implements OnInit {
 
   async ngOnInit()
   {
+
+    this.hubConnection = new HubConnectionBuilder()
+    .withUrl('https://lightgate-api.azurewebsites.net/battleHub')
+    .configureLogging(signalR.LogLevel.Information)
+    .build();
+
+    this.hubConnection
+    .start().then(() => {
+     console.log("Connected");            
+     })
+    .catch(err => console.error(err.toString()))
+
+
     try{
       this.result = await this._storageSvc.loadFromStorage('sessionId');
       this.currentPlayerId = this.result;
@@ -82,6 +99,14 @@ export class DeclareGuildNamesComponent implements OnInit {
 
   }
 
+  public updateBattleList(): void {
+
+    if (this.hubConnection) {
+        this.hubConnection.invoke('UpdateBattleList');
+    }
+
+}
+
   async postGuildRequest()
   {
       var battleId = await this.postBattleRequest();
@@ -111,6 +136,9 @@ export class DeclareGuildNamesComponent implements OnInit {
                     console.log("Guild: " + result.guildName + " | Id: " + result.id + " | Participate: " + this.participate + " | Player Id: " + pResult.id);
               }
               
+              //Reload data for others
+              this.updateBattleList();
+
               //Push to JoinTeamComponent
               this.navCtrl.push(JoinTeamComponent, {
                 battleId: battleId

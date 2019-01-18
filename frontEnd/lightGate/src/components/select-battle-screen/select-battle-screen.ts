@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {NavController} from 'ionic-angular';
 import { AuthenticationService, IBattleRoot } from '../../services/authentication.service';
 import { JoinTeamComponent } from '../join-team/join-team';
+import { HubConnection, HubConnectionBuilder } from '@aspnet/signalr';
+import * as signalR from '@aspnet/signalr';
 
 /**
  * Generated class for the SelectBattleScreenComponent component.
@@ -16,27 +18,38 @@ import { JoinTeamComponent } from '../join-team/join-team';
 export class SelectBattleScreenComponent implements OnInit {
   
   text: string;
-  battles: IBattleRoot[]
+  battles: IBattleRoot[] 
+
+  private hubConnection: HubConnection;
 
   constructor(public navCtrl: NavController, private _authSvc: AuthenticationService) {
     console.log('Hello SelectBattleScreenComponent Component');
     this.text = 'Select Battle';  
   }
 
+
   ngOnInit()
-  {
-    this.getBattlesWith(); 
+  { 
+     this.getBattlesWith();
+
+     this.hubConnection = new HubConnectionBuilder()
+     .withUrl('https://lightgate-api.azurewebsites.net/battleHub')
+     .configureLogging(signalR.LogLevel.Information)
+     .build();
+
+     this.hubConnection
+     .start().then(() => {
+      console.log("Connected");            
+      })
+     .catch(err => console.error(err.toString()))
+
+     this.hubConnection.on('UpdateBattleList', () => {
+
+      console.log("Reloading Battles");
+      this.getBattlesWith();
+
+     });   
   }
-
-  // doRefresh(refresher) {
-  //   console.log('Begin async operation', refresher);
-
-  //   setTimeout(() => {
-  //     console.log('Async operation has ended');
-  //     this.getBattlesWith();
-  //     refresher.complete();
-  //   }, 2000);
-  // }
 
   async getBattlesWith()
   {
