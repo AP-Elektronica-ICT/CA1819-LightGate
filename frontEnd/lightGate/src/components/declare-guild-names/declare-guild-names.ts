@@ -37,6 +37,9 @@ export class DeclareGuildNamesComponent implements OnInit {
   result: string;
   storage_result: IPlayer;
 
+  private guilds : IGuild[] = [];
+  private health : number = 100;
+
   private hubConnection: HubConnection;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _authSvc : AuthenticationService, private _storageSvc : StorageService) {
@@ -55,7 +58,7 @@ export class DeclareGuildNamesComponent implements OnInit {
   {
 
     this.hubConnection = new HubConnectionBuilder()
-    .withUrl('https://lightgate-api.azurewebsites.net/battleHub')
+    .withUrl('http://localhost:2052/battleHub')
     .configureLogging(signalR.LogLevel.Information)
     .build();
 
@@ -116,11 +119,14 @@ export class DeclareGuildNamesComponent implements OnInit {
         let body = {
           guildName: this.guildNamesArray[index],
           battleId: battleId,
-          //health: 100
+          health: this.health
         }
 
         try{
           let result: IGuild = await this._authSvc.postGuildRequest(body);
+
+          //push guild into the guild array to use for the attack algorithm
+          this.guilds.push(result);
 
               //Add the player, if participating, to the guild (using guild ID)
               if(this.participate && index == 0)
@@ -134,15 +140,7 @@ export class DeclareGuildNamesComponent implements OnInit {
                 var pResult: IPlayer = await this._authSvc.putPlayerRequest(this.currentPlayerId, pBody);
                 //var putResult: IPlayer = await this.putPlayerRequest(result.id);
                     console.log("Guild: " + result.guildName + " | Id: " + result.id + " | Participate: " + this.participate + " | Player Id: " + pResult.id);
-              }
-              
-              //Reload data for others
-              this.updateBattleList();
-
-              //Push to JoinTeamComponent
-              this.navCtrl.push(JoinTeamComponent, {
-                battleId: battleId
-              });
+              }             
         }
         catch(e)
         {
@@ -150,8 +148,68 @@ export class DeclareGuildNamesComponent implements OnInit {
         }
       };
 
+      //Calculate attack pattern
+      await this.calculateAttackPattern();
+
+      //Reload data for others
+      this.updateBattleList();
+
+      //Push to JoinTeamComponent
+      this.navCtrl.push(JoinTeamComponent, {
+          battleId: battleId
+      });
 
     }
+
+  async calculateAttackPattern ()
+  {
+
+    for (let index = 0; index < this.guilds.length; index++) {
+
+      console.log("Calculating attack pattern for " + this.guilds[index].guildName);
+
+      let body;
+
+      //If it's the last guild in the list
+      if(this.guilds[index] == this.guilds[this.guilds.length - 1])
+      {
+        body = {
+          id: this.guilds[index].id,
+          //attacks first guild in the list
+          attacking: this.guilds[0].id,
+          //attacked by second to last guild
+          attackedBy: this.guilds[this.guilds.length - 2].id,
+          health: this.health
+        }
+      }
+      //If it's the first guild in the list
+      else if (this.guilds[index] == this.guilds[0]) {
+        body = {
+          id: this.guilds[index].id,
+          //attacks next guild
+          attacking: this.guilds[index + 1].id,
+          //attacked by last guild
+          attackedBy: this.guilds[this.guilds.length - 1].id,
+          health: this.health
+        }
+      }
+      //If it's in between the first and last one
+      else
+      {
+        body = {
+          id: this.guilds[index].id,
+          //attacks next guild
+          attacking: this.guilds[index + 1].id,
+          //attacked by previous guild
+          attackedBy: this.guilds[index - 1].id,
+          health: this.health
+        }
+      }
+
+      await this._authSvc.putGuildRequest(this.guilds[index].id, body);      
+      
+    }
+  }  
 
   async postBattleRequest()
   {

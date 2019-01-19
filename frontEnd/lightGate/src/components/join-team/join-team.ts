@@ -6,6 +6,8 @@ import { StorageService } from '../../services/storage.service';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { OverviewScreenComponent } from '../overview-screen/overview-screen';
 import { SelectBattleScreenComponent } from '../select-battle-screen/select-battle-screen';
+import { HubConnection, HubConnectionBuilder } from '@aspnet/signalr';
+import * as signalR from '@aspnet/signalr';
 
 @Component({
   selector: 'join-team',
@@ -24,6 +26,8 @@ export class JoinTeamComponent implements OnInit {
   error: string;
   currentPlayer: IPlayer;
 
+  private hubConnection: HubConnection;
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private _authSvc: AuthenticationService,
@@ -36,6 +40,26 @@ export class JoinTeamComponent implements OnInit {
 
   async ngOnInit()
   {
+    this.hubConnection = new HubConnectionBuilder()
+     .withUrl('http://localhost:2052/battleHub')
+     .configureLogging(signalR.LogLevel.Information)
+     .build();
+
+     this.hubConnection.on('UpdateBattleState', () => {
+
+      console.log("Reloading Battle State");
+      this.refresh();
+
+     });   
+
+     this.hubConnection
+     .start().then(() => {
+      console.log("Connected");            
+      })
+     .catch(err => console.error(err.toString()))
+
+
+
     try{
       this.currentPlayerId = await this._storageSvc.loadFromStorage('sessionId');
       this.currentPlayer = await this._authSvc.getCurrentPlayer(this.currentPlayerId);
@@ -91,6 +115,13 @@ export class JoinTeamComponent implements OnInit {
     }
   }
 
+  public updateBattleState(): void {
+
+    if (this.hubConnection) {
+        this.hubConnection.invoke('UpdateBattleState');
+    }
+  }
+
   async startBattle()
   {
     if(this.isCreator)
@@ -99,8 +130,11 @@ export class JoinTeamComponent implements OnInit {
         id: this.battleId,
         inSession: true
       }
+
       //put request
       await this._authSvc.putBattleRequest(this.battleId, body);
+      this.updateBattleState();
+
     }
 
     this.navCtrl.push(BattleComponent, {
@@ -111,13 +145,14 @@ export class JoinTeamComponent implements OnInit {
   async refresh()
   {
     this.currentBattle = await this._authSvc.getCurrentBattle(this.battleId);
+    this.currentPlayer = await this._authSvc.getCurrentPlayer(this.currentPlayerId);
     this.guilds = this.currentBattle.guilds;
 
     console.log(this.currentBattle);
 
     if(this.currentBattle.inSession && this.currentPlayer.guildId != null)
     {
-      this.inSession = true;
+      this.inSession = true;      
     }
   }
 

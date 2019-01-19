@@ -25,10 +25,12 @@ public class DBInitializer
                 var g = new Guild()
                 {
                     Id = System.Guid.NewGuid(),
-                    GuildName = "DevTeam",                  
+                    GuildName = "DevTeam",
                     BattleId = b.Id,
                     Battle = b,
-                    Health = 100
+                    Health = 100,
+                    AttackedBy = null,
+                    Attacking = null
                 };
 
                 var g2 = new Guild()
@@ -37,7 +39,10 @@ public class DBInitializer
                     GuildName = "OpsTeam",          
                     BattleId = b.Id,
                     Battle = b,
-                    Health = 100
+                    Health = 100,
+                    AttackedBy = null,
+                    Attacking = null
+                    
                 };
 
                 var p = new Player()

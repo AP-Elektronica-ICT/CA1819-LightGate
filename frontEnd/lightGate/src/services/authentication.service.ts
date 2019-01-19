@@ -12,18 +12,18 @@ export class AuthenticationService
     private base_url = "https://lightgate-api.azurewebsites.net/api/v1/";
 
     // Uncomment for mobile debug
-    private player_url = this.base_url + "players/";
-    private guild_url = this.base_url + "guilds/";
-    private battle_url = this.base_url + "battles/";
-    private battle_offset_url = this.base_url + "battles?page=";
-    private image_url = this.base_url + "images/"
+    // private player_url = this.base_url + "players/";
+    // private guild_url = this.base_url + "guilds/";
+    // private battle_url = this.base_url + "battles/";
+    // private battle_offset_url = this.base_url + "battles?page=";
+    // private image_url = this.base_url + "images/"
 
     // Uncomment for localhost debug
-    // private player_url = "http://localhost:2052/api/v1/players/";
-    // private guild_url = "http://localhost:2052/api/v1/guilds/";
-    // private battle_url = "http://localhost:2052/api/v1/battles/";
-    // private battle_offset_url = "http://localhost:2052/api/v1/battles?page=";
-    // private image_url = "http://localhost:2052/api/v1/images/";
+    private player_url = "http://localhost:2052/api/v1/players/";
+    private guild_url = "http://localhost:2052/api/v1/guilds/";
+    private battle_url = "http://localhost:2052/api/v1/battles/";
+    private battle_offset_url = "http://localhost:2052/api/v1/battles?page=";
+    private image_url = "http://localhost:2052/api/v1/images/";
 
     public currentSessionId : string = null;
 
@@ -147,8 +147,14 @@ export class AuthenticationService
     }
 
     //get Specific guild from battle
-    async getSpesificGuildFromBattle(battleId: any, guildId: any){
+    async getSpecificGuildFromBattle(battleId: any, guildId: any){
         return this._http.get<IGuild>(this.battle_url + battleId + "/guilds/" + guildId).toPromise();
+    }
+
+    //Put Guild
+    async putGuildRequest(id: any, body: any)
+    {
+        return this._http.put<IGuild>(this.guild_url + id, body).toPromise();
     }
 
 

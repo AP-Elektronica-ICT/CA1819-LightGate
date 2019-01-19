@@ -12,8 +12,12 @@ namespace Model
         public Guid Id { get; set; }
         public string GuildName { get; set; }
         public Guid? BattleId { get; set; }
-        public Guild AttackedBy { get; set; }
-        public Guild Attacking { get; set; }
+
+        [ForeignKey("AttackedBy")]
+        public Guid? AttackedBy { get; set; }
+
+       [ForeignKey("Attacking")]
+        public Guid? Attacking { get; set; }
         public int Health { get; set; }
 
         [ForeignKey("BattleId")]

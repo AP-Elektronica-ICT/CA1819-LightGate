@@ -33,15 +33,9 @@ export class SelectBattleScreenComponent implements OnInit {
      this.getBattlesWith();
 
      this.hubConnection = new HubConnectionBuilder()
-     .withUrl('https://lightgate-api.azurewebsites.net/battleHub')
+     .withUrl('http://localhost:2052/battleHub')
      .configureLogging(signalR.LogLevel.Information)
      .build();
-
-     this.hubConnection
-     .start().then(() => {
-      console.log("Connected");            
-      })
-     .catch(err => console.error(err.toString()))
 
      this.hubConnection.on('UpdateBattleList', () => {
 
@@ -49,6 +43,12 @@ export class SelectBattleScreenComponent implements OnInit {
       this.getBattlesWith();
 
      });   
+
+     this.hubConnection
+     .start().then(() => {
+      console.log("Connected");            
+      })
+     .catch(err => console.error(err.toString()))
   }
 
   async getBattlesWith()

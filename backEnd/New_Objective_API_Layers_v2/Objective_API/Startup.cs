@@ -43,7 +43,7 @@ namespace Objective_API
             services.AddScoped<IBattleFacade, BattleFacade>();
             services.AddScoped<IImageFacade, ImageFacade>();
 
-            services.AddSignalR();
+            services.AddSignalR();          
 
             services.AddCors();
 
@@ -61,15 +61,14 @@ namespace Objective_API
             }
 
             app.UseCors(builder =>{
-                builder.AllowAnyOrigin()
+                builder.WithOrigins("http://localhost:8100")
                     .AllowCredentials()
                     .AllowAnyHeader()
                     .AllowAnyMethod();
-            });
-
-            
+            });          
 
             app.UseMvc();
+
             app.UseSignalR(routes =>
             {
                 routes.MapHub<BattleHub>("/battleHub");

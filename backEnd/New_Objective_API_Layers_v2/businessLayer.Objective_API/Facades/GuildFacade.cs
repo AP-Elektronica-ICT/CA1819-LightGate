@@ -103,6 +103,38 @@ namespace businessLayer.Objective_API.Facades
             }
         }
 
+        // Update Specific Guild
+
+        public Guild UpdateGuild(Guild updateGuild)
+        {
+            try
+            {
+                var orgGuild = context.Guilds
+                   .SingleOrDefault(d => d.Id == updateGuild.Id);
+
+                if (orgGuild != null)
+                {
+                    orgGuild.Attacking = updateGuild.Attacking;
+                    orgGuild.AttackedBy = updateGuild.AttackedBy;
+                    orgGuild.Health = updateGuild.Health;
+
+                    context.SaveChanges();
+                    return orgGuild;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("PUT UpdateGuild() - Status: Failed");
+                throw e;
+            }
+
+
+        }
+
         // -- END -- 
     }
 }

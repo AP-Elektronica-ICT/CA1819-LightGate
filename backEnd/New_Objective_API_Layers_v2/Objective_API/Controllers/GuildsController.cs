@@ -53,5 +53,15 @@ public class GuildsController : Controller
     public Guild CreateGuild([FromBody] Guild newGuild)
     {
         return facade.CreateGuild(newGuild);
-    }   
+    }
+
+
+    // Update specific guild
+    [Route("{id}")]
+    [HttpPut]
+
+    public Guild UpdateGuild([FromBody] Guild updateGuild)
+    {
+        return facade.UpdateGuild(updateGuild);
+    }
 }

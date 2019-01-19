@@ -12,5 +12,6 @@ namespace services.Objective_API.Services
         Guild GetGuild(Guid id);
         Guild CreateGuild(Guild newGuild);
         List<Player> GetAllPlayersFromGuild(Guid id);
+        Guild UpdateGuild(Guild updateGuild);
     }
 }

@@ -12,5 +12,15 @@ namespace businessLayer.Objective_API.Hubs
         {
             return Clients.All.SendAsync("UpdateBattleList");
         }
+
+        public Task UpdateBattleState()
+        {
+            return Clients.All.SendAsync("UpdateBattleState");
+        }
+
+        public Task UpdateHealthBar()
+        {
+            return Clients.All.SendAsync("UpdateHealthBar");
+        }
     }
 }
