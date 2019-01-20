@@ -7,12 +7,12 @@ namespace Objective_API.Classes.Jobs
 {
     public abstract class BaseFighter
     {
-        public string Name { get; }
+        public string Job { get; }
         protected int power;
 
-        public BaseFighter(string _name, int _power)
+        public BaseFighter(string _job, int _power)
         {
-            Name = _name;
+            Job = _job;
             power = _power;
         }
 

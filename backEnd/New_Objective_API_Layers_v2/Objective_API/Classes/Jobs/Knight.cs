@@ -7,9 +7,7 @@ namespace Objective_API.Classes.Jobs
 {
     public class Knight : BaseFighter
     {
-        public Knight() : base("knight", 10)
-        {
-        }
+        public Knight() : base("knight", 10) {}
 
         public override int UsePower(int health)
         {
