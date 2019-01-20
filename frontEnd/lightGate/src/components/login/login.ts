@@ -3,6 +3,7 @@ import { AuthenticationService, IPlayer } from '../../services/authentication.se
 import { NavController } from 'ionic-angular';
 import { StorageService } from '../../services/storage.service';
 import { JoinCreateComponent } from '../join-create/join-create';
+import { ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the LoginComponent component.
@@ -14,54 +15,71 @@ import { JoinCreateComponent } from '../join-create/join-create';
   selector: 'app-login',
   templateUrl: 'login.html'
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
 
-  result : IPlayer
-  player_name: string
-  player_job: string
+  result: IPlayer;
+  player_name: string;
+  player_job: string;
+  toastMessage: string = "Chose a username and a job";
 
-  constructor(private _authSvc : AuthenticationService, private _storageSvc : StorageService, private _navCtrl: NavController) { }
-  
-  ngOnInit()
-  {
-    
+  constructor(
+    private _authSvc: AuthenticationService,
+    private _storageSvc: StorageService,
+    private _navCtrl: NavController,
+    private toastCtrl: ToastController) { }
+
+  ngOnInit() {
+
   }
 
- async postPlayerRequest()
-  {
-    var body = {
-      name: this.player_name,
-      isCreator: false,
-      myJob: this.player_job
-    }
-    
 
-    try{
-      this.result = await this._authSvc.postPlayerRequest(body);
+  showToast(messageToShow: string) {
+    let toast = this.toastCtrl.create({
+      message: messageToShow,
+      duration: 3000,
+      position: 'top'
+    });
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+    toast.present();
+  }
+
+
+
+  async postPlayerRequest() {
+    if (this.player_name != "" && this.player_name != null && this.player_job != null) {
+      var body = {
+        name: this.player_name,
+        isCreator: false,
+        myJob: this.player_job
+      }
+
+      try {
+        this.result = await this._authSvc.postPlayerRequest(body);
         console.log("Post Result: " + this.result.id);
         this._authSvc.setSessionId(this.result.id);
-          //Save to Storage
-          await this._storageSvc.saveToStorage(this.result.id);
-          //Go to the selection screen
-            this._navCtrl.push(JoinCreateComponent);
+        //Save to Storage
+        await this._storageSvc.saveToStorage(this.result.id);
+        //Go to the selection screen
+        this._navCtrl.push(JoinCreateComponent);
+      }
+      catch (e) {
+        console.log(e);
+      }
     }
-    catch(e)
-    {
-      console.log(e);
-    }     
-                               
-  }
 
-  postGuildRequest()
-  {
+    else {
+      this.showToast(this.toastMessage);
+    }
 
   }
 
-  postBattleRequest()
-  {
 
-  }
 
-  
+  postGuildRequest() { }
+  postBattleRequest() { }
+
+
 
 }

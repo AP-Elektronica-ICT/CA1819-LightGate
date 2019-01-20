@@ -14,7 +14,15 @@
       <img *ngIf="jobImages[0] != null" [src]="jobImages[0]"> <br>      
       {{ players[0].myJob }}
     </div>
+
     <div class="TopMid">
+      <div class="health-outer">
+        <div class="health-inner" [style.width]="currentGuild.health + '%'">{{currentGuild.health}}%</div>
+      </div>
+      <div class="health-outer">
+        <div class="health-inner" [style.width]="currentGuild.health + '%'">{{currentGuild.health}}%</div>
+      </div>
+
       <div>
         {{ randomObjective }}
       </div>
