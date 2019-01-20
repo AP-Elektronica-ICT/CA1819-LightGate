@@ -15,7 +15,7 @@
       {{ players[0].myJob }}
     </div>
 
-    <div class="TopMid">
+    <div *ngIf="currentGuild != null" class="TopMid">
       <div class="health-outer">
         <div class="health-inner" [style.width]="currentGuild.health + '%'">{{currentGuild.health}}%</div>
       </div>
