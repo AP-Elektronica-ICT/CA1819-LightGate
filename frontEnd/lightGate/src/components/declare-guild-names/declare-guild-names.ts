@@ -91,7 +91,7 @@ export class DeclareGuildNamesComponent implements OnInit {
         let body = {
           guildName: this.guildNamesArray[index],
           battleId: battleId,
-          //health: 100
+          health: 100
         }
 
         try{

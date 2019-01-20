@@ -66,3 +66,23 @@ battle {
   flex-grow: 1;
   text-align: right;
 }
+
+.health-outer{
+  width: 96%;
+  margin: 2%;
+  padding: 3pt;
+  text-align: center;
+  background-color: #f4f4f4;
+  border: 1px solid #dcdcdc;
+  border-radius: 20pt;
+}
+
+.health-inner{
+  min-width: 15%;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 1pt;
+  border-radius: 20pt;
+  background-color: limegreen;
+  color: #f4f4f4;
+}
