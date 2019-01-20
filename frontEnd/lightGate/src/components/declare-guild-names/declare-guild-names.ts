@@ -58,7 +58,7 @@ export class DeclareGuildNamesComponent implements OnInit {
   {
 
     this.hubConnection = new HubConnectionBuilder()
-    .withUrl('http://localhost:2052/battleHub')
+    .withUrl('https://lightgate-api.azurewebsites.net/battleHub')
     .configureLogging(signalR.LogLevel.Information)
     .build();
 
@@ -152,11 +152,12 @@ export class DeclareGuildNamesComponent implements OnInit {
       await this.calculateAttackPattern();
 
       //Reload data for others
-      this.updateBattleList();
+      await this.updateBattleList();
 
       //Push to JoinTeamComponent
       this.navCtrl.push(JoinTeamComponent, {
-          battleId: battleId
+          battleId: battleId,
+          hubConnection: this.hubConnection
       });
 
     }

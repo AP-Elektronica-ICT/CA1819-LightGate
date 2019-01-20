@@ -10,6 +10,8 @@ import {AuthenticationService, IImage, IPlayer, IBattleRoot, IGuild} from '../..
 import { StorageService } from '../../services/storage.service';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { NavController, NavParams } from 'ionic-angular';
+import { HubConnection, HubConnectionBuilder } from '@aspnet/signalr';
+import * as signalR from '@aspnet/signalr';
 
 
 
@@ -39,6 +41,7 @@ export class BattleComponent implements OnInit {
 
       //define variables
       this.battleId = navParams.get('battleId');
+      this.hubConnection = navParams.get('hubConnection');
       this.StatusBar.styleDefault();
       this.SplashScreen.hide();
       var cameraWidth = window.screen.width;
@@ -80,10 +83,17 @@ export class BattleComponent implements OnInit {
   index: number;
   players: IPlayer[] = [];
 
+  private hubConnection: HubConnection
 
   //get Random objectieve from database
   async ngOnInit()
   {
+
+     this.hubConnection.on('UpdateCurrentBattle', () => {
+        console.log("Fetching Current Battle...");
+        this.getPlayers();
+     });   
+
     this._svc.getObjectives().subscribe(result => {
       this.objectives = result;
       console.log(result);

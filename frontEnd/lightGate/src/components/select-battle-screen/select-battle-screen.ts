@@ -33,13 +33,13 @@ export class SelectBattleScreenComponent implements OnInit {
      this.getBattlesWith();
 
      this.hubConnection = new HubConnectionBuilder()
-     .withUrl('http://localhost:2052/battleHub')
+     .withUrl('https://lightgate-api.azurewebsites.net/battleHub')
      .configureLogging(signalR.LogLevel.Information)
      .build();
 
      this.hubConnection.on('UpdateBattleList', () => {
 
-      console.log("Reloading Battles");
+      console.log("Fetching Battle List...");
       this.getBattlesWith();
 
      });   
@@ -49,6 +49,7 @@ export class SelectBattleScreenComponent implements OnInit {
       console.log("Connected");            
       })
      .catch(err => console.error(err.toString()))
+    
   }
 
   async getBattlesWith()
@@ -58,12 +59,14 @@ export class SelectBattleScreenComponent implements OnInit {
     
   }
 
-  join(index: number){
+  async join(index: number){
     console.log("INDEX: " + index);
     
     console.log(this.battles[index].id);
+
     this.navCtrl.push(JoinTeamComponent, {
-      battleId: this.battles[index].id
+      battleId: this.battles[index].id,
+      hubConnection: this.hubConnection
     });
 
 

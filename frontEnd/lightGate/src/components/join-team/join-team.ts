@@ -35,30 +35,24 @@ export class JoinTeamComponent implements OnInit {
     console.log('Hello JoinTeamComponent');
     this.text = 'Select a team you would like to join';
     this.battleId = navParams.get('battleId');
+    this.hubConnection = navParams.get('hubConnection');
     console.log(this.battleId);
   }
 
   async ngOnInit()
   {
-    this.hubConnection = new HubConnectionBuilder()
-     .withUrl('http://localhost:2052/battleHub')
-     .configureLogging(signalR.LogLevel.Information)
-     .build();
 
      this.hubConnection.on('UpdateBattleState', () => {
 
-      console.log("Reloading Battle State");
+      console.log("Fetching Battle State...");
       this.refresh();
 
-     });   
-
-     this.hubConnection
-     .start().then(() => {
-      console.log("Connected");            
-      })
-     .catch(err => console.error(err.toString()))
-
-
+     });
+     
+     this.hubConnection.on('UpdateGuildList', () => {
+        console.log("Fetching Guild Lists...");
+        this.refresh();
+     });
 
     try{
       this.currentPlayerId = await this._storageSvc.loadFromStorage('sessionId');
@@ -107,7 +101,7 @@ export class JoinTeamComponent implements OnInit {
 
     await this._authSvc.putPlayerRequest(this.currentPlayerId, pBody);
 
-    this.refresh();
+    this.updateGuildList();
     }
     else
     {
@@ -115,10 +109,23 @@ export class JoinTeamComponent implements OnInit {
     }
   }
 
-  public updateBattleState(): void {
+  public updateBattleState() {
 
     if (this.hubConnection) {
         this.hubConnection.invoke('UpdateBattleState');
+    }
+  }
+
+  public updateCurrentBattle()
+  {
+    if(this.hubConnection){
+      this.hubConnection.invoke('UpdateCurrentBattle');
+    }
+  }
+
+  public updateGuildList() {
+    if(this.hubConnection) {
+      this.hubConnection.invoke('UpdateGuildList');
     }
   }
 
@@ -135,10 +142,14 @@ export class JoinTeamComponent implements OnInit {
       await this._authSvc.putBattleRequest(this.battleId, body);
       this.updateBattleState();
 
+
     }
 
+    this.updateCurrentBattle();
+
     this.navCtrl.push(BattleComponent, {
-      battleId: this.battleId
+      battleId: this.battleId,
+      hubConnection: this.hubConnection
     });
   }
 
