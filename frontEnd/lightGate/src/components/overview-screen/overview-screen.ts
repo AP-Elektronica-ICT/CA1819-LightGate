@@ -29,6 +29,7 @@ export class OverviewScreenComponent implements OnInit{
     try{
       this.currentPlayerId = await this._storageSvc.loadFromStorage('sessionId');    
       this.guilds = await this._authSvc.getGuildsFromBattle(this.battleId);
+      console.log("health: " + this.guilds[0].health);
     }
     catch(e){
       console.log(e);
