@@ -11,7 +11,7 @@
     <!--<div *ngIf="players != null && players.length > 0" class="TopLeft">-->
     <div *ngIf="players[0] != null" class="TopLeft">
       {{ players[0].name }} <br>
-      <img *ngIf="jobImages[0] != null" [src]="jobImages[0]"> <br>      
+      <img *ngIf="jobImages[0] != null" [src]="jobImages[0]"> <br>
       {{ players[0].myJob }}
     </div>
 
@@ -29,14 +29,14 @@
     </div>
     <div *ngIf="players[1] != null" class="TopRight">
       {{ players[1].name }} <br>
-      <img *ngIf="jobImages[1] != null" [src]="jobImages[1]"> <br>      
+      <img *ngIf="jobImages[1] != null" [src]="jobImages[1]"> <br>
       {{ players[1].myJob }}
     </div>
   </div>
 
   <div class="MidRow">
     <div class="MidLeft">
-      <button ion-button round (click)="PostToImgur()">Overview</button>
+      <button ion-button round (click)="toOverview()">test</button>
     </div>
     <div class="MidMid">
       <div>
@@ -51,7 +51,7 @@
   <div class="BottomRow">
     <div *ngIf="players[2] != null" class="BottomLeft">
       {{ players[2].name }} <br>
-      <img *ngIf="jobImages[2] != null" [src]="jobImages[2]"> <br>      
+      <img *ngIf="jobImages[2] != null" [src]="jobImages[2]"> <br>
       {{ players[2].myJob }}
     </div>
     <div class="BottomMid">
@@ -61,7 +61,7 @@
     </div>
     <div *ngIf="players[3] != null" class="BottomRight">
       {{ players[3].name }} <br>
-      <img *ngIf="jobImages[3] != null" [src]="jobImages[3]"> <br>      
+      <img *ngIf="jobImages[3] != null" [src]="jobImages[3]"> <br>
       {{ players[3].myJob }}
     </div>
   </div>

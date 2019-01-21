@@ -11,6 +11,7 @@ import { StorageService } from '../../services/storage.service';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { NavController, NavParams } from 'ionic-angular';
 import { HubConnection, HubConnectionBuilder } from '@aspnet/signalr';
+import { OverviewScreenComponent } from '../overview-screen/overview-screen';
 import * as signalR from '@aspnet/signalr';
 
 
@@ -74,6 +75,7 @@ export class BattleComponent implements OnInit {
   imgurUrl : string;
   randomObjCount : number;
   randomObjective: string;
+  currentObjective: string;
   currentPlayerId: string;
   battleId: string;
   currentBattle: IBattleRoot;
@@ -92,7 +94,7 @@ export class BattleComponent implements OnInit {
      this.hubConnection.on('UpdateCurrentBattle', () => {
         console.log("Fetching Current Battle...");
         this.getPlayers();
-     });   
+     });
 
     this._svc.getObjectives().subscribe(result => {
       this.objectives = result;
@@ -101,6 +103,7 @@ export class BattleComponent implements OnInit {
       this.randomObjCount = this.getRandomInt(this.objectives.length);
       console.log();
       this.randomObjective = this.objectives[this.randomObjCount].description;
+      this.currentObjective = this.randomObjective
     });
 
     try{
@@ -185,9 +188,14 @@ export class BattleComponent implements OnInit {
 
   }
 
+  toOverview(){
+    console.log("This naviates to Overview screen");
+    this.navCtrl.push(OverviewScreenComponent);
+  }
+
   jobImages : string[] = [];
 
-  async getPlayers(){    
+  async getPlayers(){
 
     //API/v1/battles/-battleID-/guilds/-guildID-
     console.log('begin')
@@ -209,9 +217,9 @@ export class BattleComponent implements OnInit {
         break;
         case "cleric":
         this.jobImages.push("../../assets/imgs/character_jobs/cleric.png");
-        break; 
+        break;
       }
-      
+
     }
 
     // TODO: request naar nieuwe route
