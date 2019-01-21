@@ -83,6 +83,8 @@ export class BattleComponent implements OnInit {
   index: number;
   players: IPlayer[] = [];
 
+  timelimit: number;
+
   private hubConnection: HubConnection
 
   //get Random objectieve from database
@@ -155,6 +157,23 @@ export class BattleComponent implements OnInit {
 
   }
 
+  startCountdown(minutes : number)
+  {
+    
+    var counter = minutes;
+    var interval = setInterval(() => {
+      console.log(counter);
+      counter--;
+
+      if(counter < 0)
+      {
+        clearInterval(interval);
+        console.log('Times Up!')
+      }
+      
+    }, 60000);
+  }
+
   PostToImgur(base64)
   {
     var base64Image = base64;
@@ -196,7 +215,9 @@ export class BattleComponent implements OnInit {
     this.guildId = this.currentPlayer.guildId;
     this.currentGuild = await this._authSvc.getSpecificGuildFromBattle(this.battleId, this.guildId);
     this.players = this.currentGuild.players;
+    this.timelimit = parseInt(this.currentBattle.battleTimeInMinutes);
 
+    this.startCountdown(this.timelimit);
 
     for (let index = 0; index < this.players.length; index++) {
       switch(this.players[index].myJob)
