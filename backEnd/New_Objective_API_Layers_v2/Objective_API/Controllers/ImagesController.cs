@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Model;
-using Objective_API.Classes;
 using services.Objective_API.Services;
 using System;
 using System.Collections.Generic;
@@ -41,7 +40,7 @@ using System.Threading.Tasks;
 
         [HttpPost]
 
-        public async Task<List<String>> CreateImage([FromBody] Image newImage)
+        public async Task<List<string>> CreateImage([FromBody] Image newImage)
         {
             Image image = facade.CreateImage(newImage);
             return await facade.PredictLabels(image.Base64String);
