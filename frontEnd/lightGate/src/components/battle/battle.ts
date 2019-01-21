@@ -28,7 +28,16 @@ import * as signalR from '@aspnet/signalr';
 })
 export class BattleComponent implements OnInit {
 
-  constructor(private httpClient:HttpClient, platform: Platform, private CameraPreview: CameraPreview, private StatusBar:StatusBar, private SplashScreen:SplashScreen, private screenOrientation: ScreenOrientation, private _svc : ObjectivesService, private _authSvc: AuthenticationService, private _storageSvc: StorageService, public navCtrl: NavController,
+  constructor(private httpClient:HttpClient,
+              platform: Platform,
+              private CameraPreview: CameraPreview,
+              private StatusBar:StatusBar,
+              private SplashScreen:SplashScreen,
+              private screenOrientation: ScreenOrientation,
+              private _svc : ObjectivesService,
+              private _authSvc: AuthenticationService,
+              private _storageSvc: StorageService,
+              public navCtrl: NavController,
               public navParams: NavParams) {
     platform.ready().then(() => {
       //locks screen in landscape mode

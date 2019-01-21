@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Clarifai.API;
 using Clarifai.DTOs.Inputs;
 
-namespace Objective_API.Classes
+namespace businessLayer.Objective_API.Clarifai
 {
     public class ImageRecognizer
     {
@@ -15,15 +15,30 @@ namespace Objective_API.Classes
             this.client = new ClarifaiClient("44b3fcacff504de8b6c7ef46c753321b");
         }
 
-        public async Task PredictLabels(string img = "https://static.standard.co.uk/s3fs-public/thumbnails/image/2016/10/19/13/city-bike-header2.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5")
+        public List<string> tagList { get; set; }
+
+
+
+        public async Task PredictLabels(string img)
         {
 
             var res = await this.client.PublicModels.GeneralModel
             .Predict(new ClarifaiURLImage(img))
             .ExecuteAsync();
-
+            Console.WriteLine("IN CLARIFAI CLASS");
+            decimal? testvalue;
+            string testName;
+            decimal? compareValue = 0.1;
             foreach (var concept in res.Get().Data)
             {
+                Console.WriteLine($"{concept.Name}: {concept.Value}");
+                testvalue = concept.Value;
+                testName = concept.Name;
+                if (testvalue > compareValue)
+                {
+                    tagList = new List<string> { testName };
+                }
+
                 System.Diagnostics.Debug.WriteLine($"{concept.Name}: {concept.Value}");
             }
         }

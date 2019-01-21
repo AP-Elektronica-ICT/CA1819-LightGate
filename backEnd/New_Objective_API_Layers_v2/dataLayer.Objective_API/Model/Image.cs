@@ -15,6 +15,7 @@ namespace Model
         [JsonIgnore]
         public Player Player { get; set; }
         public Guid PlayerId { get; set; }
+        public string CurrentObjective { get; set; }
 
         //Timestamp?
     }
