@@ -84,8 +84,7 @@ export class BattleComponent implements OnInit {
   picture : string;
   imgurUrl : string;
   randomObjCount : number;
-  randomObjective: string;
-  currentObjective: string;
+  currentObjective: IObjectivesRoot;
   currentPlayerId: string;
   battleId: string;
   currentBattle: IBattleRoot;
@@ -114,9 +113,7 @@ export class BattleComponent implements OnInit {
       console.log(result);
       //console.log(result[0].description);
       this.randomObjCount = this.getRandomInt(this.objectives.length);
-      console.log();
-      this.randomObjective = this.objectives[this.randomObjCount].description;
-      this.currentObjective = this.randomObjective
+      this.currentObjective = this.objectives[this.randomObjCount];
     });
 
     try{
@@ -132,6 +129,67 @@ export class BattleComponent implements OnInit {
   }
   getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
+  }
+
+
+  async attack(){
+    this.takePicture();
+    let isHit:boolean = this.isHit(this.tags, this.currentObjective)
+    if (isHit) {
+      let updatedGuild: IGuild = this.useSkillOnTarget();
+      await this._authSvc.putGuildRequest(updatedGuild.id, updatedGuild);
+    }
+  }
+
+  isHit(tags:string[], objectives:IObjectivesRoot){
+    let check1:boolean;
+    let check2:boolean;
+    tags.forEach(label => {
+      if (label == objectives.labels[0].feature) {
+        check1=true;
+      }
+    });
+    tags.forEach(label => {
+      if (label == objectives.labels[1].feature) {
+        check2=true;
+      }
+    });
+    if (check1 && check2) {
+      return true;
+    }
+    else return false;
+  }
+
+  useSkillOnTarget():IGuild{
+    let targetGuild: IGuild;
+    
+    switch (this.currentPlayer.myJob) {
+      case "knight":
+        targetGuild = this.findGuild(this.currentGuild.attacked);
+        targetGuild.health -= 10;
+        break;
+
+      case "mage":
+        targetGuild = this.findGuild(this.currentGuild.attackedBy);
+        targetGuild.health -= 10;
+        break;
+
+      case "cleric":
+        targetGuild = this.currentGuild;
+        targetGuild.health += 10;
+        break;
+    }
+    return targetGuild;
+  }
+
+  findGuild(id:string):IGuild{
+    let findedGuild: IGuild;
+    this.currentBattle.guilds.forEach(guild => {
+      if (guild.id == id) {
+        findedGuild = guild;
+      }
+    });
+    return findedGuild;
   }
 
 
