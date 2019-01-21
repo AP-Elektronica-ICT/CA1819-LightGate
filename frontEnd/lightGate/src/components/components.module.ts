@@ -8,6 +8,7 @@ import { SelectBattleScreenComponent } from './select-battle-screen/select-battl
 import { EnterPlayernameComponent } from './enter-playername/enter-playername';
 import { OverviewScreenComponent } from './overview-screen/overview-screen';
 import { JoinTeamComponent } from './join-team/join-team';
+import { GameOverComponent } from './game-over/game-over';
 
 @NgModule({
 	declarations: [LoginComponent,
@@ -18,7 +19,8 @@ import { JoinTeamComponent } from './join-team/join-team';
     SelectBattleScreenComponent,
     EnterPlayernameComponent,
     OverviewScreenComponent,
-    JoinTeamComponent],
+    JoinTeamComponent,
+    GameOverComponent],
 	imports: [],
 	exports: [LoginComponent,
     BattleComponent,
@@ -28,6 +30,7 @@ import { JoinTeamComponent } from './join-team/join-team';
     SelectBattleScreenComponent,
     EnterPlayernameComponent,
     OverviewScreenComponent,
-    JoinTeamComponent]
+    JoinTeamComponent,
+    GameOverComponent]
 })
 export class ComponentsModule {}
