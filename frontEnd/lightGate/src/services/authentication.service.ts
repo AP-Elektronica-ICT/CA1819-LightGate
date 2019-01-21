@@ -16,14 +16,14 @@ export class AuthenticationService
     private guild_url = this.base_url + "guilds/";
     private battle_url = this.base_url + "battles/";
     private battle_offset_url = this.base_url + "battles?page=";
-    //private image_url = this.base_url + "images/"
+    private image_url = this.base_url + "images/"
 
     // Uncomment for localhost debug
     // private player_url = "http://localhost:2052/api/v1/players/";
     // private guild_url = "http://localhost:2052/api/v1/guilds/";
     // private battle_url = "http://localhost:2052/api/v1/battles/";
     // private battle_offset_url = "http://localhost:2052/api/v1/battles?page=";
-     private image_url = "http://localhost:2052/api/v1/images/";
+    // private image_url = "http://localhost:2052/api/v1/images/";
 
     public currentSessionId : string = null;
 
@@ -131,7 +131,7 @@ export class AuthenticationService
     //Post Images
     async postImageRequest(body: any)
     {
-        return this._http.post<IImage>(this.image_url, body).toPromise();
+        return this._http.post<string[]>(this.image_url, body).toPromise();
     }
 
 

@@ -94,6 +94,7 @@ export class BattleComponent implements OnInit {
   guildId: string;
   index: number;
   players: IPlayer[] = [];
+  tags: string[];
 
   private hubConnection: HubConnection
 
@@ -146,6 +147,7 @@ export class BattleComponent implements OnInit {
       console.log(this.picture);
       this.PostToImgur(this.picture);
       this.postImageRequest();
+      
 
     }, (err) => {
       console.log(err);
@@ -161,7 +163,8 @@ export class BattleComponent implements OnInit {
 
     try {
       var result = await this._authSvc.postImageRequest(body);
-      console.log("postImageRequest: " + result);
+      console.log("postImageRequest: " + result.length);
+      this.tags = result;
     } catch (e) {
       console.log(e);
     }

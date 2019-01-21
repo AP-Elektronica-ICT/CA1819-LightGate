@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using Clarifai;
 using businessLayer.Objective_API.Clarifai;
+using System.Threading.Tasks;
 
 namespace businessLayer.Objective_API.Facades
 {
@@ -71,7 +72,7 @@ namespace businessLayer.Objective_API.Facades
                 context.Images.Add(newImage);
                 context.SaveChanges();
 
-                PredictLabels(newImage.Base64String);
+                
 
                 return newImage;
             }
@@ -82,9 +83,9 @@ namespace businessLayer.Objective_API.Facades
             }
         }
 
-        async void PredictLabels(string base64)
+        public async Task<List<string>> PredictLabels(string base64)
         {
-            await clarifai.PredictLabels(base64);
+            return await clarifai.PredictLabels(base64);
         }
 
 

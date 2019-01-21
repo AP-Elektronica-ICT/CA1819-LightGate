@@ -69,14 +69,4 @@ public class GuildsController : Controller
         return facade.UpdateGuild(updateGuild);
     }
 
-
-
-    [Route("{id}/attack")]
-    [HttpPut]
-    public Guild UpdateGuildWhenAttacking(Guid id, string image, string job, Objective objective)
-    {
-        Guild guildToAttack = facade.GetGuild(id);
-        guildToAttack = attackGenerator.AttackOnGuild(image, objective, job, guildToAttack);
-        return facade.UpdateGuild(guildToAttack);
-    }
 }

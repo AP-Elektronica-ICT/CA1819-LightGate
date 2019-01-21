@@ -19,7 +19,7 @@ namespace businessLayer.Objective_API.Clarifai
 
 
 
-        public async Task PredictLabels(string img)
+        public async Task<List<string>> PredictLabels(string img)
         {
             
             var res = await this.client.PublicModels.GeneralModel
@@ -29,7 +29,7 @@ namespace businessLayer.Objective_API.Clarifai
             decimal? testvalue;
             string testName;
             //TODO Change compareValue to working value (decimal?)
-            decimal? compareValue = 0.1;
+            decimal? compareValue = 0.8m;
             foreach (var concept in res.Get().Data)
             {
                 Console.WriteLine($"{concept.Name}: {concept.Value}");
@@ -42,6 +42,7 @@ namespace businessLayer.Objective_API.Clarifai
 
                 System.Diagnostics.Debug.WriteLine($"{concept.Name}: {concept.Value}");
             }
+            return tagList;
         }
     }
 }

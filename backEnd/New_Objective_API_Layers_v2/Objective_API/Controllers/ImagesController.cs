@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Model;
+using Objective_API.Classes;
 using services.Objective_API.Services;
 using System;
 using System.Collections.Generic;
@@ -11,14 +12,15 @@ using System.Threading.Tasks;
     {
         private readonly IImageFacade facade;
 
-        public ImagesController(IImageFacade facade)
+    public ImagesController(IImageFacade facade, IGuildFacade guildFacade)
         {
             this.facade = facade;
-        }
+    }
 
-        // Get full library
 
-        [HttpGet]
+    // Get full library
+
+    [HttpGet]
 
         public List<Image> GetImagesLibrary()
         {
@@ -39,9 +41,10 @@ using System.Threading.Tasks;
 
         [HttpPost]
 
-        public Image CreateImage([FromBody] Image newImage)
+        public async Task<List<String>> CreateImage([FromBody] Image newImage)
         {
-            return facade.CreateImage(newImage);
+            Image image = facade.CreateImage(newImage);
+            return await facade.PredictLabels(image.Base64String);
         }
     }
 

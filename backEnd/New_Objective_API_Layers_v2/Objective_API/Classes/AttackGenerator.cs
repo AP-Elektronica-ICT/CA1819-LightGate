@@ -15,15 +15,17 @@ namespace Objective_API.Classes
         private Cleric cleric = new Cleric();
 
         new ImageRecognizer imageRegognize;
-        new ObjectiveComparer objectiveCompaire;
+        new ObjectiveComparer objectiveCompare;
 
         public Guild AttackOnGuild( string image, Objective myObjectives, string job, Guild guildToAttack)
         {
             List<string> tags;
+            Label[] labels = new Label[myObjectives.Labels.Count];
+            myObjectives.Labels.CopyTo(labels, 0);
             //tags = imagerecognizer.RecognizeImage(image);
             tags = imageRegognize.tagList;
             bool isHit = true;
-            isHit = objectiveCompaire.Compare(tags, objective1, objective1);
+            isHit = objectiveCompare.Compare(tags, labels[0].Feature , labels[1].Feature);
 
 
             if (isHit)
