@@ -5,6 +5,7 @@ using businessLayer.Objective_API.Facades;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Model;
+using Objective_API.Classes;
 using services.Objective_API.Services;
 
 [Route("api/v1/guilds")]
@@ -12,10 +13,13 @@ using services.Objective_API.Services;
 public class GuildsController : Controller
 {
     private readonly IGuildFacade facade;
+    private AttackGenerator attackGenerator;
 
     public GuildsController(IGuildFacade facade)
     {
         this.facade = facade;
+        // Attack (update) specific guild
+        this.attackGenerator = new AttackGenerator();
     }
 
     // Get full library
@@ -63,5 +67,16 @@ public class GuildsController : Controller
     public Guild UpdateGuild([FromBody] Guild updateGuild)
     {
         return facade.UpdateGuild(updateGuild);
+    }
+
+
+
+    [Route("{id}/attack")]
+    [HttpPut]
+    public Guild UpdateGuildWhenAttacking(Guid id, string image, string job, Objective objective)
+    {
+        Guild guildToAttack = facade.GetGuild(id);
+        guildToAttack = attackGenerator.AttackOnGuild(image, objective, job, guildToAttack);
+        return facade.UpdateGuild(guildToAttack);
     }
 }

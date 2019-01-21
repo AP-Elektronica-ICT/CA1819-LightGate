@@ -16,38 +16,28 @@ namespace Objective_API.Classes
         //new ImageRecognizer
         //new ObjectiveComparer
 
-        public Guild AttackOnGuild( string image,
-                                    string objective1,
-                                    string objective2,
-                                    string job,
-                                    Guild ownGuild,
-                                    Guild frontGuild,
-                                    Guild backGuild)
+        public Guild AttackOnGuild( string image, Objective myObjectives, string job, Guild guildToAttack)
         {
             List<string> tags;
             //tags = imagerecognizer.RecognizeImage(image);
             bool isHit = true;
-            //isHit = objectiveComparer.Compare(tags, objective1, objective1);
-
+            //isHit = objectiveComparer.Compare(tags, myObjectives);
             if (isHit)
             {
                 switch (job)
                 {
                     case "knight":
-                        frontGuild.Health = knight.UsePower(frontGuild.Health);
-                        return frontGuild;
+                        guildToAttack.Health = knight.UsePower(guildToAttack.Health);
                         break;
                     case "mage":
-                        backGuild.Health = mage.UsePower(backGuild.Health);
-                        return backGuild;
+                        guildToAttack.Health = mage.UsePower(guildToAttack.Health);
                         break;
                     case "cleric":
-                        ownGuild.Health = cleric.UsePower(ownGuild.Health);
-                        return ownGuild;
+                        guildToAttack.Health = cleric.UsePower(guildToAttack.Health);
                         break;
                 }
             }
-            return ownGuild;
+            return guildToAttack;
 
         }
     }
