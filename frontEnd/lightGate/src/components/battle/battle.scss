@@ -9,22 +9,23 @@ battle {
   justify-content: space-between;
 }
 
+
 .TopRow{
   display: flex;
+  flex-wrap: nowrap
   //flex-direction: column;
 }
 
-
 .TopLeft {
-  flex-flow: row nowrap;
+  //flex-flow: row nowrap;
   flex-grow: 1;
 }
 .Topmid {
-  flex-flow: row nowrap;
+  //flex-flow: row nowrap;
   flex-grow: 2;
 }
 .TopRight {
-  flex-flow: row nowrap;
+  //flex-flow: row nowrap;
   flex-grow: 1;
   text-align: right;
 }
@@ -33,39 +34,47 @@ battle {
 
 .MidRow{
   display: flex;
+  flex-wrap: nowrap
   //flex-direction: column;
 }
+
 .MidLeft {
-  flex-flow: row nowrap;
+  //flex-flow: row nowrap;
   flex-grow: 1;
 }
 .MidMid {
-  flex-flow: row nowrap;
+  //flex-flow: row nowrap;
   flex-grow: 2;
 }
 .MidRight {
-  flex-flow: row nowrap;
+  //flex-flow: row nowrap;
   flex-grow: 1;
   text-align: right;
 }
 
+
+
 .BottomRow {
   display: flex;
+  flex-wrap: nowrap
  // flex-direction: column;
 }
+
 .BottomLeft {
-  flex-flow: row nowrap;
+  //flex-flow: row nowrap;
   flex-grow: 1;
 }
 .BottomMid {
-  flex-flow: row nowrap;
+  //flex-flow: row nowrap;
   flex-grow: 2;
 }
 .BottomRight {
-  flex-flow: row nowrap;
+  //flex-flow: row nowrap;
   flex-grow: 1;
   text-align: right;
 }
+
+
 
 img {
   width: 7rem;

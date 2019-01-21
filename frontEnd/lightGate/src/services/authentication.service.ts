@@ -131,7 +131,7 @@ export class AuthenticationService
     //Post Images
     async postImageRequest(body: any)
     {
-        return this._http.post<IImage>(this.image_url, body).toPromise();
+        return this._http.post<string[]>(this.image_url, body).toPromise();
     }
 
 

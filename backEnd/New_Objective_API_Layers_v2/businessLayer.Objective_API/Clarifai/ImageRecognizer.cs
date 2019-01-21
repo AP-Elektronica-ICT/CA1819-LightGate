@@ -14,23 +14,35 @@ namespace businessLayer.Objective_API.Clarifai
         {
             this.client = new ClarifaiClient("44b3fcacff504de8b6c7ef46c753321b");
         }
-        
-        
-   
 
-        public async Task PredictLabels(string img)
+        public List<string> tagList { get; set; }
+
+
+
+        public async Task<List<string>> PredictLabels(string img)
         {
-
+            
             var res = await this.client.PublicModels.GeneralModel
             .Predict(new ClarifaiURLImage(img))
             .ExecuteAsync();
             Console.WriteLine("IN CLARIFAI CLASS");
+            decimal? testvalue;
+            string testName;
+            //TODO Change compareValue to working value (decimal?)
+            decimal? compareValue = 0.8m;
             foreach (var concept in res.Get().Data)
             {
                 Console.WriteLine($"{concept.Name}: {concept.Value}");
+                testvalue = concept.Value;
+                testName = concept.Name;
+                if (testvalue > compareValue)
+                {
+                    tagList = new List<string> { testName };
+                }
 
                 System.Diagnostics.Debug.WriteLine($"{concept.Name}: {concept.Value}");
             }
+            return tagList;
         }
     }
 }

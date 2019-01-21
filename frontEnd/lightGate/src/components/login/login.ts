@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   result: IPlayer;
   player_name: string;
   player_job: string;
-  toastMessage: string = "Chose a username and a job";
+  toastMessage: string = "Choose a username and a job";
 
   constructor(
     private _authSvc: AuthenticationService,
