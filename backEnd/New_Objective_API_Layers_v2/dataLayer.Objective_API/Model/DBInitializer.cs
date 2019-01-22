@@ -132,54 +132,122 @@ public class DBInitializer
             //Create new Objective(s)
             var o = new Objective()
             {
-               Description = "car & church"
+               Description = "laptop"
             };
 
             var o2 = new Objective()
             {
-                Description = "human & tree"
+                Description = "bottle"
             };
+
+            var o3 = new Objective()
+            {
+                Description = "chair"
+            };
+
+            var o4 = new Objective()
+            {
+                Description = "bag"
+            };
+
+                var o5 = new Objective()
+                {
+                    Description = "watch"
+                };
 
             //Create new Label(s)
 
             var l = new Label()
             {
-                Feature = "car",
+                Feature = "laptop",
                 ObjectiveId = 1,
                 Objective = o
             };
 
             var l2 = new Label()
             {
-                Feature = "church",
+                Feature = "laptop",
                 ObjectiveId = 1,
                 Objective = o
             };
 
             var l3 = new Label()
             {
-                Feature = "human",
+                Feature = "bottle",
                 ObjectiveId = 2,
                 Objective = o2
             };
 
             var l4 = new Label()
             {
-                Feature = "tree",
+                Feature = "bottle",
                 ObjectiveId = 2,
                 Objective = o2
-            };            
+            };
+
+             var l5 = new Label()
+                {
+                    Feature = "chair",
+                    ObjectiveId = 3,
+                    Objective = o3
+                };
+
+                var l6 = new Label()
+                {
+                    Feature = "chair",
+                    ObjectiveId = 3,
+                    Objective = o3
+                };
+
+                var l7 = new Label()
+                {
+                    Feature = "bag",
+                    ObjectiveId = 4,
+                    Objective = o4
+                };
+
+                var l8 = new Label()
+                {
+                    Feature = "bag",
+                    ObjectiveId = 4,
+                    Objective = o4
+                };
+
+                var l9 = new Label()
+                {
+                    Feature = "watch",
+                    ObjectiveId = 5,
+                    Objective = o5
+                };
+
+                var l10 = new Label()
+                {
+                    Feature = "watch",
+                    ObjectiveId = 5,
+                    Objective = o5
+                };
+
+
 
             //Add everything to their respective collection
             context.Objectives.Add(o);
             context.Objectives.Add(o2);
+            context.Objectives.Add(o3);
+            context.Objectives.Add(o4);
+            context.Objectives.Add(o5);
             context.Labels.Add(l);
             context.Labels.Add(l2);
             context.Labels.Add(l3);
             context.Labels.Add(l4);
+            context.Labels.Add(l5);
+            context.Labels.Add(l6);
+            context.Labels.Add(l7);
+            context.Labels.Add(l8);
+            context.Labels.Add(l9);
+            context.Labels.Add(l10);
 
-            //Save all changes to the DB
-            context.SaveChanges();
+                //Save all changes to the DB
+                context.SaveChanges();
         }
     }
 
