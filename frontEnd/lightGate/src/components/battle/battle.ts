@@ -66,10 +66,10 @@ export class BattleComponent implements OnInit {
       const cameraPreviewOpts: CameraPreviewOptions = {
         //This will define the start coordinates of the camera view
         x: 0,
-        y: 20,
+        y: 0,
         //defines the width and height of the view
-        width: camreaHeight -20,
-        height: cameraWidth - 80,
+        width: camreaHeight,
+        height: cameraWidth,
         camera: 'rear',
         tapPhoto: true,
         previewDrag: true,
@@ -79,6 +79,7 @@ export class BattleComponent implements OnInit {
       };
 
       this.CameraPreview.startCamera(cameraPreviewOpts);
+      CameraPreview.show();
     });
 
   }
@@ -162,7 +163,7 @@ export class BattleComponent implements OnInit {
     tags.forEach(label => {
 
       console.log(label);
-      console.log(objectives.labels[0].feature);
+      //console.log(objectives.labels[0].feature);
       if (label == objectives.labels[0].feature) {
         check1=true;
       }
@@ -244,12 +245,12 @@ export class BattleComponent implements OnInit {
 
    takePicture() {
     this.CameraPreview.takePicture(this.pictureOpts).then((imageData) => {
-      console.log("This button will end up taking a ");
       //this.picture = 'data:image/jpeg;base64,' + imageData;
       this.picture = imageData.join();
-      console.log(this.picture);
+      //console.log(this.picture);
       this.PostToImgur(this.picture);
-      this.postImageRequest();
+      console.log("POST TO IMGUR DONE, STARTING POST IMAGE RESQUEST");
+      //this.postImageRequest();
 
 
     }, (err) => {
@@ -316,12 +317,12 @@ export class BattleComponent implements OnInit {
     const headers = new HttpHeaders({'Authorization':'Client-ID e89b61d9f20f749'});
     this.httpClient.post<IResult>(url, body, {headers: headers}).subscribe(
       (data : IResult) => {
-          console.log(data);
+          //console.log(data);
           this.imgurUrl = data.data.link;
           console.log(this.imgurUrl);
 
           // TODO: Remove postImageRequest here
-          //this.postImageRequest();
+          this.postImageRequest();
       },
       (err: HttpErrorResponse) => {
           if (err.error instanceof Error) {
