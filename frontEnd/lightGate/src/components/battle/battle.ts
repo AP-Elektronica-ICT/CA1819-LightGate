@@ -65,7 +65,7 @@ export class BattleComponent implements OnInit {
 
       const cameraPreviewOpts: CameraPreviewOptions = {
         //This will define the start coordinates of the camera view
-        x: 50,
+        x: 0,
         y: 20,
         //defines the width and height of the view
         width: camreaHeight -20,
@@ -339,6 +339,10 @@ export class BattleComponent implements OnInit {
       if (this.currentGuild.health <= 0 ){
       this.navCtrl.push(GameOverComponent);
     }
+  }
+
+  YouDied(){
+    this.navCtrl.push(GameOverComponent);
   }
 
   toOverview(){
