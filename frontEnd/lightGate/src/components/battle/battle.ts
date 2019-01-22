@@ -43,12 +43,15 @@ export class BattleComponent implements OnInit {
     platform.ready().then(() => {
       //locks screen in landscape mode
       // TODO: Uncommend when deploying on mobile devide
-      // try {
-      //   this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
-      // } catch (error) {
-      //   console.log("something went wrong during locking of screen");
-      //   throw(error);
-      // }
+      if(platform.is("ios") == true || platform.is("android") == true){
+        try {
+          this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+        } catch (error) {
+          console.log("something went wrong during locking of screen");
+          throw(error);
+        }
+      }
+
 
       //define variables
       this.battleId = navParams.get('battleId');
@@ -335,7 +338,6 @@ export class BattleComponent implements OnInit {
   checkHealth(){
       if (this.currentGuild.health <= 0 ){
       this.navCtrl.push(GameOverComponent);
-
     }
   }
 
