@@ -32,9 +32,9 @@ export class OverviewScreenComponent implements OnInit{
     this.hubConnection = navParams.get('hubConnection');
     console.log(this.battleId);
 
-    // platform.ready().then(() => {
-    //   CameraPreview.stopCamera();
-    // });
+     platform.ready().then(() => {
+       CameraPreview.hide();
+     });
   }
 
   async ngOnInit()
