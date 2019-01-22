@@ -29,7 +29,7 @@ namespace businessLayer.Objective_API.Clarifai
             decimal? testvalue;
             string testName;
             //TODO Change compareValue to working value (decimal?)
-            decimal? compareValue = 0.8m;
+            decimal? compareValue = 0.6m;
             foreach (var concept in res.Get().Data)
             {
                 Console.WriteLine($"{concept.Name}: {concept.Value}");
