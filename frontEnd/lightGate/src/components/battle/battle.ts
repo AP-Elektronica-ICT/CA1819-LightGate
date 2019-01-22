@@ -289,22 +289,22 @@ export class BattleComponent implements OnInit {
     await this._authSvc.putGuildRequest(updateGuild.id, updateGuild);
   }
 
-  startCountdown(minutes : number)
-  {
+  // startCountdown(minutes : number)
+  // {
 
-    var counter = minutes;
-    var interval = setInterval(() => {
-      console.log(counter);
-      counter--;
+  //   var counter = minutes;
+  //   var interval = setInterval(() => {
+  //     console.log(counter);
+  //     counter--;
 
-      if(counter < 0)
-      {
-        clearInterval(interval);
-        console.log('Times Up!')
-      }
+  //     if(counter < 0)
+  //     {
+  //       clearInterval(interval);
+  //       console.log('Times Up!')
+  //     }
 
-    }, 60000);
-  }
+  //   }, 60000);
+  // }
 
   PostToImgur(base64)
   {
@@ -362,7 +362,7 @@ export class BattleComponent implements OnInit {
     this.players = this.currentGuild.players;
     this.timelimit = parseInt(this.currentBattle.battleTimeInMinutes);
 
-    this.startCountdown(this.timelimit);
+    //this.startCountdown(this.timelimit);
 
     for (let index = 0; index < this.players.length; index++) {
       switch(this.players[index].myJob)
