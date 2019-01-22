@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { BattleComponent } from "../battle/battle";
 import { AuthenticationService, IGuild } from '../../services/authentication.service';
 import { StorageService } from '../../services/storage.service';
+import { HubConnection } from '@aspnet/signalr';
 
 
 @Component({
@@ -15,21 +16,28 @@ export class OverviewScreenComponent implements OnInit{
   guilds: IGuild[];
   currentPlayerId: number;
 
+  private hubConnection: HubConnection
+
   constructor(public navParams: NavParams,
               private _storageSvc: StorageService,
               private _authSvc: AuthenticationService,
               public navCtrl: NavController) {
     console.log('Hello OverviewScreenComponent');
     this.battleId = navParams.get('battleId');
+    this.hubConnection = navParams.get('hubConnection');
     console.log(this.battleId);
   }
 
   async ngOnInit()
   {
+
+    this.hubConnection.on('UpdateHealthBar', () => {
+      console.log("Fetching Current Battle...");
+      this.getGuildsFromBattle();
+   })
+
     try{
-      this.currentPlayerId = await this._storageSvc.loadFromStorage('sessionId');
-      this.guilds = await this._authSvc.getGuildsFromBattle(this.battleId);
-      console.log("health: " + this.guilds[0].health);
+      this.getGuildsFromBattle();
     }
     catch(e){
       console.log("Error on loading OverviewScreen");
@@ -38,9 +46,20 @@ export class OverviewScreenComponent implements OnInit{
 
   }
 
+  async getGuildsFromBattle()
+  {
+    this.currentPlayerId = await this._storageSvc.loadFromStorage('sessionId');
+    this.guilds = await this._authSvc.getGuildsFromBattle(this.battleId);
+    console.log("health: " + this.guilds[0].health);
+  }
+
+
   toBattle(){
     console.log("This naviates to the battle screen");
-    this.navCtrl.push(BattleComponent);
+    this.navCtrl.push(BattleComponent, {
+      battleId: this.battleId,
+      hubConnection: this.hubConnection
+    });
   }
 
 

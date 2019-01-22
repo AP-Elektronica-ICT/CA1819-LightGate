@@ -108,6 +108,12 @@ export class BattleComponent implements OnInit {
         this.getPlayers();
      });
 
+     this.hubConnection.on('UpdateHealthBar', () => {
+        console.log("Fetching Current Battle...");
+        this.getPlayers();
+        this.checkHealth();
+     })
+
     this._svc.getObjectives().subscribe(result => {
       this.objectives = result;
       console.log(result);
@@ -127,24 +133,32 @@ export class BattleComponent implements OnInit {
 
 
   }
+
+  updateHealthBar()
+  {
+    if(this.hubConnection)
+    {
+      this.hubConnection.invoke("UpdateHealthBar");
+    }
+  }
+
   getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
 
   async attack(){
-    this.takePicture();
-    let isHit:boolean = this.isHit(this.tags, this.currentObjective)
-    if (isHit) {
-      let updatedGuild: IGuild = this.useSkillOnTarget();
-      await this._authSvc.putGuildRequest(updatedGuild.id, updatedGuild);
-    }
+    this.PostToImgur("");
   }
 
-  isHit(tags:string[], objectives:IObjectivesRoot){
+  checkIfHit(tags:string[], objectives:IObjectivesRoot){
     let check1:boolean;
     let check2:boolean;
+
     tags.forEach(label => {
+
+      console.log(label);
+      console.log(objectives.labels[0].feature);
       if (label == objectives.labels[0].feature) {
         check1=true;
       }
@@ -157,39 +171,61 @@ export class BattleComponent implements OnInit {
     if (check1 && check2) {
       return true;
     }
-    else return false;
+    //TODO - SHOULD BE FALSE
+    else return true;
   }
 
-  useSkillOnTarget():IGuild{
+  useSkillOnTarget(){
     let targetGuild: IGuild;
     
     switch (this.currentPlayer.myJob) {
       case "knight":
         targetGuild = this.findGuild(this.currentGuild.attacked);
         targetGuild.health -= 10;
+        this.createUpdateGuild(targetGuild);
         break;
 
       case "mage":
         targetGuild = this.findGuild(this.currentGuild.attackedBy);
-        targetGuild.health -= 10;
+        targetGuild.health -= 5;
+        this.createUpdateGuild(targetGuild);
+        
+        targetGuild = this.findGuild(this.currentGuild.attacked);
+        targetGuild.health -= 5;
+        this.createUpdateGuild(targetGuild);
         break;
 
       case "cleric":
         targetGuild = this.currentGuild;
-        targetGuild.health += 10;
+
+        if(targetGuild.health < 100)
+        {
+          targetGuild.health += 5;
+        }
+        else
+        {
+          targetGuild = this.findGuild(this.currentGuild.attacked);
+          targetGuild.health -= 5;
+        }
+
+        if(targetGuild.health > 100)
+        {
+          targetGuild.health = 100;
+        }
+
+        this.createUpdateGuild(targetGuild);
         break;
     }
-    return targetGuild;
   }
 
   findGuild(id:string):IGuild{
-    let findedGuild: IGuild;
+    let foundGuild: IGuild;
     this.currentBattle.guilds.forEach(guild => {
       if (guild.id == id) {
-        findedGuild = guild;
+        foundGuild = guild;
       }
     });
-    return findedGuild;
+    return foundGuild;
   }
 
 
@@ -200,7 +236,7 @@ export class BattleComponent implements OnInit {
   }
 
 
-  takePicture() {
+   takePicture() {
     this.CameraPreview.takePicture(this.pictureOpts).then((imageData) => {
       console.log("This button will end up taking a ");
       this.picture = 'data:image/jpeg;base64,' + imageData;
@@ -225,10 +261,23 @@ export class BattleComponent implements OnInit {
       var result = await this._authSvc.postImageRequest(body);
       console.log("postImageRequest: " + result[0] + result[1] + result[2] + result[4]);
       this.tags = result;
+
+      let isHit:boolean = this.checkIfHit(this.tags, this.currentObjective)
+      if (isHit) {
+        await this.useSkillOnTarget();
+        //Reload battle for all clients
+        this.updateHealthBar();
+      }
+
     } catch (e) {
       console.log(e);
     }
 
+  }
+
+  async createUpdateGuild(updateGuild: IGuild)
+  {
+    await this._authSvc.putGuildRequest(updateGuild.id, updateGuild);
   }
 
   startCountdown(minutes : number)
@@ -288,7 +337,10 @@ export class BattleComponent implements OnInit {
 
   toOverview(){
     console.log("This naviates to Overview screen");
-    this.navCtrl.push(OverviewScreenComponent);
+    this.navCtrl.push(OverviewScreenComponent, {
+      battleId: this.battleId,
+      hubConnection: this.hubConnection
+    });
   }
 
   jobImages : string[] = [];
