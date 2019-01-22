@@ -12,22 +12,24 @@ battle {
 
 .TopRow{
   display: flex;
-  flex-wrap: nowrap
-  //flex-direction: column;
+  flex-wrap: nowrap;
+  height: 37%;
 }
 
 .TopLeft {
-  //flex-flow: row nowrap;
   flex-grow: 1;
+  text-align: center;
+  width: 7%;
+  
 }
-.Topmid {
-  //flex-flow: row nowrap;
-  flex-grow: 2;
+.TopMid {
+  flex-grow: 4;
+  text-align: center;
 }
 .TopRight {
-  //flex-flow: row nowrap;
   flex-grow: 1;
-  text-align: right;
+  text-align: center;
+  width: 7%;
 }
 
 
@@ -35,19 +37,15 @@ battle {
 .MidRow{
   display: flex;
   flex-wrap: nowrap
-  //flex-direction: column;
 }
 
 .MidLeft {
-  //flex-flow: row nowrap;
   flex-grow: 1;
 }
 .MidMid {
-  //flex-flow: row nowrap;
   flex-grow: 2;
 }
 .MidRight {
-  //flex-flow: row nowrap;
   flex-grow: 1;
   text-align: right;
 }
@@ -56,22 +54,26 @@ battle {
 
 .BottomRow {
   display: flex;
-  flex-wrap: nowrap
- // flex-direction: column;
+  flex-wrap: nowrap;
+  height: 37%;
 }
 
 .BottomLeft {
-  //flex-flow: row nowrap;
   flex-grow: 1;
+  text-align: center;
+  width: 7%;
 }
 .BottomMid {
-  //flex-flow: row nowrap;
-  flex-grow: 2;
+  flex-grow:4;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
 }
 .BottomRight {
-  //flex-flow: row nowrap;
   flex-grow: 1;
-  text-align: right;
+  text-align: center;
+  width: 7%;
 }
 
 
@@ -79,6 +81,10 @@ battle {
 img {
   width: 7rem;
   height: 7rem;
+}
+
+.boldText{
+  font-weight: bold;
 }
 
 .health-outer{
@@ -91,12 +97,21 @@ img {
   border-radius: 20pt;
 }
 
-.health-inner{
+.health-innerYou{
   min-width: 15%;
   white-space: nowrap;
   overflow: hidden;
   padding: 1pt;
   border-radius: 20pt;
   background-color: limegreen;
+  color: #f4f4f4;
+}
+.health-innerEnemy{
+  min-width: 15%;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 1pt;
+  border-radius: 20pt;
+  background-color: orange;
   color: #f4f4f4;
 }
