@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { NavController } from 'ionic-angular';
+import { Platform } from 'ionic-angular';
+import { LoginComponent } from '../login/login'
+
+
 
 /**
  * Generated class for the GameOverComponent component.
@@ -14,9 +20,31 @@ export class GameOverComponent {
 
   text: string;
 
-  constructor() {
-    console.log('Hello GameOverComponent Component');
-    this.text = 'Hello World';
+  constructor(private screenOrientation: ScreenOrientation,
+              public navCtrl: NavController,
+              platform: Platform,) {
+
+      platform.ready().then(() => {
+      //locks screen in landscape mode
+        console.log("is windows: " + platform.is("windows"));
+        console.log("is ios: " + platform.is("ios"));
+        console.log("is android: " + platform.is("android"));
+        if(platform.is("ios") == true || platform.is("android") == true){
+          try {
+            this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+          } catch (error) {
+            console.log("something went wrong during locking of screen");
+            throw(error);
+          }
+        }
+    });
   }
+
+
+  toJoin(){
+    this.navCtrl.push(LoginComponent);
+    console.log("function triggered")
+  }
+
 
 }

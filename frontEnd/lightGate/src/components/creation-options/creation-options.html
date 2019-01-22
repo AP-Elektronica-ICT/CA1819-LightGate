@@ -2,8 +2,8 @@
 
 <body class="alignCenter">
 
-<h1>  
-    {{text}} 
+<h1>
+    {{text}}
 </h1>
 
 <br>
@@ -37,9 +37,8 @@
             <ion-label>Patricipate</ion-label>
             <ion-toggle [(ngModel)]="participate"></ion-toggle>
         </ion-item>
+  <button ion-button block (click)="values()">Create battle</button>
 </div>
 
-<div> 
-    <button ion-button large (click)="values()">Create battle</button>
-</div>
+
 </body>

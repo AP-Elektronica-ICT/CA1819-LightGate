@@ -4,6 +4,12 @@ import { NavController } from 'ionic-angular';
 import { StorageService } from '../../services/storage.service';
 import { JoinCreateComponent } from '../join-create/join-create';
 import { ToastController } from 'ionic-angular';
+import { Platform } from 'ionic-angular';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { CameraPreview} from '@ionic-native/camera-preview';
+import {Camera} from "@ionic-native/camera";
+
+
 
 /**
  * Generated class for the LoginComponent component.
@@ -26,7 +32,26 @@ export class LoginComponent implements OnInit {
     private _authSvc: AuthenticationService,
     private _storageSvc: StorageService,
     private _navCtrl: NavController,
-    private toastCtrl: ToastController) { }
+    private toastCtrl: ToastController,
+    private screenOrientation: ScreenOrientation,
+    private CameraPreview: CameraPreview,
+    platform: Platform,) {
+
+    platform.ready().then(() => {
+      CameraPreview.stopCamera();
+      //locks screen in landscape mode
+      if(platform.is("ios") == true || platform.is("android") == true){
+        try {
+          this.screenOrientation.unlock()
+          this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+        } catch (error) {
+          console.log("something went wrong during locking of screen");
+          throw(error);
+        }
+      }
+    });
+
+  }
 
   ngOnInit() {
 

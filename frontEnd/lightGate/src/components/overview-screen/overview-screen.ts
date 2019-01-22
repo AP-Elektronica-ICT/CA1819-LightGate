@@ -4,6 +4,9 @@ import { BattleComponent } from "../battle/battle";
 import { AuthenticationService, IGuild } from '../../services/authentication.service';
 import { StorageService } from '../../services/storage.service';
 import { HubConnection } from '@aspnet/signalr';
+import { CameraPreview} from '@ionic-native/camera-preview';
+import { Platform } from 'ionic-angular';
+
 
 
 @Component({
@@ -21,11 +24,17 @@ export class OverviewScreenComponent implements OnInit{
   constructor(public navParams: NavParams,
               private _storageSvc: StorageService,
               private _authSvc: AuthenticationService,
+              private CameraPreview: CameraPreview,
+              platform: Platform,
               public navCtrl: NavController) {
     console.log('Hello OverviewScreenComponent');
     this.battleId = navParams.get('battleId');
     this.hubConnection = navParams.get('hubConnection');
     console.log(this.battleId);
+
+    // platform.ready().then(() => {
+    //   CameraPreview.stopCamera();
+    // });
   }
 
   async ngOnInit()
