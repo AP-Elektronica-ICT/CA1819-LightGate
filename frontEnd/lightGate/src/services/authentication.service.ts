@@ -174,7 +174,7 @@ export class AuthenticationService
     battleId: string;
     players: IPlayer[];
     health: number;
-    attacked: string;
+    attacking: string;
     attackedBy: string;
   }
 

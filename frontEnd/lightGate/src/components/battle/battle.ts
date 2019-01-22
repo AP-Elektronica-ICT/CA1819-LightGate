@@ -180,8 +180,9 @@ export class BattleComponent implements OnInit {
     
     switch (this.currentPlayer.myJob) {
       case "knight":
-        targetGuild = this.findGuild(this.currentGuild.attacked);
+        targetGuild = this.findGuild(this.currentGuild.attacking);
         targetGuild.health -= 10;
+        console.log(targetGuild.health);
         this.createUpdateGuild(targetGuild);
         break;
 
@@ -190,7 +191,7 @@ export class BattleComponent implements OnInit {
         targetGuild.health -= 5;
         this.createUpdateGuild(targetGuild);
         
-        targetGuild = this.findGuild(this.currentGuild.attacked);
+        targetGuild = this.findGuild(this.currentGuild.attacking);
         targetGuild.health -= 5;
         this.createUpdateGuild(targetGuild);
         break;
@@ -204,7 +205,7 @@ export class BattleComponent implements OnInit {
         }
         else
         {
-          targetGuild = this.findGuild(this.currentGuild.attacked);
+          targetGuild = this.findGuild(this.currentGuild.attacking);
           targetGuild.health -= 5;
         }
 
@@ -220,6 +221,7 @@ export class BattleComponent implements OnInit {
 
   findGuild(id:string):IGuild{
     let foundGuild: IGuild;
+    
     this.currentBattle.guilds.forEach(guild => {
       if (guild.id == id) {
         foundGuild = guild;
@@ -264,7 +266,8 @@ export class BattleComponent implements OnInit {
 
       let isHit:boolean = this.checkIfHit(this.tags, this.currentObjective)
       if (isHit) {
-        await this.useSkillOnTarget();
+        
+        this.useSkillOnTarget();
         //Reload battle for all clients
         this.updateHealthBar();
       }
