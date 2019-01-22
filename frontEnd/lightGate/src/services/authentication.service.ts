@@ -11,14 +11,14 @@ export class AuthenticationService
     private currentName = "";
     private base_url = "https://lightgate-api.azurewebsites.net/api/v1/";
 
-    // Uncomment for mobile debug
+    //Uncomment for mobile debug
     private player_url = this.base_url + "players/";
     private guild_url = this.base_url + "guilds/";
     private battle_url = this.base_url + "battles/";
     private battle_offset_url = this.base_url + "battles?page=";
     private image_url = this.base_url + "images/"
 
-    // Uncomment for localhost debug
+    // // Uncomment for localhost debug
     // private player_url = "http://localhost:2052/api/v1/players/";
     // private guild_url = "http://localhost:2052/api/v1/guilds/";
     // private battle_url = "http://localhost:2052/api/v1/battles/";
@@ -131,7 +131,7 @@ export class AuthenticationService
     //Post Images
     async postImageRequest(body: any)
     {
-        return this._http.post<IImage>(this.image_url, body).toPromise();
+        return this._http.post<string[]>(this.image_url, body).toPromise();
     }
 
 
@@ -174,6 +174,8 @@ export class AuthenticationService
     battleId: string;
     players: IPlayer[];
     health: number;
+    attacking: string;
+    attackedBy: string;
   }
 
   export interface IPlayer {

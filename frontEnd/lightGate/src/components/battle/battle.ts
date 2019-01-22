@@ -11,6 +11,8 @@ import { StorageService } from '../../services/storage.service';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { NavController, NavParams } from 'ionic-angular';
 import { HubConnection, HubConnectionBuilder } from '@aspnet/signalr';
+import { OverviewScreenComponent } from '../overview-screen/overview-screen';
+import { GameOverComponent } from '../game-over/game-over'
 import * as signalR from '@aspnet/signalr';
 
 
@@ -27,17 +29,29 @@ import * as signalR from '@aspnet/signalr';
 })
 export class BattleComponent implements OnInit {
 
-  constructor(private httpClient:HttpClient, platform: Platform, private CameraPreview: CameraPreview, private StatusBar:StatusBar, private SplashScreen:SplashScreen, private screenOrientation: ScreenOrientation, private _svc : ObjectivesService, private _authSvc: AuthenticationService, private _storageSvc: StorageService, public navCtrl: NavController,
+  constructor(private httpClient:HttpClient,
+              platform: Platform,
+              private CameraPreview: CameraPreview,
+              private StatusBar:StatusBar,
+              private SplashScreen:SplashScreen,
+              private screenOrientation: ScreenOrientation,
+              private _svc : ObjectivesService,
+              private _authSvc: AuthenticationService,
+              private _storageSvc: StorageService,
+              public navCtrl: NavController,
               public navParams: NavParams) {
     platform.ready().then(() => {
       //locks screen in landscape mode
       // TODO: Uncommend when deploying on mobile devide
-      // try {
-      //   this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
-      // } catch (error) {
-      //   console.log("something went wrong during locking of screen");
-      //   throw(error);
-      // }
+      if(platform.is("ios") == true || platform.is("android") == true){
+        try {
+          this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+        } catch (error) {
+          console.log("something went wrong during locking of screen");
+          throw(error);
+        }
+      }
+
 
       //define variables
       this.battleId = navParams.get('battleId');
@@ -51,7 +65,7 @@ export class BattleComponent implements OnInit {
 
       const cameraPreviewOpts: CameraPreviewOptions = {
         //This will define the start coordinates of the camera view
-        x: 50,
+        x: 0,
         y: 20,
         //defines the width and height of the view
         width: camreaHeight -20,
@@ -73,7 +87,7 @@ export class BattleComponent implements OnInit {
   picture : string;
   imgurUrl : string;
   randomObjCount : number;
-  randomObjective: string;
+  currentObjective: IObjectivesRoot;
   currentPlayerId: string;
   battleId: string;
   currentBattle: IBattleRoot;
@@ -82,6 +96,9 @@ export class BattleComponent implements OnInit {
   guildId: string;
   index: number;
   players: IPlayer[] = [];
+  tags: string[];
+
+  timelimit: number;
 
   private hubConnection: HubConnection
 
@@ -92,15 +109,20 @@ export class BattleComponent implements OnInit {
      this.hubConnection.on('UpdateCurrentBattle', () => {
         console.log("Fetching Current Battle...");
         this.getPlayers();
-     });   
+     });
+
+     this.hubConnection.on('UpdateHealthBar', () => {
+        console.log("Fetching Current Battle...");
+        this.getPlayers();
+        this.checkHealth();
+     })
 
     this._svc.getObjectives().subscribe(result => {
       this.objectives = result;
       console.log(result);
       //console.log(result[0].description);
       this.randomObjCount = this.getRandomInt(this.objectives.length);
-      console.log();
-      this.randomObjective = this.objectives[this.randomObjCount].description;
+      this.currentObjective = this.objectives[this.randomObjCount];
     });
 
     try{
@@ -114,8 +136,102 @@ export class BattleComponent implements OnInit {
 
 
   }
+
+  updateHealthBar()
+  {
+    if(this.hubConnection)
+    {
+      this.hubConnection.invoke("UpdateHealthBar");
+    }
+  }
+
   getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
+  }
+
+
+  async attack(){
+    //this.PostToImgur("");
+    this.takePicture();
+  }
+
+  checkIfHit(tags:string[], objectives:IObjectivesRoot){
+    let check1:boolean;
+    let check2:boolean;
+
+    tags.forEach(label => {
+
+      console.log(label);
+      console.log(objectives.labels[0].feature);
+      if (label == objectives.labels[0].feature) {
+        check1=true;
+      }
+    });
+    tags.forEach(label => {
+      if (label == objectives.labels[1].feature) {
+        check2=true;
+      }
+    });
+    if (check1 && check2) {
+      return true;
+    }
+    //TODO - SHOULD BE FALSE
+    else return false;
+  }
+
+  useSkillOnTarget(){
+    let targetGuild: IGuild;
+
+    switch (this.currentPlayer.myJob) {
+      case "knight":
+        targetGuild = this.findGuild(this.currentGuild.attacking);
+        targetGuild.health -= 10;
+        console.log(targetGuild.health);
+        this.createUpdateGuild(targetGuild);
+        break;
+
+      case "mage":
+        targetGuild = this.findGuild(this.currentGuild.attackedBy);
+        targetGuild.health -= 5;
+        this.createUpdateGuild(targetGuild);
+
+        targetGuild = this.findGuild(this.currentGuild.attacking);
+        targetGuild.health -= 5;
+        this.createUpdateGuild(targetGuild);
+        break;
+
+      case "cleric":
+        targetGuild = this.currentGuild;
+
+        if(targetGuild.health < 100)
+        {
+          targetGuild.health += 5;
+        }
+        else
+        {
+          targetGuild = this.findGuild(this.currentGuild.attacking);
+          targetGuild.health -= 5;
+        }
+
+        if(targetGuild.health > 100)
+        {
+          targetGuild.health = 100;
+        }
+
+        this.createUpdateGuild(targetGuild);
+        break;
+    }
+  }
+
+  findGuild(id:string):IGuild{
+    let foundGuild: IGuild;
+
+    this.currentBattle.guilds.forEach(guild => {
+      if (guild.id == id) {
+        foundGuild = guild;
+      }
+    });
+    return foundGuild;
   }
 
 
@@ -126,15 +242,18 @@ export class BattleComponent implements OnInit {
   }
 
 
-  takePicture() {
+   takePicture() {
     this.CameraPreview.takePicture(this.pictureOpts).then((imageData) => {
       console.log("This button will end up taking a ");
-      this.picture = 'data:image/jpeg;base64,' + imageData;
+      //this.picture = 'data:image/jpeg;base64,' + imageData;
+      this.picture = imageData.join();
       console.log(this.picture);
       this.PostToImgur(this.picture);
       this.postImageRequest();
 
+
     }, (err) => {
+
       console.log(err);
     });
   };
@@ -148,20 +267,51 @@ export class BattleComponent implements OnInit {
 
     try {
       var result = await this._authSvc.postImageRequest(body);
-      console.log("postImageRequest: " + result);
+      console.log("postImageRequest: " + result[0] + result[1] + result[2] + result[4]);
+      this.tags = result;
+
+      let isHit:boolean = this.checkIfHit(this.tags, this.currentObjective)
+      if (isHit) {
+
+        this.useSkillOnTarget();
+        //Reload battle for all clients
+        this.updateHealthBar();
+      }
+
     } catch (e) {
       console.log(e);
     }
 
   }
 
+  async createUpdateGuild(updateGuild: IGuild)
+  {
+    await this._authSvc.putGuildRequest(updateGuild.id, updateGuild);
+  }
+
+  // startCountdown(minutes : number)
+  // {
+
+  //   var counter = minutes;
+  //   var interval = setInterval(() => {
+  //     console.log(counter);
+  //     counter--;
+
+  //     if(counter < 0)
+  //     {
+  //       clearInterval(interval);
+  //       console.log('Times Up!')
+  //     }
+
+  //   }, 60000);
+  // }
+
   PostToImgur(base64)
   {
-    var base64Image = base64;
     const url = 'https://api.imgur.com/3/image';
     const body = {
-      // TODO: change base64 content
-      image: base64Image
+      image: base64
+
     };
     const headers = new HttpHeaders({'Authorization':'Client-ID e89b61d9f20f749'});
     this.httpClient.post<IResult>(url, body, {headers: headers}).subscribe(
@@ -171,7 +321,7 @@ export class BattleComponent implements OnInit {
           console.log(this.imgurUrl);
 
           // TODO: Remove postImageRequest here
-          this.postImageRequest();
+          //this.postImageRequest();
       },
       (err: HttpErrorResponse) => {
           if (err.error instanceof Error) {
@@ -185,9 +335,27 @@ export class BattleComponent implements OnInit {
 
   }
 
+  checkHealth(){
+      if (this.currentGuild.health <= 0 ){
+      this.navCtrl.push(GameOverComponent);
+    }
+  }
+
+  YouDied(){
+    this.navCtrl.push(GameOverComponent);
+  }
+
+  toOverview(){
+    console.log("This naviates to Overview screen");
+    this.navCtrl.push(OverviewScreenComponent, {
+      battleId: this.battleId,
+      hubConnection: this.hubConnection
+    });
+  }
+
   jobImages : string[] = [];
 
-  async getPlayers(){    
+  async getPlayers(){
 
     //API/v1/battles/-battleID-/guilds/-guildID-
     console.log('begin')
@@ -196,7 +364,9 @@ export class BattleComponent implements OnInit {
     this.guildId = this.currentPlayer.guildId;
     this.currentGuild = await this._authSvc.getSpecificGuildFromBattle(this.battleId, this.guildId);
     this.players = this.currentGuild.players;
+    this.timelimit = parseInt(this.currentBattle.battleTimeInMinutes);
 
+    //this.startCountdown(this.timelimit);
 
     for (let index = 0; index < this.players.length; index++) {
       switch(this.players[index].myJob)
@@ -209,9 +379,9 @@ export class BattleComponent implements OnInit {
         break;
         case "cleric":
         this.jobImages.push("../../assets/imgs/character_jobs/cleric.png");
-        break; 
+        break;
       }
-      
+
     }
 
     // TODO: request naar nieuwe route

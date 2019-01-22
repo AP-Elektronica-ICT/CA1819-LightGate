@@ -16,6 +16,7 @@ import { CreationOptionsComponent } from '../components/creation-options/creatio
 import { DeclareGuildNamesComponent } from "../components/declare-guild-names/declare-guild-names";
 import { SelectBattleScreenComponent } from "../components/select-battle-screen/select-battle-screen";
 import { EnterPlayernameComponent } from "../components/enter-playername/enter-playername";
+import { GameOverComponent } from "../components/game-over/game-over"
 import { ObjectivesService } from '../services/objectives.service';
 import { OverviewScreenComponent } from '../components/overview-screen/overview-screen';
 import { HttpClientModule } from '@angular/common/http';
@@ -37,6 +38,7 @@ import { JoinTeamComponent } from '../components/join-team/join-team';
     DeclareGuildNamesComponent,
     OverviewScreenComponent,
     JoinTeamComponent,
+    GameOverComponent
 
   ],
   imports: [
@@ -57,7 +59,8 @@ import { JoinTeamComponent } from '../components/join-team/join-team';
     SelectBattleScreenComponent,
     EnterPlayernameComponent,
     JoinTeamComponent,
-    OverviewScreenComponent
+    OverviewScreenComponent,
+    GameOverComponent
   ],
   providers: [
     ScreenOrientation,
