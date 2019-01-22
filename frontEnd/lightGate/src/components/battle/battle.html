@@ -7,19 +7,17 @@
   <button ion-button round (click)="getCurrentScreenOrientation()">check screen</button> -->
   <p id="msg"></p>
   <div *ngIf="players != null" class="container">
-  <div class="TopRow">
-    <!--<div *ngIf="players != null && players.length > 0" class="TopLeft">-->
-    <div *ngIf="players[0] != null" class="TopLeft">
-      {{ players[0].name }} <br>
-      <img *ngIf="jobImages[0] != null" [src]="jobImages[0]"> <br>
-      {{ players[0].myJob }}
+    <div class="TopRow">
+      <!--<div *ngIf="players != null && players.length > 0" class="TopLeft">-->
+      <div *ngIf="players[0] != null" class="TopLeft">
+        {{ players[0].name }} <br>
+        <img *ngIf="jobImages[0] != null" [src]="jobImages[0]"> <br>
+        {{ players[0].myJob }}
+      </div>
     </div>
 
 
     <div class="TopRow">
-
-
-
 
       <!--<div *ngIf="players != null && players.length > 0" class="TopLeft">-->
       <div class="TopLeft">
@@ -30,7 +28,6 @@
           <br> {{ players[0].myJob }}
         </div>
       </div>
-
 
       <div class="TopMid">
         <div *ngIf="currentGuild != null">
@@ -46,7 +43,6 @@
         </div>
       </div>
 
-
       <div class="TopRight">
         <div *ngIf="players[1] != null">
           {{ players[1].name }}
@@ -55,41 +51,30 @@
           <br> {{ players[1].myJob }}
         </div>
       </div>
-    </div>
-    <div *ngIf="players[1] != null" class="TopRight">
-      {{ players[1].name }} <br>
-      <img *ngIf="jobImages[1] != null" [src]="jobImages[1]"> <br>
-      {{ players[1].myJob }}
-    </div>
-  </div>
 
-  <div class="MidRow">
-    <div class="MidLeft">
-      <button ion-button round (click)="toOverview()">test</button>
+
     </div>
+
     <div class="MidRow">
-
-
 
 
       <div class="MidLeft">
         <button ion-button round (click)="attack()">ATTACK</button>
       </div>
-      <div class="MidMid">
 
-  <div class="BottomRow">
-    <div *ngIf="players[2] != null" class="BottomLeft">
-      {{ players[2].name }} <br>
-      <img *ngIf="jobImages[2] != null" [src]="jobImages[2]"> <br>
-      {{ players[2].myJob }}
+
+      <div class="MidRight">
+        <button ion-button round (click)="toOverview()">test</button>
+      </div>
+
+
     </div>
+
     <div class="BottomRow">
 
 
-
-
-      <div *ngIf="players[2] != null" class="BottomLeft">
-        <div *ngIf="players[2] != null" class="BottomLeft">
+      <div class="BottomLeft">
+        <div *ngIf="players[2] != null">
           {{ players[2].name }}
           <br>
           <img *ngIf="jobImages[2] != null" [src]="jobImages[2]">
@@ -116,14 +101,8 @@
         </div>
       </div>
 
-
-
-
     </div>
-    <div *ngIf="players[3] != null" class="BottomRight">
-      {{ players[3].name }} <br>
-      <img *ngIf="jobImages[3] != null" [src]="jobImages[3]"> <br>
-      {{ players[3].myJob }}
-    </div>
+
   </div>
+
 </ion-content>

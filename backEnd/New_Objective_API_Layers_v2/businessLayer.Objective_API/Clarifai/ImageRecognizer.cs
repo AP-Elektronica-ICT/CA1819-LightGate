@@ -21,7 +21,7 @@ namespace businessLayer.Objective_API.Clarifai
 
         public async Task<List<string>> PredictLabels(string img)
         {
-            
+            tagList = new List<string>();
             var res = await this.client.PublicModels.GeneralModel
             .Predict(new ClarifaiURLImage(img))
             .ExecuteAsync();
@@ -29,7 +29,7 @@ namespace businessLayer.Objective_API.Clarifai
             decimal? testvalue;
             string testName;
             //TODO Change compareValue to working value (decimal?)
-            decimal? compareValue = 0.8m;
+            decimal? compareValue = 0.9m;
             foreach (var concept in res.Get().Data)
             {
                 Console.WriteLine($"{concept.Name}: {concept.Value}");
@@ -37,7 +37,8 @@ namespace businessLayer.Objective_API.Clarifai
                 testName = concept.Name;
                 if (testvalue > compareValue)
                 {
-                    tagList = new List<string> { testName };
+                   
+                    tagList.Add(testName);
                 }
 
                 System.Diagnostics.Debug.WriteLine($"{concept.Name}: {concept.Value}");
