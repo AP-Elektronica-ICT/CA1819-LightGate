@@ -6,6 +6,9 @@ import { JoinCreateComponent } from '../join-create/join-create';
 import { ToastController } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { CameraPreview} from '@ionic-native/camera-preview';
+import {Camera} from "@ionic-native/camera";
+
 
 
 /**
@@ -31,11 +34,12 @@ export class LoginComponent implements OnInit {
     private _navCtrl: NavController,
     private toastCtrl: ToastController,
     private screenOrientation: ScreenOrientation,
+    private CameraPreview: CameraPreview,
     platform: Platform,) {
 
     platform.ready().then(() => {
+      CameraPreview.stopCamera();
       //locks screen in landscape mode
-      // TODO: Uncommend when deploying on mobile devide
       if(platform.is("ios") == true || platform.is("android") == true){
         try {
           this.screenOrientation.unlock()

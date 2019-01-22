@@ -7,12 +7,12 @@
 </h1>
 
 <div>Create {{Guilds}} guilds</div>
-<ion-item class="form">
-  <ion-label color="primary" stacked>Enter guildname n#{{count}}</ion-label>
-  <ion-input [(ngModel)]="guildname" type="text" placeholder="guildname" clearInput="true"></ion-input>
-</ion-item>
-
-<div>
-  <button ion-button large (click)="addGuild()">Create Guild</button> 
+<div class="form">
+  <ion-item>
+    <ion-label color="primary" stacked>Enter guildname n#{{count}}</ion-label>
+    <ion-input [(ngModel)]="guildname" type="text" placeholder="guildname" clearInput="true"></ion-input>
+  </ion-item>
+  <button ion-button block (click)="addGuild()">Create Guild</button>
 </div>
+
 </body>
