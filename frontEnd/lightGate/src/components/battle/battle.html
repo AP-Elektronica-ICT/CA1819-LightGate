@@ -23,7 +23,7 @@
       <div class="TopMid">
         <div *ngIf="currentGuild != null">
           <div class="health-outer">
-            <div class="health-innerEnemy" [style.width]="currentGuild.health + '%'">ENEMY:  {{currentGuild.health}}%</div>
+            <div class="health-innerEnemy" [style.width]="currentGuild.health + '%'">ENEMY:  {{findGuild(this.currentGuild.attacking).health}}%</div>
           </div>
           <p>Take a picture of a</p>
           <p class="boldText">{{ currentObjective.description }}</p>
